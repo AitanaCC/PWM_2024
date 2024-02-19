@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chiringuito</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="menu-button" onclick="toggleSidebar()">☰</div>
+      <div class="site-title">Chiringuito</div>
+      <div class="user-options">
+        <span class="cart-access">Cesta</span>
+        <button class="login-button">Log In</button>
+      </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="closebtn" onclick="toggleSidebar()">&times;</div>
+      <a href="#">Drinks</a>
+      <a href="#">Smoothies</a>
+      <a href="#">Cocktails</a>
+      <a href="#">Frozen Desserts</a>
+      <a href="#">Appetizer</a>
+
+      <hr />
+      <a href="#">Reviews</a>
+      <br />
+      <a href="#">Contact us</a>
+    </div>
+
+    <main>
+      <!-- Contenido principal aquí -->
+    </main>
+
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
