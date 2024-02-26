@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chiringuito</title>
     <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
-    <div class="header">
-      <div class="menu-button" onclick="toggleSidebar()">☰</div>
-      <div class="site-title">Chiringuito</div>
-      <div class="user-options">
-        <span class="cart-access">Cesta</span>
-        <button class="login-button">Log In</button>
+    <div id="dark-filter"></div>
+    <div id="wrapper">
+      <header class="header">
+
+        <div class="menu-button" onclick="toggleSidebar()">
+          <img src="./img/sidebar-icon.png" height="35" width="35">
+        </div>
+        
+        <div class="site-title">TFC</div>
+        
+        <nav>
+          <div class="user-options">
+            <img src="./img/icons8-cart-48.png" height="50" width="50">
+          </div>
+
+          <div class="user-options">
+            <img src="./img/icons8-user-50.png" height="50" width="50">
+          </div>
+        </nav>
+
+      </header>
+      
+      
+      <video autoplay muted loop id="video-background">
+          <source src="./video/background.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      
+
+      <div id="sidebar" class="sidebar">
+        <div class="closebtn" onclick="toggleSidebar()">&times;</div>
+        <a href="#">Drinks</a>
+        <a href="#">Smoothies</a>
+        <a href="#">Cocktails</a>
+        <a href="#">Frozen Desserts</a>
+        <a href="#">Appetizer</a>
+        <br><hr /><br>
+        <a href="#">Reviews</a>
+        <br><br><br><br><br><br><br><br>
+        <a href="#">Contact us</a>
       </div>
+
+      <div class="centered-text">
+        <h1>Taste, Flavor, and Chill <br> with our <span class="typing-effect"></span></h1>
+        <script src="js/typingEffect.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTypingEffect('.typing-effect', ["Drinks", "Smoothies", "Frozen Desserts", "Cocktails", "Appetizer"]);
+        });
+        </script>
+
+        <button class="button">Buy now!</button>
+        
+      </div>
+      
+      
+
     </div>
 
-    <div id="sidebar" class="sidebar">
-      <div class="closebtn" onclick="toggleSidebar()">&times;</div>
-      <a href="#">Drinks</a>
-      <a href="#">Smoothies</a>
-      <a href="#">Cocktails</a>
-      <a href="#">Frozen Desserts</a>
-      <a href="#">Appetizer</a>
-
-      <hr />
-      <a href="#">Reviews</a>
-      <br />
-      <a href="#">Contact us</a>
-    </div>
-
-    <main>
-      <!-- Contenido principal aquí -->
-    </main>
 
     <script>
       function toggleSidebar() {
         var sidebar = document.getElementById("sidebar");
+        var filter = document.getElementById("dark-filter");
         sidebar.classList.toggle("active");
+
+        if (filter.style.display === "none" || filter.style.display === "") {
+          filter.style.display = "block";
+        } else {
+          filter.style.display = "none";
+        }
       }
     </script>
+
   </body>
 </html>
