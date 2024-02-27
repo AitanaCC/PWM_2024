@@ -21,43 +21,49 @@
     </video>
 
 
-    <div id="sidebar" class="sidebar">
-        <div class="closebtn" onclick="toggleSidebar()">&times;</div>
-        <a href="#">Drinks</a>
-        <a href="#">Smoothies</a>
-        <a href="#">Cocktails</a>
-        <a href="#">Frozen Desserts</a>
-        <a href="#">Appetizer</a>
-        <br>
-        <hr/>
-        <br>
-        <a href="#">Reviews</a>
-        <br><br><br><br><br><br><br><br>
-        <a href="#">Contact us</a>
-    </div>
+    <div id="sidebar-container"></div>
 
     <div class="centered-text">
         <h1>Taste, Flavor, and Chill <br> with our <span class="typing-effect"></span></h1>
-        <script src="js/typingEffect.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                initializeTypingEffect('.typing-effect', ["Drinks", "Smoothies", "Frozen Desserts", "Cocktails", "Appetizer"]);
-            });
-        </script>
-
-        <button class="button">Buy now</button>
-
+        <button class="button">Explore</button>
     </div>
-
 
 </div>
 
+<div id="content-below">
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>We are a team dedicated to bringing you the best drinks, smoothies, cocktails, and frozen desserts. With years of experience, we've perfected our recipes to offer our customers unforgettable taste experiences.</p>
+    </section>
+
+    <!-- Otra sección, por ejemplo, Reviews -->
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <p>Read what our customers have to say about our amazing selections.</p>
+        <!-- Aquí podrías incluir citas de clientes o enlaces a reseñas -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions? Want to place a special order? Contact us!</p>
+        <!-- Formulario de contacto o información de contacto aquí -->
+    </section>
+</div>
+
+<footer id="footer"></footer>
+
+
+
+
+<script src="js/typingEffect.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
-    loadHTMLAndExecuteScripts('#header', './header.html');
-    /*loadHTMLAndExecuteScripts('#articles', './sidebar_articles.html');
-    loadHTMLAndExecuteScripts('#categories', './sidebar_categories.html');
-    loadHTMLAndExecuteScripts('#links', './sidebar_links.html');
+      initializeTypingEffect('.typing-effect', ["Drinks", "Smoothies", "Frozen Desserts", "Cocktails", "Appetizer"]);
+      loadHTMLAndExecuteScripts('#header', './header.html');
+      loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
+      loadHTMLAndExecuteScripts('#footer', './footer.html');
+    /*loadHTMLAndExecuteScripts('#links', './sidebar_links.html');
     loadHTMLAndExecuteScripts('#top_navlist', './top_navlist.html');
     loadHTMLAndExecuteScripts('#footerRight', './footer_right.html');
     loadHTMLAndExecuteScripts('#footerLeft', './footer_left.html');
@@ -92,9 +98,7 @@
       document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
     });
   }
-</script>
 
-<script>
     function toggleSidebar() {
         var sidebar = document.getElementById("sidebar");
         var filter = document.getElementById("dark-filter");

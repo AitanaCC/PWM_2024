@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesta de Productos</title>
+    <link rel="stylesheet" href="basket.css">
+</head>
+<body>
+
+<header id="header">
+</header>
+
+<div id="basket-container">
+
+    <div id="basket-content">
+        <div id="basket-empty">
+            <img src="./img/icons8-cart-48.png" alt="Cesta Vacía">
+            <p>¿Aún no hay artículos?</p>
+            <button id="explore-button">Explorar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadHTMLAndExecuteScripts('#header', './header.html');
+    });
+
+    function loadHTMLAndExecuteScripts(selector, sourceFile) {
+        fetch(sourceFile)
+            .then(response => response.text())
+            .then(html => {
+                const container = document.querySelector(selector);
+                container.innerHTML = html;
+
+                executeScripts(container);
+            })
+            .catch(error => console.error('Error loading ' + sourceFile + ':', error));
+    }
+
+    function executeScripts(container) {
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+            const scriptTag = document.createElement('script');
+
+            if (script.src) {
+                scriptTag.src = script.src;
+            } else {
+                scriptTag.textContent = script.textContent;
+            }
+
+            // Insert script tag into the document to ensure global execution context
+            document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+        });
+    }
+</script>
+
+
+</body>
+</html>

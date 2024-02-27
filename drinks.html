@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Productos</title>
+    <link rel="stylesheet" href="products.css"> <!-- Asegúrate de enlazar tu archivo CSS aquí -->
+</head>
+<body>
+<header id="header">
+</header>
+<div id="sidebar-container"></div>
+
+<div id="productsList">
+    <h1>Drinks</h1>
+
+    <section id="products">
+        <!-- Contenedor de productos -->
+        <div class="product-card">
+            <img src="/img/drinks/estrellaGalicia.png" alt="Producto" class="product-image">
+            <p class="product-description">Estrella Galicia Hostia</p>
+            <button class="product-button">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="/img/drinks/coke.png" alt="Producto" class="product-image">
+            <p class="product-description">Basura de cocacola, comprad la Zero</p>
+            <button class="product-button">Comprar</button>
+        </div>
+        <!-- Repite el div .product-card para cada producto -->
+    </section>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadHTMLAndExecuteScripts('#header', './header.html');
+        loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html'); /*El .. es para subir un nivel en las carpetas*/
+
+    });
+
+    function loadHTMLAndExecuteScripts(selector, sourceFile) {
+        fetch(sourceFile)
+            .then(response => response.text())
+            .then(html => {
+                const container = document.querySelector(selector);
+                container.innerHTML = html;
+
+                executeScripts(container);
+            })
+            .catch(error => console.error('Error loading ' + sourceFile + ':', error));
+    }
+
+    function executeScripts(container) {
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+            const scriptTag = document.createElement('script');
+
+            if (script.src) {
+                scriptTag.src = script.src;
+            } else {
+                scriptTag.textContent = script.textContent;
+            }
+
+            // Insert script tag into the document to ensure global execution context
+            document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+        });
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var filter = document.getElementById("dark-filter");
+        sidebar.classList.toggle("active");
+
+        if (filter.style.display === "none" || filter.style.display === "") {
+            filter.style.display = "block";
+        } else {
+            filter.style.display = "none";
+        }
+    }
+</script>
+
+
+</body>
+</html>
