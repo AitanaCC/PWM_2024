@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <title>Perfil</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Beige background */
+        .info-container{
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+            align-items: center; /* Centra los elementos horizontalmente */
         }
 
         .profile-container {
-            background: #2F4F4F; /* Beige background */
+            background: #2F4F4F; /* Fondo oscuro */
             width: 80%;
-            max-width: 800px;
+            max-width: 800px; /* Ajusta este valor según necesites */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             border: 1px solid black;
             padding: 20px;
             box-sizing: border-box;
+            margin-top: 20px; /* Añade un margen en la parte superior si es necesario */
         }
 
         .profile-header {
@@ -61,6 +61,7 @@
         .profile-info div {
             margin-bottom: 5px;
         }
+
         button {
             padding: 10px 20px;
             border: 1px solid black;
@@ -76,28 +77,95 @@
 </head>
 <body>
 
-<div class="profile-container">
-    <div class="profile-header">
-        <h1>Perfil del Usuario</h1>
-        <div class="profile-picture"></div>
-    </div>
-    <div class="profile-info">
-        <div><span>Nombre de usuario:</span> tuNombre</div>
-    </div>
-    <div class="profile-info">
-        <div><span>Nombre:</span> name</div>
-    </div>
-    <div class="profile-info">
-        <div><span>Apellido:</span> apellido1 apellido2</div>
-    </div>
-    <div class="profile-info">
-        <div><span>Email:</span> tuEmail@gmail.com</div>
-    </div>
-    <div class="profile-footer" style="display: flex; justify-content: space-between; margin-top: 20px;">
-        <button onclick="window.location.href='index.html'">Atrás</button>
-        <button onclick="window.location.href='edit-profile.html'">Editar Datos</button>
+<header id="header">
+</header>
+
+<div id="sidebar-container"></div>
+<div class="info-container">
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Perfil del Usuario</h1>
+            <div class="profile-picture"></div>
+        </div>
+        <div class="profile-info">
+            <div><span>Nombre de usuario:</span> tuNombre</div>
+        </div>
+        <div class="profile-info">
+            <div><span>Nombre:</span> name</div>
+        </div>
+        <div class="profile-info">
+            <div><span>Apellido:</span> apellido1 apellido2</div>
+        </div>
+        <div class="profile-info">
+            <div><span>Email:</span> tuEmail@gmail.com</div>
+        </div>
+        <div class="profile-footer" style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button onclick="window.location.href='index.html'">Atrás</button>
+            <button onclick="window.location.href='edit-profile.html'">Editar Datos</button>
+        </div>
     </div>
 </div>
+
+<div id="footer">
+    <div class="footer"></div>
+    <div class="footer-right">
+        <div id="map" ></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadHTMLAndExecuteScripts('#header', './header.html');
+        loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
+        loadHTMLAndExecuteScripts('.footer', './footer.html');
+
+        /** SE PUEDE PONER "../ARCHIVO.html" PARA SUBIR UN NIVEL EN LAS CARPETAS Y EJECUTARL0 */
+
+    });
+
+    function loadHTMLAndExecuteScripts(selector, sourceFile) {
+        fetch(sourceFile)
+            .then(response => response.text())
+            .then(html => {
+                const container = document.querySelector(selector);
+                container.innerHTML = html;
+
+                executeScripts(container);
+            })
+            .catch(error => console.error('Error loading ' + sourceFile + ':', error));
+    }
+
+    function executeScripts(container) {
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+            const scriptTag = document.createElement('script');
+
+            if (script.src) {
+                scriptTag.src = script.src;
+            } else {
+                scriptTag.textContent = script.textContent;
+            }
+
+            // Insert script tag into the document to ensure global execution context
+            document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+        });
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var filter = document.getElementById("dark-filter");
+        sidebar.classList.toggle("active");
+
+        if (filter.style.display === "none" || filter.style.display === "") {
+            filter.style.display = "block";
+        } else {
+            filter.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>

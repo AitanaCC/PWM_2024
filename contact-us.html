@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesta de Productos</title>
-    <link rel="stylesheet" href="css/basket.css">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact-us.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-<div id="dark-filter"></div>
 
-<header id="header">
-</header>
+<header id="header"></header>
 <div id="sidebar-container"></div>
 
-<div id="basket-container">
-    <div id="basket-content">
-        <div id="basket-empty">
-            <img src="./img/icons8-cart-48.png" alt="Cesta Vacía">
-            <p>¿Aún no hay artículos?</p>
-            <a href="explorerMenu.html">
-                <button id="explore-button">Explorar</button>
-            </a>
+<div id="contact-container">
+    <section id="contact-info">
+        <div class="info-block">
+            <h3>Visit us:</h3>
+            <p>Street...</p>
         </div>
-    </div>
-</div>
+        <div class="info-block">
+            <h3>Open:</h3>
+            <p>lunes a viernes</p>
+            <p>sábado</p>
+            <p>domingo</p>
+        </div>
+        <div class="info-block contact-form">
+            <h3>Contact us:</h3>
+            <form>
+                <input type="email" placeholder="E-mail">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
-<div id="footer">
-    <div class="footer"></div>
-    <div class="footer-right">
-        <div id="map" ></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
-    </div>
+    <div id="map" style="height: 323px;"></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
 </div>
-
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="js/map.js"></script>
 
@@ -40,7 +43,6 @@
     document.addEventListener('DOMContentLoaded', (event) => {
         loadHTMLAndExecuteScripts('#header', './header.html');
         loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
-        loadHTMLAndExecuteScripts('.footer', './footer.html');
     });
 
     function loadHTMLAndExecuteScripts(selector, sourceFile) {
@@ -82,6 +84,7 @@
             filter.style.display = "none";
         }
     }
+
 </script>
 
 </body>

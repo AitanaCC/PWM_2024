@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige; /* Un color de fondo similar al de la imagen */
+}
+
+#contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#contact-info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff; /* Fondo blanco para la sección de información */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    margin: 20px;
+}
+
+.info-block {
+    margin: 0 10px;
+}
+
+.contact-form form {
+    background-color: #333; /* Fondo oscuro para el formulario de contacto */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact-form button {
+    background-color: #007bff; /* Color azul para el botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Un tono de azul más oscuro para el hover */
+}
+
+#map {
+    height: 300px; /* o la altura que desees */
+    width: 100%;
+    margin-top: 20px;
+    z-index: 0;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #contact-info {
+        flex-direction: column;
+    }
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff00;
+    vertical-align: middle;
+}
+
+
+.user-options{
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: 47px;
+    display: inline-block;
+}
+
+.menu-button {
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: 47px;
+    display: inline-block;
+}
+
+.site-title {
+    font-size: 40px;
+    color: #000;
+    font-weight: 600;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    left: -30%;
+    border-radius: 600px;
+}
+
+
+.sidebar {
+    height: 95%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-bottom-right-radius: 5%;
+    border-top-right-radius: 5%;
+}
+.sidebar a {
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+.sidebar.active {
+    width: 250px;
+}
+
+.sidebar hr {
+    border: 0;
+    height: 3px;
+    background-color: black;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 36px;
+    margin-left: 20px;
+    cursor: pointer;
+}

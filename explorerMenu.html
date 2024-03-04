@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Chiringuito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        h1{
+            text-align: center;
+            font-family: "Bodoni MT";
+        }
+
+        .menu-logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #000000; /* Color Icono */
+        }
+
+        .menu-item i {
+            font-size: 50px; /* Tamaño de los íconos */
+            margin: 40px;
+        }
+
+        .menu-item span {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Estilos existentes */
+        .menu-logo-container, .menu-item, h1 {
+            /* Tus estilos existentes */
+        }
+
+        /* Añade esto para tu footer */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .footer-container {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer {
+            background-color: #2F4F4F; /* Color oscuro para el footer */
+            color: white; /* Color del texto */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+    </style>
+</head>
+<body>
+<header id="header"></header>
+<div id="sidebar-container"></div>
+
+<h1>Menú del Chiringuito</h1>
+
+<div class="menu-logo-container">
+    <a href="drinks.html" class="menu-item">
+        <i class="fas fa-cocktail"></i>
+        <span>Drinks</span>
+    </a>
+    <a href="frozenDesserts.html" class="menu-item">
+        <i class="fas fa-ice-cream"></i>
+        <span>Frozen Desserts</span>
+    </a>
+    <a href="appetizer.html" class="menu-item">
+        <i class="fas fa-pepper-hot"></i>
+        <span>Appetizer</span>
+    </a>
+    <a href="cocktails.html" class="menu-item">
+        <i class="fas fa-glass-martini-alt"></i>
+        <span>Cocktails</span>
+    </a>
+    <a href="smoothies.html" class="menu-item">
+        <i class="fas fa-blender"></i>
+        <span>Smoothies</span>
+    </a>
+</div>
+<div class="footer-container">
+    <footer id="footer"></footer>
+</div>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadHTMLAndExecuteScripts('#header', './header.html');
+        loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
+        loadHTMLAndExecuteScripts('#footer', './footer.html');
+    });
+
+    function loadHTMLAndExecuteScripts(selector, sourceFile) {
+        fetch(sourceFile)
+            .then(response => response.text())
+            .then(html => {
+                const container = document.querySelector(selector);
+                container.innerHTML = html;
+
+                executeScripts(container);
+            })
+            .catch(error => console.error('Error loading ' + sourceFile + ':', error));
+    }
+
+    function executeScripts(container) {
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+            const scriptTag = document.createElement('script');
+
+            if (script.src) {
+                scriptTag.src = script.src;
+            } else {
+                scriptTag.textContent = script.textContent;
+            }
+
+            // Insert script tag into the document to ensure global execution context
+            document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+        });
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var filter = document.getElementById("dark-filter");
+        sidebar.classList.toggle("active");
+
+        if (filter.style.display === "none" || filter.style.display === "") {
+            filter.style.display = "block";
+        } else {
+            filter.style.display = "none";
+        }
+    }
+
+</script>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <link rel="stylesheet" href="css/review.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+</head>
+<body>
+
+<header id="header"></header>
+<div id="sidebar-container"></div>
+
+<h1>Reviews Page</h1>
+
+<div id="filter-container">
+    <div id="filter">
+        <label for="filter-select">Sort by:</label>
+        <select id="filter-select">
+            <option value="highest">&#x25B2; Ascending</option>
+            <option value="lowest">&#x25BC; Descending</option>
+        </select>
+    </div>
+</div>
+
+<section id="product-reviews">
+    <!-- PRODUCTO -->
+    <article class="product">
+        <img src="img/drinks/estrellaGalicia.png" alt="Product Image" class="product-image">
+        <div class="product-info">
+            <h2 class="product-name">idProducto</h2>
+            <div class="product-rating">
+                <span>⭐⭐⭐⭐⭐</span> <!-- CALIFICACIÓN -->
+            </div>
+            <!-- Contenedor deslizable para comentarios -->
+            <div class="comments-container">
+                <h4>Comentarios</h4>
+                <div class="comment">
+                    <p><strong>Usuario 1</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+                <div class="comment">
+                    <p><strong>Usuario 2</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+                <!-- Añade más comentarios según sea necesario -->
+                <div class="comment">
+                    <p><strong>Usuario 3</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+                <div class="comment">
+                    <p><strong>Usuario 4</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="product">
+        <img src="img/drinks/coke.png" alt="Product Image" class="product-image">
+        <div class="product-info">
+            <h2 class="product-name">idProducto2</h2>
+            <div class="product-rating">
+                <span>⭐⭐</span>
+            </div>
+        </div>
+        <!-- CONTENEDOR PARA COMENTARIOS -->
+        <div class="comments-container">
+            <h4>Comentarios</h4>
+            <div class="comment">
+                <p><strong>Usuario 1</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+            <div class="comment">
+                <p><strong>Usuario 2</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+        </div>
+        </div>
+    </article>
+</section>
+<br>
+<div id="footer">
+    <div class="footer"></div>
+    <div class="footer-right">
+        <div id="map" ></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadHTMLAndExecuteScripts('#header', './header.html');
+        loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
+        loadHTMLAndExecuteScripts('.footer', './footer.html');
+    });
+
+    function loadHTMLAndExecuteScripts(selector, sourceFile) {
+        fetch(sourceFile)
+            .then(response => response.text())
+            .then(html => {
+                const container = document.querySelector(selector);
+                container.innerHTML = html;
+
+                executeScripts(container);
+            })
+            .catch(error => console.error('Error loading ' + sourceFile + ':', error));
+    }
+
+    function executeScripts(container) {
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+            const scriptTag = document.createElement('script');
+
+            if (script.src) {
+                scriptTag.src = script.src;
+            } else {
+                scriptTag.textContent = script.textContent;
+            }
+
+            // Insert script tag into the document to ensure global execution context
+            document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+        });
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var filter = document.getElementById("dark-filter");
+        sidebar.classList.toggle("active");
+
+        if (filter.style.display === "none" || filter.style.display === "") {
+            filter.style.display = "block";
+        } else {
+            filter.style.display = "none";
+        }
+    }
+
+</script>
+<script src="js/sortProducts.js"></script>
+
+</body>
+</html>

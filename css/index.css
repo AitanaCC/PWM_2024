@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f5dc;
+  background-color: beige;
   width: 100%;
   overflow-x: hidden;
 }
@@ -14,13 +14,12 @@ body {
   vertical-align: middle;
 }
 
-#wrapper{
+#wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  position: relative;
-
 }
+
 
 .user-options{
   cursor: pointer;
@@ -37,7 +36,6 @@ body {
   font-size: 47px;
   display: inline-block;
 }
-
 
 .centered-text {
   position: absolute;
@@ -77,6 +75,7 @@ body {
   border-bottom-right-radius: 5%;
   border-top-right-radius: 5%;
 }
+
 .sidebar a {
   padding: 10px 25px;
   text-decoration: none;
@@ -109,7 +108,6 @@ body {
   cursor: pointer;
 }
 
-
 .video-container {
   position: relative;
   width: 100%;
@@ -139,7 +137,6 @@ body {
 
 .button {
   border: none;
-  color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -150,15 +147,60 @@ body {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.651);
   color: rgb(255, 255, 255);
-  
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+
+  border-radius: 10px;
   width: 20%;
 }
 
 #content-below {
-  width: 100%; /* Opcional, dependiendo de cómo quieras que se vea */
-  padding: 20px; /* Opcional, para darle algo de espacio */
+  width: 100%;
+  padding: 20px;
+}
+
+/*----------------------------------------------------------------------------------*/
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Color oscuro para contrastar con el texto blanco */
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Color oscuro para contrastar con el texto blanco */
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 250px; /* Establece un ancho mínimo para cada sección */
+  padding: 10px;
+}
+
+.footer-left, .footer-center {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  margin-top: 0; /* Elimina el margen superior para alinear el título con el borde superior */
+  color: #FFD700; /* Color dorado para los títulos */
+}
+
+p {
+  margin: 5px 0; /* Reduce el margen para los párrafos */
+}
+
+#map {
+  width: 300px; /* Ancho del cuadrado */
+  height: 300px; /* Altura del cuadrado */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  background-color: #eee; /* Color de fondo mientras el mapa carga */
+  margin: auto; /* Centra el mapa si está dentro de un contenedor más grande */
 }
