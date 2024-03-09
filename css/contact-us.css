@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: beige; /* Un color de fondo similar al de la imagen */
@@ -11,27 +11,48 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 100%;
 }
 
 #contact-info {
     display: flex;
     justify-content: space-around;
-    background-color: #ffffff; /* Fondo blanco para la sección de información */
+    background-color: #9b9b9b; /* Fondo blanco para la sección de información */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para la tarjeta */
     border-radius: 10px; /* Bordes redondeados */
-    padding: 20px;
-    margin: 20px;
+    padding: 60px 20px;
+    margin: 10px 0;
+    width: calc(100% - 40px);
+}
+
+h3 {
+    margin-top: -10px; /* Elimina el margen superior para alinear el título con el borde superior */
+    color: #ffffff; /* Color dorado para los títulos */
+    font-size: 25px;
 }
 
 .info-block {
-    margin: 0 10px;
+    margin: -10px 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.info-block.contact-form h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .contact-form form {
     background-color: #333; /* Fondo oscuro para el formulario de contacto */
-    padding: 10px;
+    padding: 20px 40px;
     border-radius: 5px;
+    margin-left: 20%;
 }
+
 
 .contact-form input,
 .contact-form textarea {
@@ -56,9 +77,10 @@ body {
 }
 
 #map {
-    height: 300px; /* o la altura que desees */
+    position: fixed;
+    bottom: 0;
+    height: 300px;
     width: 100%;
-    margin-top: 20px;
     z-index: 0;
 }
 

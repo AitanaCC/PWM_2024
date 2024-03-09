@@ -5,41 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change afterPath="$PROJECT_DIR$/appetizer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cocktails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/coke.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/estrellaGalicia.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/chocolate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/slush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/sortProducts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smoothies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.css" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cesta-de-la-compra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img-index/beachbar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drinks.html" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frozenDesserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/frozenDesserts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/coke.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/estrellaGalicia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/chocolate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/slush.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/contact-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/explorerMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Aitana" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -70,12 +50,16 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2cwcmgNnwI0XMhy4PFqFvCqWcXk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "JavaScript Debug.appetizer.html.executor": "Run",
     "JavaScript Debug.basket.html.executor": "Run",
     "JavaScript Debug.cocktails.html.executor": "Run",
@@ -86,6 +70,7 @@
     "JavaScript Debug.footer.html.executor": "Run",
     "JavaScript Debug.frozenDesserts.html.executor": "Run",
     "JavaScript Debug.header.html.executor": "Run",
+    "JavaScript Debug.index.html (1).executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
     "JavaScript Debug.map.html.executor": "Run",
     "JavaScript Debug.profile.html.executor": "Run",
@@ -95,31 +80,49 @@
     "JavaScript Debug.smoothies.html.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/yeray/Downloads/ejemplo-templates-dinamicos",
+    "git-widget-placeholder": "Aitana",
+    "last_opened_file_path": "D:/PWM_2024/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PWM_2024\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PWM_2024\img\img-index" />
+      <recent name="D:\PWM_2024\HTML" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\frozenDesserts" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\drinks" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\css" />
-      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\smoothies" />
-      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\cocktails" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="basket.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/basket.html" useBuiltInWebServerPort="true">
+    <configuration name="basket.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/HTML/basket.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/HTML/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.basket.html" />
+        <item itemvalue="JavaScript Debug.basket.html" />
         <item itemvalue="JavaScript Debug.basket.html" />
       </list>
     </recent_temporary>
@@ -137,6 +140,8 @@
       <workItem from="1709027761245" duration="9229000" />
       <workItem from="1709120528008" duration="6943000" />
       <workItem from="1709544691576" duration="13676000" />
+      <workItem from="1709587654062" duration="8123000" />
+      <workItem from="1709756646345" duration="13101000" />
     </task>
     <task id="LOCAL-00001" summary="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
       <option name="closed" value="true" />
@@ -176,6 +181,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed" />
     <option name="LAST_COMMIT_MESSAGE" value="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed" />
   </component>

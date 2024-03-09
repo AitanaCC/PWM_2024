@@ -152,10 +152,51 @@ body {
   width: 20%;
 }
 
-#content-below {
-  width: 100%;
-  padding: 20px;
+#content-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
+
+#content-us h2{
+  margin-bottom: 20%;
+  font-size: 250%;
+  position: absolute;
+  left: 5%;
+}
+
+#about-us{
+  flex: 1;
+  padding-right: 40px;
+  text-align: justify;
+  position: relative;
+}
+
+.highlight{
+  position: absolute;
+  margin-left: 10%;
+  margin-right: 10%;
+  top: -60px;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.highlight{
+  font-size: 150%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: inherit;
+}
+
+.about-image{
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
 
 /*----------------------------------------------------------------------------------*/
 #footer {
