@@ -6,6 +6,13 @@
     vertical-align: middle;
 }
 
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+}
+
 #sidebar-container{
     display: flex;
     flex-direction: column;
@@ -41,7 +48,7 @@
 }
 
 #basket-container {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #333;
     max-width: 400px;
     margin: 0 auto;
@@ -61,12 +68,39 @@
     font-size: 24px;
 }
 
-#basket-name {
-    font-weight: bold;
+#basket-content {
+    padding: 50px 20px 50px 0;
+    text-align: center;
 }
 
-#basket-content {
-    padding: 50px 20px;
+#basket-container{
+    max-width: none;
+    margin: 0;
+}
+
+.basket-name-container{
+    position: relative;
+    padding-left: 10%;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.basket-name-container::after{
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    border-bottom: 3px solid black;
+    width: auto;
+}
+
+#basket-name {
+    font-weight: bold;
+    font-size: 200%;
+    margin: 0;
+    padding-bottom: 10px;
+    /*border-bottom: 2px solid black;*/
 }
 
 #basket-empty img {
@@ -75,15 +109,21 @@
 
 #basket-empty p {
     margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 #explore-button {
     background-color: #000000;
     color: white;
-    border: none;
-    padding: 10px 20px;
+    padding: 15px 35px;
+    font-size: 20px;
+    font-weight: bolder;
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
 }
 
 #explore-button:hover {
@@ -91,6 +131,8 @@
 }
 body{
     background-color: beige;
+    margin: 0;
+    padding: 0;
 }
 
 /**---------------------------------------------*/
