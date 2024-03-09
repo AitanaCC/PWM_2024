@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change afterPath="$PROJECT_DIR$/img/cesta-de-la-compra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/img-index/beachbar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contact-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/explorerMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="Modificacaciones del css de las paginas index, basket y contact-us" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +27,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="e4fef4ae-b967-4f05-bab3-dace2969b707" />
+        <option name="accountId" value="c3fdcd4e-de91-40ee-ac74-b67cdc175e6d" />
         <option name="url" value="https://github.com/RobertoZebensui/PWM_2024.git" />
       </UrlAndAccount>
     </option>
@@ -141,7 +130,7 @@
       <workItem from="1709120528008" duration="6943000" />
       <workItem from="1709544691576" duration="13676000" />
       <workItem from="1709587654062" duration="8123000" />
-      <workItem from="1709756646345" duration="13101000" />
+      <workItem from="1709756646345" duration="13502000" />
     </task>
     <task id="LOCAL-00001" summary="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
       <option name="closed" value="true" />
@@ -151,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709060148823</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modificacaciones del css de las paginas index, basket y contact-us">
+      <option name="closed" value="true" />
+      <created>1710004030012</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710004030012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +180,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed" />
+    <MESSAGE value="Modificacaciones del css de las paginas index, basket y contact-us" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacaciones del css de las paginas index, basket y contact-us" />
   </component>
 </project>
