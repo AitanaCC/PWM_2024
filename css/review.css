@@ -2,12 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: beige;
+    background-color: #fffaef;
 }
 
 h1{
     text-align: center;
     font-family: "Bodoni MT";
+    font-size: 4em;
+    color: #000000;
 }
 
 #filter-container {
@@ -30,32 +32,59 @@ h1{
     justify-content: space-around;
     gap: 20px;
 }
+
 .product {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    background: none;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 15px;
-    width: calc(50% - 20px);
+    padding: 1em 1em;
+    width: calc(48% - 2em);
+    height: calc(100% - 2em);
+}
+.product-header {
+    vertical-align: middle;
+    position: relative;
 }
 
+
+.product-header a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.product-title {
+    display: inline-block;
+    padding: 1em;
+    vertical-align: middle;
+}
+.image-container {
+    display: inline-block;
+}
 .product-image {
-    max-width: 100px; /* TAMAÑO DE LA IMAGEN */
+    max-width: 150px; /* TAMAÑO DE LA IMAGEN */
+    max-height: 150px;
     margin: 0 auto 10px; /* Centra la imagen y añade margen inferior de 10px */
-    display: block; /* Hace que la imagen se comporte como un bloque para poder centrarla con margin auto */
+    display: inline-block; /* Hace que la imagen se comporte como un bloque para poder centrarla con margin auto */
+    vertical-align: middle;
 }
 
 
-.product-info {
+.product-container {
     text-align: center;
 }
 
 .product-name {
-    font-size: 1em;
+    font-size: 2em;
     margin-bottom: 5px;
 }
 
 .product-rating span {
-    color: #ff6e07;
+    font-size: 30px;
 }
 @media (max-width: 600px) {
     .product {
@@ -159,19 +188,46 @@ h1{
     max-height: 0; /* Inicialmente no se muestra el contenido */
     overflow-y: auto; /* Permite desplazamiento vertical si es necesario */
     transition: max-height 0.5s ease-out; /* Suaviza la transición de la altura máxima */
+    background-color: ghostwhite;
+    border-radius: 0.8em;
 }
 
 .comments-container h4{
     text-align: left;
+    font-size: 1.5em;
+    color: #C3C8FF;
+    padding-left: 1em;
+    margin: 5px;
 }
 
 .product:hover .comments-container {
-    max-height: 250px; /* Ajusta según necesites para mostrar los comentarios al pasar el cursor */
+    max-height: 135px; /* Ajusta según necesites para mostrar los comentarios al pasar el cursor */
 }
 
 .comment {
-    border-top: 1px solid #ddd;
-    padding: 10px;
+    /* border-top: 1px solid #ddd; */
+    border: none;
+    border-radius: 0.8em;
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de la pista de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color de la barra de desplazamiento */
+    border-radius: 5px; /* Bordes redondeados de la barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color de la barra al pasar el mouse */
 }
 
 /*--------------------------------------------------------------------*/

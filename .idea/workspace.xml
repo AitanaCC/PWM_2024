@@ -5,41 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change afterPath="$PROJECT_DIR$/appetizer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cocktails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/coke.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/estrellaGalicia.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/chocolate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/slush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/sortProducts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smoothies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drinks.html" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frozenDesserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/frozenDesserts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/coke.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/estrellaGalicia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/chocolate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/slush.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/7up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/Fanta-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/Fanta_1500ml.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/cervezaPilsen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/cocacola.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/drinks/sevenup.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/review.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/review.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,44 +48,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.appetizer.html.executor": "Run",
-    "JavaScript Debug.basket.html.executor": "Run",
-    "JavaScript Debug.cocktails.html.executor": "Run",
-    "JavaScript Debug.contact-us.html.executor": "Run",
-    "JavaScript Debug.drinks.html.executor": "Run",
-    "JavaScript Debug.explorar.html.executor": "Run",
-    "JavaScript Debug.explorerMenu.html.executor": "Run",
-    "JavaScript Debug.footer.html.executor": "Run",
-    "JavaScript Debug.frozenDesserts.html.executor": "Run",
-    "JavaScript Debug.header.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "JavaScript Debug.map.html.executor": "Run",
-    "JavaScript Debug.profile.html.executor": "Run",
-    "JavaScript Debug.prueba.html.executor": "Run",
-    "JavaScript Debug.review.html.executor": "Run",
-    "JavaScript Debug.sidebar.html.executor": "Run",
-    "JavaScript Debug.smoothies.html.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/yeray/Downloads/ejemplo-templates-dinamicos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.appetizer.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.basket.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.cocktails.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.contact-us.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.drinks.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.explorar.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.explorerMenu.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.footer.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.frozenDesserts.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.map.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.profile.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.prueba.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.review.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.sidebar.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.smoothies.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Roberto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yeray/Downloads/ejemplo-templates-dinamicos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\WebstormProjects\PWM_2024\img\drinks" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\frozenDesserts" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\drinks" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\css" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\smoothies" />
-      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\cocktails" />
     </key>
   </component>
   <component name="RunManager">
@@ -137,6 +111,8 @@
       <workItem from="1709027761245" duration="9229000" />
       <workItem from="1709120528008" duration="6943000" />
       <workItem from="1709544691576" duration="13676000" />
+      <workItem from="1709574571096" duration="7328000" />
+      <workItem from="1709890476529" duration="9459000" />
     </task>
     <task id="LOCAL-00001" summary="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
       <option name="closed" value="true" />
