@@ -1,45 +1,72 @@
  body {
-     background-color: beige;
+     background-color: #fffaef;
  }
  h1 {
      text-align: center;
  }
+
+#productsList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 #products {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 3%;
+    width: 60%;
 }
 
 .product-card {
-    width: 200px; /* O el ancho que prefieras */
+    width: 242.2px; /* O el ancho que prefieras */
+    height: 323.6px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     text-align: center;
-    padding: 20px;
+
+}
+
+.image-container{
+    overflow: hidden;
+    width: 100%;
+    height: 72.81%;
 }
 
 .product-image {
     width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    border-radius: 3px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-description {
+    font-size: 18px;
     color: #333;
-    margin-bottom: 20px;
+    line-height: 110%;
 }
 
+
 .product-button {
-    background-color: #000000;
+    border:none;
+    font-weight:600;
     color: white;
-    border: none;
+    background-color:black;
+    margin-left: 60%;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
+    border-top-left-radius: 10px; /* Adjust the radius value as needed */
+    border-bottom-left-radius: 10px; /* Adjust the radius value as needed */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+    height: 30px;
 }
 
 .product-button:hover {
