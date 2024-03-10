@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #ffffff00;
+    background-color: #fffaef;
     vertical-align: middle;
 }
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: beige;
+    background-color: #fffaef;
     margin: 0;
     padding: 0;
 }
@@ -60,7 +60,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #f2f2f2;
+    background-color: #fffaef;
     border-bottom: 1px solid #ccc;
 }
 
@@ -130,7 +130,7 @@ body{
     background-color: #000000;
 }
 body{
-    background-color: beige;
+    background-color: #fffaef;
     margin: 0;
     padding: 0;
 }
@@ -162,13 +162,14 @@ body{
 }
 
 .site-title {
-    font-size: 40px;
+    font-size: 50px;
     color: #000;
     font-weight: 600;
     display: inline-block;
     align-items: center;
     position: relative;
-    left: -30%;
+    left: -35%;
+    bottom: 10px;
     border-radius: 600px;
 }
 
@@ -214,6 +215,15 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    font-size: 36px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.contact_sidebar{
+    position: absolute;
+    top: 85%;
+    left: -10%;
     font-size: 36px;
     margin-left: 20px;
     cursor: pointer;
@@ -271,9 +281,10 @@ p {
 }
 
 #map {
-    width: 300px; /* Ancho del cuadrado */
+    width: 400px; /* Ancho del cuadrado */
     height: 300px; /* Altura del cuadrado */
     border-radius: 10px; /* Opcional: bordes redondeados */
     background-color: #eee; /* Color de fondo mientras el mapa carga */
     margin: auto; /* Centra el mapa si está dentro de un contenedor más grande */
+    left: 20%;
 }
