@@ -6,17 +6,27 @@
     <title>Menú del Chiringuito</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
     <style>
         h1{
             text-align: center;
-            font-family: "Bodoni MT";
+            font-size: 45px;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaef;
+            margin: 0;
+            padding: 0;
         }
 
         .menu-logo-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 60px;
             margin-top: 20px;
         }
 
@@ -29,13 +39,14 @@
         }
 
         .menu-item i {
-            font-size: 50px; /* Tamaño de los íconos */
+            font-size: 80px; /* Tamaño de los íconos */
             margin: 40px;
         }
 
         .menu-item span {
             text-align: center;
             font-weight: bold;
+            font-size: 25px;
         }
 
         /* Estilos existentes */
@@ -49,17 +60,38 @@
             margin: 0;
         }
 
-        .footer-container {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
+        #footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Color oscuro para contrastar con el texto blanco */
+            color: white;
+            padding: 20px;
+            flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+            margin-top: 5%;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* Color oscuro para contrastar con el texto blanco */
+            color: white;
+            padding: 20px;
+            flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
         }
 
-        footer {
-            background-color: #2F4F4F; /* Color oscuro para el footer */
-            color: white; /* Color del texto */
-            text-align: center;
-            padding: 20px 0;
+        .footer-left, .footer-center,.footer-right {
+            flex: 1;
+            min-width: 250px; /* Establece un ancho mínimo para cada sección */
+            padding: 10px;
+        }
+
+        #map {
+            width: 400px; /* Ancho del cuadrado */
+            height: 300px; /* Altura del cuadrado */
+            border-radius: 10px; /* Opcional: bordes redondeados */
+            background-color: #eee; /* Color de fondo mientras el mapa carga */
+            left: 50% /* Centra el mapa si está dentro de un contenedor más grande */
         }
 
     </style>
@@ -92,9 +124,15 @@
         <span>Smoothies</span>
     </a>
 </div>
-<div class="footer-container">
-    <footer id="footer"></footer>
+<div id="footer">
+    <div class="footer"></div>
+    <div class="footer-right">
+        <div id="map" ></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
+    </div>
 </div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
 
 </body>
 </html>
@@ -103,7 +141,7 @@
     document.addEventListener('DOMContentLoaded', (event) => {
         loadHTMLAndExecuteScripts('#header', './header.html');
         loadHTMLAndExecuteScripts('#sidebar-container', './sidebar.html');
-        loadHTMLAndExecuteScripts('#footer', './footer.html');
+        loadHTMLAndExecuteScripts('.footer', './footer.html');
     });
 
     function loadHTMLAndExecuteScripts(selector, sourceFile) {
