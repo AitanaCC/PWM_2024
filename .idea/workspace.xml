@@ -5,46 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change afterPath="$PROJECT_DIR$/appetizer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cocktails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/appetizer/appetizer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cocktails/cocktail2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/coke.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/drinks/estrellaGalicia.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/chocolate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/frozenDesserts/slush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/smoothies/smoothie2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/sortProducts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smoothies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drinks.html" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frozenDesserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/frozenDesserts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/coke.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/drinks/estrellaGalicia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/chocolate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/frozenDesserts/slush.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.appetizer.html.executor": "Run",
     "JavaScript Debug.basket.html.executor": "Run",
     "JavaScript Debug.cocktails.html.executor": "Run",
@@ -95,8 +69,8 @@
     "JavaScript Debug.smoothies.html.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/yeray/Downloads/ejemplo-templates-dinamicos",
+    "git-widget-placeholder": "Daniel",
+    "last_opened_file_path": "C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,6 +80,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024\css" />
+      <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\frozenDesserts" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\drinks" />
