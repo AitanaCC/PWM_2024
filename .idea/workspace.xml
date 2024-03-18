@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
+      <change afterPath="$PROJECT_DIR$/css/payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/mastercard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/pago.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/paypal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/paymentScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paymentGateway.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +52,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2cwcmgNnwI0XMhy4PFqFvCqWcXk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,16 +73,19 @@
     "JavaScript Debug.frozenDesserts.html.executor": "Run",
     "JavaScript Debug.header.html.executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.login.html.executor": "Run",
     "JavaScript Debug.map.html.executor": "Run",
+    "JavaScript Debug.paymentGateway.html.executor": "Run",
     "JavaScript Debug.profile.html.executor": "Run",
     "JavaScript Debug.prueba.html.executor": "Run",
+    "JavaScript Debug.register.html.executor": "Run",
     "JavaScript Debug.review.html.executor": "Run",
     "JavaScript Debug.sidebar.html.executor": "Run",
     "JavaScript Debug.smoothies.html.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Daniel",
-    "last_opened_file_path": "C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css",
+    "git-widget-placeholder": "Yeray",
+    "last_opened_file_path": "C:/Users/yeray/WebstormProjects/PWM_2024/img/payment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,15 +96,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\payment" />
       <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024\css" />
       <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\payment" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\frozenDesserts" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\drinks" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\css" />
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\smoothies" />
-      <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\cocktails" />
     </key>
   </component>
   <component name="RunManager">
