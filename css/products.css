@@ -24,13 +24,14 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding-left: 3%;
-    width: 60%;
+    padding: 20px;
+    width: 100%;
 
 }
 
 .product-card {
-    width: 242.2px; /* O el ancho que prefieras */
+    max-width: 242.2px;
+    width: 100%; /* O el ancho que prefieras */
     height: 323.6px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,6 +88,41 @@
 .product-button:hover {
     background-color: #0056b3;
 }
+
+/*----------dispositivo tablet-----------*/
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    #products {
+        width: 80%;
+    }
+
+    .product-card {
+        flex: 1;
+        flex-basis: 30%;
+        margin: 1%;
+    }
+
+}
+
+/*------dispositivos moviles--------*/
+
+@media only screen and (max-width: 600px) {
+
+    #products {
+        width: 100%;
+        padding-left: 0;
+    }
+    .product-card {
+        width: calc(40% - 5px);
+        height: 320px;
+        margin: 5px;
+
+    }
+
+}
+
+
 
 /*---------------------------------- --> HEADER*/
 
