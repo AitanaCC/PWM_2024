@@ -68,11 +68,6 @@ body{
     font-size: 24px;
 }
 
-#basket-content {
-    padding: 50px 20px 50px 0;
-    text-align: center;
-}
-
 #basket-container{
     max-width: none;
     margin: 0;
@@ -82,14 +77,13 @@ body{
     position: relative;
     padding-left: 10%;
     text-align: left;
-    margin-top: 30px;
 }
 
 .basket-name-container::after{
     content: '';
     position: absolute;
     left: 5%;
-    right: 5%;
+    right: 45%;
     bottom: 0;
     border-bottom: 3px solid black;
     width: auto;
@@ -101,6 +95,9 @@ body{
     margin: 0;
     padding-bottom: 10px;
     /*border-bottom: 2px solid black;*/
+}
+#basket-empty {
+    display: none;
 }
 
 #basket-empty img {
@@ -134,7 +131,186 @@ body{
     margin: 0;
     padding: 0;
 }
+.basket-product-container{
+    max-height: 25em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em;
+}
 
+.basket-product {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+/*
+.basket-product::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 0;
+    border-top: 3px solid black;
+    width: auto;
+}
+.basket-product::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    border-bottom: 3px solid black;
+    width: auto;
+}
+ */
+
+.product-info {
+    display: inline-block;
+    position: sticky;
+    left: 0;
+}
+.product-info p {
+    font-size: 1.2em;
+}
+.product-title {
+    padding: 1em 0;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0.3em;
+
+}
+
+.count-container{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em 0;
+}
+.count-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+}
+.count-button:hover{
+    color: #C3C8FF;
+    outline: none;
+}
+.count-button:focus{
+    outline: none;
+}
+.image-container {
+    padding: 0.5em;
+    text-align: center;
+
+}
+
+.product-image {
+    max-width: 170px; /* TAMAÑO DE LA IMAGEN */
+    max-height: 170px;
+    margin: 0 auto 10px; /* Centra la imagen y añade margen inferior de 10px */
+    display: inline-block; /* Hace que la imagen se comporte como un bloque para poder centrarla con margin auto */
+    vertical-align: middle;
+}
+
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #488BFF;
+}
+
+.clear-container{
+    padding:2em 0;
+}
+.clear-button{
+    background-color: #DE3F3F;
+    font-size: 2em;
+    font-weight: bold;
+    border-color: transparent;
+    border-radius: 10px;
+    padding:0.3em 0;
+    color: white;
+}
+
+.resume-container{
+    background: rgba(24, 32, 74, 0.5);
+    border: 2px solid #ddd;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+.resume-title{
+    font-size: 3em;
+    text-align: left;
+    padding: 0.3em 0.5em;
+    margin:0;
+    color: white;
+    position: relative;
+}
+.resume-title:after{
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    border-bottom: 0.1em solid white;
+    border-radius: 10px;
+    width: auto;
+}
+.total-title{
+    font-size: 2em;
+    text-align: left;
+    padding: 0.3em 1em;
+    margin:0;
+    color: white;
+}
+.total-amount-container{
+    text-align: right;
+}
+.total-amount{
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: right;
+    padding: 0.3em 1em;
+    color: #FFC861;
+}
+
+.payment-container{
+    background: transparent;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+.payment-button{
+    background-color: #488BFF;
+    font-size: 2em;
+    font-weight: bold;
+    border-color: transparent;
+    border-radius: 10px;
+    padding:0.3em 0.2em;
+    color: white;
+}
+/**---------------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 0.5em; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de la pista de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color de la barra de desplazamiento */
+    border-radius: 5px; /* Bordes redondeados de la barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color de la barra al pasar el mouse */
+}
 /**---------------------------------------------*/
 #header {
     display: flex;
@@ -146,14 +322,6 @@ body{
 
 
 .user-options{
-    cursor: pointer;
-    color: #fff;
-    font-weight: 600;
-    font-size: 47px;
-    display: inline-block;
-}
-
-.menu-button {
     cursor: pointer;
     color: #fff;
     font-weight: 600;
