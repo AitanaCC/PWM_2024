@@ -1,0 +1,123 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"4c74eb8e-ca82-4719-b3c5-d25a4c11aef6\" name=\"Changes\" comment=\"improve the index, added some sidebar options, and all the footer, header to reuse in other files completed\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/basket.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/basket.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/index.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/index.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/login.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/login.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/products.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/products.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/register.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/register.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/css/review.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/css/review.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/login.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/login.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/profile.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/profile.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/register.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/register.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;yeraylois&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"e4fef4ae-b967-4f05-bab3-dace2969b707\" />\r\n        <option name=\"url\" value=\"https://github.com/RobertoZebensui/PWM_2024.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2cwcmgNnwI0XMhy4PFqFvCqWcXk\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;JavaScript Debug.appetizer.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.basket.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.cocktails.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.contact-us.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.drinks.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.explorar.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.explorerMenu.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.footer.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.frozenDesserts.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.map.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.profile.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.prueba.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.review.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.sidebar.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;JavaScript Debug.smoothies.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\danie\\Documents\\4º año segundo semestre\\PWM\\PWM_2024\\css\" />\r\n      <recent name=\"C:\\Users\\danie\\Documents\\4º año segundo semestre\\PWM\\PWM_2024\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\yeray\\WebstormProjects\\PWM_2024\\img\\frozenDesserts\" />\r\n      <recent name=\"C:\\Users\\yeray\\WebstormProjects\\PWM_2024\\img\\drinks\" />\r\n      <recent name=\"C:\\Users\\yeray\\WebstormProjects\\PWM_2024\\css\" />\r\n      <recent name=\"C:\\Users\\yeray\\WebstormProjects\\PWM_2024\\img\\smoothies\" />\r\n      <recent name=\"C:\\Users\\yeray\\WebstormProjects\\PWM_2024\\img\\cocktails\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JavaScript Debug.index.html\">\r\n    <configuration name=\"basket.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/PWM_2024/basket.html\" useBuiltInWebServerPort=\"true\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"index.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/PWM_2024/index.html\" useBuiltInWebServerPort=\"true\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JavaScript Debug.index.html\" />\r\n        <item itemvalue=\"JavaScript Debug.basket.html\" />\r\n        <item itemvalue=\"JavaScript Debug.basket.html\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"4c74eb8e-ca82-4719-b3c5-d25a4c11aef6\" name=\"Changes\" comment=\"\" />\r\n      <created>1709026242380</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1709026242380</updated>\r\n      <workItem from=\"1709026244862\" duration=\"548000\" />\r\n      <workItem from=\"1709026808478\" duration=\"940000\" />\r\n      <workItem from=\"1709027761245\" duration=\"9229000\" />\r\n      <workItem from=\"1709120528008\" duration=\"6943000\" />\r\n      <workItem from=\"1709544691576\" duration=\"13676000\" />\r\n      <workItem from=\"1710840991420\" duration=\"3498000\" />\r\n      <workItem from=\"1711621070412\" duration=\"14038000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"improve the index, added some sidebar options, and all the footer, header to reuse in other files completed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709060148823</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709060148823</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"improve the index, added some sidebar options, and all the footer, header to reuse in other files completed\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"improve the index, added some sidebar options, and all the footer, header to reuse in other files completed\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,18 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/css/review.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
+-    </list>
++    <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -29,6 +18,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="main" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -56,39 +50,39 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+-    &quot;JavaScript Debug.appetizer.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.basket.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.cocktails.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.contact-us.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.drinks.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.explorar.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.explorerMenu.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.footer.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.frozenDesserts.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.map.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.profile.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.prueba.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.review.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.sidebar.html.executor&quot;: &quot;Run&quot;,
+-    &quot;JavaScript Debug.smoothies.html.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultHtmlFileTemplate": "HTML File",
++    "JavaScript Debug.appetizer.html.executor": "Run",
++    "JavaScript Debug.basket.html.executor": "Run",
++    "JavaScript Debug.cocktails.html.executor": "Run",
++    "JavaScript Debug.contact-us.html.executor": "Run",
++    "JavaScript Debug.drinks.html.executor": "Run",
++    "JavaScript Debug.explorar.html.executor": "Run",
++    "JavaScript Debug.explorerMenu.html.executor": "Run",
++    "JavaScript Debug.footer.html.executor": "Run",
++    "JavaScript Debug.frozenDesserts.html.executor": "Run",
++    "JavaScript Debug.header.html.executor": "Run",
++    "JavaScript Debug.index.html.executor": "Run",
++    "JavaScript Debug.map.html.executor": "Run",
++    "JavaScript Debug.profile.html.executor": "Run",
++    "JavaScript Debug.prueba.html.executor": "Run",
++    "JavaScript Debug.review.html.executor": "Run",
++    "JavaScript Debug.sidebar.html.executor": "Run",
++    "JavaScript Debug.smoothies.html.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "Daniel",
++    "last_opened_file_path": "C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024\css" />
+@@ -131,7 +125,7 @@
+       <workItem from="1709120528008" duration="6943000" />
+       <workItem from="1709544691576" duration="13676000" />
+       <workItem from="1710840991420" duration="3498000" />
+-      <workItem from="1711621070412" duration="14038000" />
++      <workItem from="1711621070412" duration="14394000" />
+     </task>
+     <task id="LOCAL-00001" summary="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
+       <option name="closed" value="true" />
