@@ -9,34 +9,45 @@
 </head>
 <body>
 
-    <video autoplay muted loop id="video-background">
-        <source src="./video/background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<!--
+
+
+
+-->
 
     <div class="wrapper">
 
         <h1>Register</h1>
 
-        <div class="input-box">
-            <input type="text" placeholder="First Name" required>
-        </div>
+        <form>
 
-        <div class="input-box">
-            <input type="text" placeholder="Last Name" required>
-        </div>
+            <div class="input-box">
+                <input type="text" placeholder="First Name" min="2" max="20" required>
+            </div>
 
-        <div class="input-box">
-            <input type="text" placeholder="Email Address" required>
-        </div>
+            <div class="input-box">
+                <input type="text" placeholder="Last Name" min="2" max="30" required>
+            </div>
 
-        <div class="input-box">
-            <input type="password" placeholder="Password" required>
-        </div>
+            <div class="input-box">
+                <input id="email" type="email" placeholder="Email Address"
+                       required
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                       title="example@gmail.com"/>
+            </div>
 
-        <button type="submit" class="btn">Submit</button>
+            <div class="input-box">
+                <input type="password" placeholder="Password"
+                       required
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+                       title="at least 8 characters long and contain at least one lowercase letter, one uppercase letter, and one digit">
+            </div>
 
+            <input type="submit" class="btn" value="Submit"/>
+        </form>
     </div>
+
+
 
 </body>
 </html>

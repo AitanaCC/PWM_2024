@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/review.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,38 +56,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.appetizer.html.executor": "Run",
-    "JavaScript Debug.basket.html.executor": "Run",
-    "JavaScript Debug.cocktails.html.executor": "Run",
-    "JavaScript Debug.contact-us.html.executor": "Run",
-    "JavaScript Debug.drinks.html.executor": "Run",
-    "JavaScript Debug.explorar.html.executor": "Run",
-    "JavaScript Debug.explorerMenu.html.executor": "Run",
-    "JavaScript Debug.footer.html.executor": "Run",
-    "JavaScript Debug.frozenDesserts.html.executor": "Run",
-    "JavaScript Debug.header.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "JavaScript Debug.map.html.executor": "Run",
-    "JavaScript Debug.profile.html.executor": "Run",
-    "JavaScript Debug.prueba.html.executor": "Run",
-    "JavaScript Debug.review.html.executor": "Run",
-    "JavaScript Debug.sidebar.html.executor": "Run",
-    "JavaScript Debug.smoothies.html.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Daniel",
-    "last_opened_file_path": "C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.appetizer.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.basket.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.cocktails.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.contact-us.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.drinks.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.explorar.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.explorerMenu.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.footer.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.frozenDesserts.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.header.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.map.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.profile.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.prueba.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.review.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.sidebar.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.smoothies.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/4º año segundo semestre/PWM/PWM_2024/css&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danie\Documents\4º año segundo semestre\PWM\PWM_2024\css" />
@@ -92,12 +102,17 @@
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\cocktails" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="basket.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/basket.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.basket.html" />
         <item itemvalue="JavaScript Debug.basket.html" />
       </list>
     </recent_temporary>
@@ -115,6 +130,8 @@
       <workItem from="1709027761245" duration="9229000" />
       <workItem from="1709120528008" duration="6943000" />
       <workItem from="1709544691576" duration="13676000" />
+      <workItem from="1710840991420" duration="3498000" />
+      <workItem from="1711621070412" duration="14038000" />
     </task>
     <task id="LOCAL-00001" summary="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
       <option name="closed" value="true" />
