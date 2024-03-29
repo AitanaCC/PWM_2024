@@ -402,7 +402,7 @@ body {
 }
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     background-color: #333; /* Color oscuro para contrastar con el texto blanco */
     color: white;

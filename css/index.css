@@ -287,7 +287,7 @@ a{
 .footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: 10%;
   width: 30%;
   background-color: #333; /* Color oscuro para contrastar con el texto blanco */

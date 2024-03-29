@@ -17,7 +17,7 @@
      justify-content: center;
      flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
      align-items: center; /* Centra los elementos horizontalmente */
-     height: 800px;
+     height: 600px;
  }
 
  .profile-container {
@@ -29,8 +29,8 @@
      border: 1px solid black;
      padding: 20px;
      box-sizing: border-box;
-     margin-top: 20px; /* Añade un margen en la parte superior si es necesario */
-     margin-bottom: 40px;
+     margin: 20px 20px 40px;
+
  }
 
  .profile-header {
@@ -197,7 +197,7 @@
  .footer {
      display: flex;
      flex-wrap: wrap;
-     justify-content: center;
+     justify-content: left;
      gap: 10%;
      width: 30%;
      background-color: #333; /* Color oscuro para contrastar con el texto blanco */
