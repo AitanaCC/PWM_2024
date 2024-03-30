@@ -1,28 +1,28 @@
 [
 
   {
-    "price": "6.5 euros",
+    "price": "6.5 €",
     "name": "Cocktail 1",
     "image": "/img/cocktails/margarita.png"
 
   },
 
   {
-    "price": "5 euros",
+    "price": "5 €",
     "name": "Cocktail 2",
     "image": "/img/cocktails/mojito.png"
 
   },
 
   {
-    "price": "7 euros",
+    "price": "7 €",
     "name": "Cocktail 3",
     "image": "/img/cocktails/blue_lagoon.png"
 
   },
 
   {
-    "price": "6.5 euros",
+    "price": "6.5 €",
     "name": "Cocktail 4",
     "image": "/img/cocktails/mai_tai.png"
 

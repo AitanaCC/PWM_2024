@@ -71,6 +71,15 @@
     flex-grow: 1;
 }
 
+.product-price {
+    padding-right: 1em;
+    text-align: right;
+    font-size: 18px;
+    color: #488BFF;
+    line-height: 110%;
+    font-weight: bolder;
+    flex-grow: 1;
+}
 
 .product-button {
     border:none;
