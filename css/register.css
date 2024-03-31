@@ -10,24 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: #fffaef;
 }
-
-.video-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-#video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
 
 
 
@@ -56,13 +40,15 @@ body {
     border-color: #18204A;
     border-radius: 10px;
     font-size: 16px;
-    color: white;
+    color: black;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder{
     color: #18204A;
 }
+
+
 
 .wrapper .btn{
     outline: none;
@@ -78,5 +64,9 @@ body {
     margin: 10px 0;
 }
 
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
 
 

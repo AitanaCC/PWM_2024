@@ -3,78 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <title>Perfil</title>
-    <style>
-        .info-container{
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-            align-items: center; /* Centra los elementos horizontalmente */
-        }
 
-        .profile-container {
-            background: #362f4f; /* Fondo oscuro */
-            width: 80%;
-            max-width: 800px; /* Ajusta este valor según necesites */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            border: 1px solid black;
-            padding: 20px;
-            box-sizing: border-box;
-            margin-top: 20px; /* Añade un margen en la parte superior si es necesario */
-            margin-bottom: 40px;
-        }
-
-        .profile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .profile-picture {
-            background: url('./img/perfil-del-usuario.png') no-repeat center;
-            background-size: cover;
-            border-radius: 50%;
-            width: 3cm; /* 3x3 cm */
-            height: 3cm; /* 3x3 cm */
-            border: 2px solid white; /* Black border */
-        }
-
-        .profile-info {
-            background: white; /* White background for data sections */
-            border: 1px solid black; /* Black border */
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-        }
-
-        .profile-info span {
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        .profile-info div {
-            margin-bottom: 5px;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: 1px solid black;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-    </style>
 </head>
 <body>
 
@@ -82,30 +14,36 @@
 </header>
 
 <div id="sidebar-container"></div>
+
+
 <div class="info-container">
     <div class="profile-container">
         <div class="profile-header">
-            <h1>Perfil del Usuario</h1>
-            <div class="profile-picture"></div>
+            <h1>User Profile</h1>
         </div>
         <div class="profile-info">
-            <div><span>Nombre de usuario:</span> tuNombre</div>
+            <span>User Name:</span>
+            <input type="text" placeholder="User Name" required>
         </div>
         <div class="profile-info">
-            <div><span>Nombre:</span> name</div>
+            <span>Name:</span>
+            <input type="text" placeholder="Name" required>
         </div>
         <div class="profile-info">
-            <div><span>Apellido:</span> apellido1 apellido2</div>
+            <span>Last Name:</span>
+            <input type="text" placeholder="Last Name" required>
         </div>
         <div class="profile-info">
-            <div><span>Email:</span> tuEmail@gmail.com</div>
+            <span>Email:</span>
+            <input type="text" placeholder="Email" required>
         </div>
         <div class="profile-footer" style="display: flex; justify-content: space-between; margin-top: 20px;">
-            <button onclick="window.location.href='index.html'">Atrás</button>
-            <button onclick="window.location.href='edit-profile.html'">Editar Datos</button>
+            <button onclick="window.location.href='index.html'">Go back</button>
+            <button type="submit" class="btn" id="update">Update</button>
         </div>
     </div>
 </div>
+
 
 <div id="footer">
     <div class="footer"></div>
@@ -113,6 +51,7 @@
         <div id="map" ></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
     </div>
 </div>
+
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="js/map.js"></script>

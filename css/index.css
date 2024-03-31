@@ -208,36 +208,96 @@ a{
   object-fit: cover;
 }
 
+/*------- dispositivo tablet-----*/
+
+@media only screen and (min-width: 601px) and (max-width: 1024px){
+
+  .centered-text h1{
+    font-size: 40px;
+  }
+
+  .button{
+    width: 30%;
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
+
+
+  #content-us h2{
+    font-size: 3vw;
+    bottom: 70px;
+
+  }
+
+  #about-us p{
+    font-size: 1.5vw;
+  }
+
+}
+
+
+/*-------dispositivo movil--------*/
+
+
+@media only screen and (max-width: 600px) {
+
+  .centered-text{
+    flex-direction: column;
+  }
+
+  .centered-text h1{
+    font-size: 30px;
+  }
+
+  .button{
+    width: 40%;
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
+
+  #content-us h2{
+    font-size: 3vw;
+    bottom: 50px;
+  }
+
+  #about-us p{
+    font-size: 1.5vw;
+  }
+
+  .highlight{
+    top: -40px;
+  }
+
+}
+
 
 /*----------------------------------------------------------------------------------*/
 #footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #333; /* Color oscuro para contrastar con el texto blanco */
   color: white;
   padding: 20px;
   flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+  gap: 20%
 }
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10%;
+  width: 30%;
   background-color: #333; /* Color oscuro para contrastar con el texto blanco */
   color: white;
-  padding: 20px;
-  flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
 }
 
-.footer-left, .footer-center, .footer-right {
-  flex: 1;
-  min-width: 250px; /* Establece un ancho mínimo para cada sección */
-  padding: 10px;
-}
-
-.footer-left, .footer-center {
+.footer-right {
   display: flex;
-  flex-direction: column;
+  width: 400px; /* Establece un ancho mínimo para cada sección */
+  padding: 10px;
 }
 
 h3 {
@@ -250,10 +310,10 @@ p {
 }
 
 #map {
-  width: 400px; /* Ancho del cuadrado */
-  height: 300px; /* Altura del cuadrado */
+  width: 100%; /* Ancho del cuadrado */
+  height: 250px; /* Altura del cuadrado */
   border-radius: 10px; /* Opcional: bordes redondeados */
   background-color: #eee; /* Color de fondo mientras el mapa carga */
-  left: 50%;5 /* Centra el mapa si está dentro de un contenedor más grande */
 }
+
 

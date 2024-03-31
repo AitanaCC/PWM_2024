@@ -1,0 +1,31 @@
+[
+
+  {
+    "price": "5 €",
+    "name": "Smoothie 1",
+    "image": "/img/smoothies/batido_fresa.png"
+
+  },
+
+  {
+    "price": "5 €",
+    "name": "Smoothie 2",
+    "image": "/img/smoothies/batido_platano.png"
+
+  },
+
+  {
+    "price": "5 €",
+    "name": "Smoothie 3",
+    "image": "/img/smoothies/batido_arandano.png"
+
+  },
+
+  {
+    "price": "5 €",
+    "name": "Smoothie 4",
+    "image": "/img/smoothies/batido_sandia.png"
+
+  }
+
+]
