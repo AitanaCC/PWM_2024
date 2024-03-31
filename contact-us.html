@@ -5,38 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="css/contact-us.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 </head>
 <body>
+<div id="dark-filter"></div>
 
-<header id="header"></header>
-<div id="sidebar-container"></div>
+<div id="wrapper">
+    <header id="header"></header>
+    <div id="sidebar-container"></div>
 
-<div id="contact-container">
-    <section id="contact-info">
-        <div class="info-block">
-            <h3>Visit us:</h3>
-            <p>Street Dunas, 123</p>
-            </br>
-            <h3>Contact:</h3>
-            <p>email@example.com</p>
-        </div>
-        <div class="info-block">
-            <h3>Open:</h3>
-            <p>lunes a viernes</p>
-            <p>sábado</p>
-            <p>domingo</p>
-        </div>
-        <div class="info-block contact-form">
-            <h3>Contact us:</h3>
-            <form>
-                <input type="email" placeholder="E-mail">
-                <textarea placeholder="Message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
+    <div id="contact-container">
+        <section id="contact-info">
+            <div class="info-block">
+                <h3>Visit us:</h3>
+                <p>Street Dunas, 123</p>
+                </br>
+                <h3>Contact:</h3>
+                <p>email@example.com</p>
+            </div>
+            <div class="info-block">
+                <h3>Open:</h3>
+                <p>lunes a viernes</p>
+                <p>sábado</p>
+                <p>domingo</p>
+            </div>
+            <div class="info-block contact-form">
+                <h3>Contact us:</h3>
+                <form>
+                    <input type="email" placeholder="E-mail">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </div>
     <div id="map" style="height: 323px;"></div> <!-- Asegúrate de que el mapa tenga una altura definida -->
 </div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -87,6 +89,28 @@
             filter.style.display = "none";
         }
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Esto asegura que el script se ejecuta después de que se haya cargado el DOM.
+
+        // Selecciona el elemento dark-filter.
+        var darkFilter = document.getElementById('dark-filter');
+
+        // Añade un evento de clic al dark-filter.
+        darkFilter.addEventListener('click', function () {
+            // Selecciona el elemento sidebar.
+            var sidebar = document.querySelector('.sidebar');
+
+            // Verifica si el sidebar existe para evitar errores.
+            if (sidebar) {
+                // Elimina la clase 'active' del sidebar para ocultarlo.
+                sidebar.classList.remove('active');
+            }
+
+            // Opcional: También puedes ocultar el dark-filter después de hacer clic.
+            darkFilter.style.display = 'none';
+        });
+    });
 
 </script>
 

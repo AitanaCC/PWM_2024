@@ -370,7 +370,7 @@ h2 {
 
 
 .sidebar {
-    height: 95%;
+    height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -476,4 +476,26 @@ p {
     height: 250px; /* Altura del cuadrado */
     border-radius: 10px; /* Opcional: bordes redondeados */
     background-color: #eee; /* Color de fondo mientras el mapa carga */
+    z-index: 0;
+}
+
+/*--------- PARÁMETROS MEDIA ----------*/
+
+@media only screen and (max-width: 640px) {
+
+    .site-title {
+        font-size: 45px;
+        margin-top: 1%;
+        margin-left: 40%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; /* Si tienes varios elementos en tu nav, los alinea al final */
+        margin-right: 1%;
+    }
+
+    .menu-button img, .user-options img{
+        width: 42px;
+    }
 }
