@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_03_2024_13_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_03_2024_13_59__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appetizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/appetizer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/basket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocktails.html" beforeDir="false" afterPath="$PROJECT_DIR$/cocktails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/basket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/contact-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/contact-us.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/product_descrip.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/product_descrip.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/review.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/review.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drinks.html" beforeDir="false" afterPath="$PROJECT_DIR$/drinks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/explorerMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/explorerMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frozenDesserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/frozenDesserts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_descrip.html" beforeDir="false" afterPath="$PROJECT_DIR$/product_descrip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smoothies.html" beforeDir="false" afterPath="$PROJECT_DIR$/smoothies.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +84,13 @@
     "JavaScript Debug.frozenDesserts.html.executor": "Run",
     "JavaScript Debug.header.html.executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.login.html.executor": "Run",
     "JavaScript Debug.map.html.executor": "Run",
+    "JavaScript Debug.product.html.executor": "Run",
+    "JavaScript Debug.product_descrip.html.executor": "Run",
     "JavaScript Debug.profile.html.executor": "Run",
     "JavaScript Debug.prueba.html.executor": "Run",
+    "JavaScript Debug.register.html.executor": "Run",
     "JavaScript Debug.review.html.executor": "Run",
     "JavaScript Debug.sidebar.html.executor": "Run",
     "JavaScript Debug.smoothies.html.executor": "Run",
@@ -97,7 +121,7 @@
       <recent name="C:\Users\yeray\WebstormProjects\PWM_2024\img\smoothies" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager">
     <configuration name="basket.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PWM_2024/basket.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>

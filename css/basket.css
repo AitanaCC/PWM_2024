@@ -55,6 +55,13 @@ body{
     text-align: center;
 }
 
+.basket-left-container {
+    /*display: none;*/
+}
+.right-basket-container {
+    /*display: none;*/
+}
+
 #basket-header {
     display: flex;
     justify-content: space-between;
@@ -88,6 +95,12 @@ body{
     border-bottom: 3px solid black;
     width: auto;
 }
+@media (max-width: 765px) {
+    .basket-name-container::after{
+        display: none;
+    }
+}
+
 
 #basket-name {
     font-weight: bold;
@@ -97,6 +110,7 @@ body{
     /*border-bottom: 2px solid black;*/
 }
 #basket-empty {
+    padding: 2em 0;
     display: none;
 }
 
@@ -138,6 +152,12 @@ body{
     padding: 1em;
 }
 
+@media (max-width: 765px) {
+    .basket-product-container{
+        max-height: 22em;
+    }
+}
+
 .basket-product {
     display: flex;
     justify-content: space-around;
@@ -172,6 +192,7 @@ body{
 }
 .product-info p {
     font-size: 1.2em;
+    margin: 0;
 }
 .product-title {
     padding: 1em 0;
@@ -187,7 +208,7 @@ h2 {
 .count-container{
     font-size: 1.5em;
     font-weight: bold;
-    padding: 1em 0;
+    padding: 0.5em;
 }
 .count-button {
     background-color: transparent;
@@ -215,6 +236,12 @@ h2 {
     margin: 0 auto 10px; /* Centra la imagen y añade margen inferior de 10px */
     display: inline-block; /* Hace que la imagen se comporte como un bloque para poder centrarla con margin auto */
     vertical-align: middle;
+}
+@media (max-width: 765px) {
+    .product-image{
+        max-width: 130px;
+        max-height: 130px;
+    }
 }
 
 .price {
@@ -343,7 +370,7 @@ h2 {
 
 
 .sidebar {
-    height: 95%;
+    height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -449,4 +476,26 @@ p {
     height: 250px; /* Altura del cuadrado */
     border-radius: 10px; /* Opcional: bordes redondeados */
     background-color: #eee; /* Color de fondo mientras el mapa carga */
+    z-index: 0;
+}
+
+/*--------- PARÁMETROS MEDIA ----------*/
+
+@media only screen and (max-width: 640px) {
+
+    .site-title {
+        font-size: 45px;
+        margin-top: 1%;
+        margin-left: 40%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; /* Si tienes varios elementos en tu nav, los alinea al final */
+        margin-right: 1%;
+    }
+
+    .menu-button img, .user-options img{
+        width: 42px;
+    }
 }

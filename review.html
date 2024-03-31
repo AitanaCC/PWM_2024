@@ -9,7 +9,7 @@
 
 </head>
 <body>
-
+<div id="dark-filter"></div>
 <header id="header"></header>
 <div id="sidebar-container"></div>
 
@@ -30,7 +30,7 @@
     <article class="product">
         <div class="product-container">
             <div class="product-header">
-                <a href="index.html"></a>
+                <a href="product_descrip.html"></a>
                 <div class="image-container">
                     <img src="img/drinks/cocacola.png" alt="Product Image" class="product-image">
                 </div>
@@ -71,7 +71,7 @@
     <article class="product">
         <div class="product-container">
             <div class="product-header">
-                <a href="index.html"></a>
+                <a href="product_descrip.html"></a>
                 <div class="image-container">
                     <img src="img/drinks/cervezaPilsen.png" alt="Product Image" class="product-image">
                 </div>
@@ -101,7 +101,7 @@
     <article class="product">
         <div class="product-container">
             <div class="product-header">
-                <a href="index.html"></a>
+                <a href="product_descrip.html"></a>
                 <div class="image-container">
                     <img src="img/drinks/Fanta-1.png" alt="Product Image" class="product-image">
                 </div>
@@ -130,7 +130,7 @@
     <article class="product">
         <div class="product-container">
             <div class="product-header">
-                <a href="index.html"></a>
+                <a href="product_descrip.html"></a>
                 <div class="image-container">
                     <img src="img/drinks/7up.png" alt="Product Image" class="product-image">
                 </div>
@@ -213,6 +213,27 @@
             filter.style.display = "none";
         }
     }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Esto asegura que el script se ejecuta después de que se haya cargado el DOM.
+
+        // Selecciona el elemento dark-filter.
+        var darkFilter = document.getElementById('dark-filter');
+
+        // Añade un evento de clic al dark-filter.
+        darkFilter.addEventListener('click', function() {
+            // Selecciona el elemento sidebar.
+            var sidebar = document.querySelector('.sidebar');
+
+            // Verifica si el sidebar existe para evitar errores.
+            if (sidebar) {
+                // Elimina la clase 'active' del sidebar para ocultarlo.
+                sidebar.classList.remove('active');
+            }
+
+            // Opcional: También puedes ocultar el dark-filter después de hacer clic.
+            darkFilter.style.display = 'none';
+        });
+    });
 
 </script>
 <script src="js/sortProducts.js"></script>
