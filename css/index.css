@@ -46,9 +46,10 @@ a{
 .centered-text {
   position: absolute;
   top: 53%;
-  left: 65%;
+  left: 55%;
   transform: translate(-50%, -50%);
   width: 100%;
+  max-width: 80%;
 }
 
 .centered-text h1 {
