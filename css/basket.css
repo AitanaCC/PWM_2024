@@ -55,6 +55,13 @@ body{
     text-align: center;
 }
 
+.basket-left-container {
+    /*display: none;*/
+}
+.right-basket-container {
+    /*display: none;*/
+}
+
 #basket-header {
     display: flex;
     justify-content: space-between;
@@ -103,6 +110,7 @@ body{
     /*border-bottom: 2px solid black;*/
 }
 #basket-empty {
+    padding: 2em 0;
     display: none;
 }
 
