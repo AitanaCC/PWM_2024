@@ -254,6 +254,6 @@ p {
   height: 300px; /* Altura del cuadrado */
   border-radius: 10px; /* Opcional: bordes redondeados */
   background-color: #eee; /* Color de fondo mientras el mapa carga */
-  left: 50% /* Centra el mapa si está dentro de un contenedor más grande */
+  left: 50%;5 /* Centra el mapa si está dentro de un contenedor más grande */
 }
 

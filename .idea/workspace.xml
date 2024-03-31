@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c74eb8e-ca82-4719-b3c5-d25a4c11aef6" name="Changes" comment="improve the index, added some sidebar options, and all the footer, header to reuse in other files completed">
-      <change afterPath="$PROJECT_DIR$/css/payment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/payment/mastercard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/payment/pago.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/payment/paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/paymentScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paymentGateway.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/paymentScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paymentScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
