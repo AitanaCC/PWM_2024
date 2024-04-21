@@ -1,0 +1,24 @@
+<!-- header.component.html -->
+<div class="header">
+  <div class="menu-button" (click)="toggleSidebar()">
+    <img src="./assets/img/menu.png" alt="Menu" height="40" width="40">
+  </div>
+  <div class="title">
+    <img src="./assets/img/logo-TFC.png" alt="Logo" height="125" width="125">
+  </div>
+  <div class="user-options">
+    <img src="./assets/img/cesta.png" alt="Cesta" height="40" width="40">
+    <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
+  </div>
+  <div *ngIf="sidebarOpen" class="sidebar">
+    <div class="closebtn" (click)="toggleSidebar()">&times;</div>
+    <a routerLink="/">Drinks</a>
+    <a routerLink="/">Smoothies</a>
+    <a routerLink="/">Cocktails</a>
+    <a routerLink="/">Frozen Desserts</a>
+    <a routerLink="/">Appetizer</a>
+    <hr/>
+    <a routerLink="/">Reviews</a>
+    <a routerLink="/">Contact us</a>
+  </div>
+</div>

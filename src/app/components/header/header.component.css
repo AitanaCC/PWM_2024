@@ -1,0 +1,89 @@
+/* header.component.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 2%;
+  height: 10vh;
+  border-radius: 20px
+}
+
+
+.menu-button, .user-options {
+  cursor: pointer;
+  display: flex;
+  margin-right: 1em;
+}
+
+.user-options img {
+  margin-right: 0.5em; /* Añade margen a la derecha de cada icono */
+}
+
+.user-options img:last-child {
+  margin-right: 0; /* Elimina el margen del último icono para evitar espacio extra en el borde */
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+
+}
+.sidebar a {
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #000000;
+  display: block;
+  transition: 0.5s;
+}
+
+
+.sidebar hr {
+  border: 0;
+  height: 3px;
+  background-color: black;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.closebtn {
+  position: relative;
+  left: 200px;
+  cursor: pointer;
+  font-size: 2em; /* Tamaño de la 'X' */
+  font-weight: bold;
+  color: black; /* Color de la 'X' */
+}
+
+.contact_sidebar{
+  top: 85%;
+  left: -10%;
+  font-size: 1.5em;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed; /* Fijar el sidebar en la pantalla */
+  z-index: 1; /* Colocar el sidebar por encima del contenido */
+  left: 0;
+  top: 0;
+  padding-top: 5%;
+  background-color: #ffffff; /* Color de fondo del sidebar */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Sombra para un efecto 3D */
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+  border-bottom-right-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.header .sidebar {
+  transform: translateX(0);
+}
+
+

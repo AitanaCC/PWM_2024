@@ -1,0 +1,17 @@
+.map-container {
+  position: relative; /* Cambiado de absolute a relative para el contexto del footer */
+  margin: 0; /* Elimina el margen si no es necesario */
+  height: 100%; /* Asegura que el contenedor tome toda la altura del .footer-right */
+}
+
+.map-frame {
+  height: 100%; /* Asegura que el frame tome toda la altura del .map-container */
+}
+
+#map {
+  width: 100%; /* Ancho del cuadrado */
+  height: 250px; /* Altura del cuadrado */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  background-color: #eee; /* Color de fondo mientras el mapa carga */
+  z-index: 0;
+}
