@@ -1,0 +1,76 @@
+#dark-filter {
+  position: relative;  /* Posicionamiento relativo para el contenedor padre */
+  width: 100%;         /* Ocupa todo el ancho disponible */
+  height: 100vh;       /* O la altura que desees, aquí uso 100vh como ejemplo */
+
+}
+#video-background {
+  width: 100%;         /* Establece el ancho del video al 100% del contenedor */
+  height: 140vh;        /* Establece la altura del video al 100% del contenedor */
+  object-fit: cover;   /* Asegura que el video cubra completamente el área sin distorsión */
+  position: relative;  /* Posiciona el video absolutamente dentro de su contenedor */
+  top:-25%;              /* Alinea la parte superior del video con el contenedor */
+  left: 0; /* Alinea el lado izquierdo del video con el contenedor */
+  bottom: 25%;
+  z-index: -1;
+}
+
+.centered-text {
+  position: absolute;
+  top: 53%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 80%;
+  z-index: 1;
+}
+.centered-text h1 {
+  font-size: 50px;
+  color: white;
+  z-index: 0;
+}
+
+#content-us {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: row;
+  background-color: beige;
+  font-size: 150%;
+  font-weight: normal;
+  font-family: "Noto Sans"
+}
+
+#content-us h2{
+  font-weight: bolder;
+  font-size: 3.5vw;
+  margin-top: 5%;
+  margin-bottom: 0;
+  padding-top: 5%;
+}
+
+#about-us{
+  display: flex;
+  margin-left: 5%;
+  flex: 1;
+  padding-right: 40px;
+  text-align: justify;
+  position: relative;
+  flex-direction: column;
+}
+
+.highlight{
+  font-family: Cambria;
+  font-weight: inherit;
+}
+.about-image{
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+p{
+  font-size: 2.5vw;
+  padding-top: 5%;
+  margin: 5%;
+}

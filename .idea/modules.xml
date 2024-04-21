@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PWMApp.iml" filepath="$PROJECT_DIR$/.idea/PWMApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pwmapp.iml" filepath="$PROJECT_DIR$/.idea/pwmapp.iml" />
     </modules>
   </component>
 </project>

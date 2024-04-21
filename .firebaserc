@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pwmapp-a480f": {
+      "hosting": {
+        "pwmapp": [
+          "pwmapp-a480f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pwmapp-a480f"
+  }
+}

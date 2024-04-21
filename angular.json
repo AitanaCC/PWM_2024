@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PWMApp": {
+    "pwmapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,10 +26,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/leaflet/dist/leaflet.css",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -64,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PWMApp:build:production"
+              "buildTarget": "pwmapp:build:production"
             },
             "development": {
-              "buildTarget": "PWMApp:build:development"
+              "buildTarget": "pwmapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "PWMApp:build"
+            "buildTarget": "pwmapp:build"
           }
         },
         "test": {
@@ -95,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "pwmapp:build:production",
+              "serveTarget": "pwmapp:serve:production"
+            },
+            "development": {
+              "buildTarget": "pwmapp:build:development",
+              "serveTarget": "pwmapp:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
