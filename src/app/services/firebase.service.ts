@@ -1,7 +1,22 @@
 // src/app/firebase.service.ts
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, Firestore, collection, addDoc, getDocs, doc, getDoc, updateDoc, deleteDoc, DocumentReference, QuerySnapshot } from 'firebase/firestore';
+import {
+  getFirestore,
+  Firestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  getDoc,
+  updateDoc,
+  deleteDoc,
+  DocumentReference,
+  QuerySnapshot,
+  setDoc
+} from 'firebase/firestore';
+
+import { getAuth, onAuthStateChanged, Auth } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +24,8 @@ import { getFirestore, Firestore, collection, addDoc, getDocs, doc, getDoc, upda
 export class FirebaseService {
   app: any;
   db: Firestore;
+  auth: Auth;
+  currentUserUid: string | null = null; // Almacena el UID del usuario actual
 
   constructor() {
     const firebaseConfig = {
@@ -22,6 +39,17 @@ export class FirebaseService {
 
     this.app = initializeApp(firebaseConfig);
     this.db = getFirestore(this.app);
+    this.auth = getAuth(this.app);
+
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.currentUserUid = user.uid; // Actualiza el UID cuando el usuario está loggeado
+        console.log("Logged in as:", user.uid);
+      } else {
+        this.currentUserUid = null; // Limpia el UID cuando no hay usuario loggeado
+        console.log("No user logged in.");
+      }
+    });
   }
 // Función para añadir documentos
   async addDocument(collectionName: string, data: any): Promise<DocumentReference> {
@@ -84,4 +112,67 @@ export class FirebaseService {
       throw e;  // Lanza el error para manejo externo
     }
   }
+
+  getCurrentUserUid(): string | null {
+    const user = this.auth.currentUser;
+    return user ? user.uid : null;
+  }
+
+  async updateBasket(productId: string, quantity: number|null) {
+    if (!this.currentUserUid) {
+      throw new Error("No user is currently logged in.");
+    }
+    const basketRef = collection(this.db, `users/${this.currentUserUid}/basket`);
+
+    // Si la cantidad es null, se debe eliminar el producto (excepto si es 'empty')
+    if (quantity === null) {
+      if (productId !== 'empty') {
+        const productDocRef = doc(basketRef, productId);
+        await deleteDoc(productDocRef);
+        console.log(`Producto ${productId} eliminado de la cesta.`);
+      }
+      return;
+    }
+
+    // Actualizar o añadir un nuevo producto (incluyendo 'empty')
+    const productDocRef = doc(basketRef, productId);
+    await setDoc(productDocRef, { quantity }, { merge: true });
+    console.log(`Producto ${productId} actualizado/añadido con cantidad ${quantity}.`);
+  }
+
+
+  // Método para comprobar si la cesta del usuario está vacía
+  async isEmptyBasket(userId: string): Promise<boolean> {
+    const basketRef = collection(this.db, `users/${userId}/basket`);
+    const snapshot = await getDocs(basketRef);
+    const docs = snapshot.docs.map(doc => doc.id);
+
+    // Comprobar si la única entrada es 'empty'
+    return docs.length === 1 && docs.includes('empty');
+  }
+
+  /**
+   * Método para obtener los detalles de un producto o documento específico
+   * desde una ruta dinámica construida con parámetros de colección y documento.
+   *
+   * @param pathSegments Array de strings que representa la ruta al documento, por ejemplo:
+   * ["products", "drinks", "00001", "00001", "productId"]
+   *
+   * @returns Promise con los datos del documento o null si no existe.
+   */
+  async getDocumentDetails(pathSegments: string[]): Promise<any> {
+    const path = pathSegments.join('/');
+    const docRef = doc(this.db, path);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log(`Document found at path: ${path}`);
+      return docSnap.data();
+    } else {
+      console.log(`No document found at path: ${path}`);
+      return null;
+    }
+  }
+
+
+
 }

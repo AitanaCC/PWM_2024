@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div id="dark-filter">
 <video autoplay muted loop id="video-background">
   <source src="../assets/background.mp4" type="video/mp4">
@@ -5,7 +6,13 @@
 </video>
 
 <div class="centered-text">
-  <h1>Taste, Flavor, and Chill with our <span class="typing-effect"></span></h1>
+  <h1>Taste, Flavor, and Chill with our <span class="typing-effect">
+
+<!--
+    {{ textToShow$ | async }}
+-->
+  </span>
+  </h1>
 </div>
 </div>
 

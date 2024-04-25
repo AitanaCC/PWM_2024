@@ -1,12 +1,17 @@
+<!-- Suponiendo que este código está en tu componente Angular 'app.component.html' -->
+<app-header></app-header>
 <div class="container">
   <input type="checkbox" id="check">
   <div class="login form">
     <header>Login</header>
-    <form action="#">
-      <input type="text" placeholder="Enter your email">
-      <input type="password" placeholder="Enter your password">
+    <form (submit)="login()">
+      <input type="text" placeholder="Enter your email" [(ngModel)]="loginEmail" name="loginEmail">
+      <input type="password" placeholder="Enter your password" [(ngModel)]="loginPassword" name="loginPassword">
       <a href="/">Forgot password?</a>
-      <input type="button" class="button" value="Login">
+      <input type="button" class="button" value="Login" (click)="login()">
+      <a *ngIf="isAuthenticated" routerLink="/Home">
+        <button #autoButton (click)="autoFunc()" style="display: none">Click</button>
+      </a>
     </form>
     <div class="signup">
         <span class="signup">Don't have an account?
@@ -16,11 +21,14 @@
   </div>
   <div class="registration form">
     <header>Signup</header>
-    <form action="#">
-      <input type="text" placeholder="Enter your email">
-      <input type="password" placeholder="Create a password">
-      <input type="password" placeholder="Confirm your password">
-      <input type="button" class="button" value="Signup">
+    <form (submit)="register()">
+      <input type="text" placeholder="Enter your email" [(ngModel)]="signupEmail" name="signupEmail">
+      <input type="password" placeholder="Create a password" [(ngModel)]="signupPassword" name="signupPassword">
+      <input type="password" placeholder="Confirm your password" [(ngModel)]="confirmPassword" name="confirmPassword">
+      <input type="button" class="button" value="Signup" (click)="register()">
+      <a *ngIf="isAuthenticated" routerLink="/Home">
+        <button #autoButton (click)="autoFunc()" style="display: none">Click</button>
+      </a>
     </form>
     <div class="signup">
         <span class="signup">Already have an account?

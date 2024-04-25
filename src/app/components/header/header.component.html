@@ -4,63 +4,33 @@
     <img src="./assets/img/menu.png" alt="Menu" height="40" width="40">
   </div>
   <div class="title">
-    <a [routerLink]="['/']">
-    <img src="./assets/img/logo-TFC.png" alt="Logo" height="125" width="125">
+    <a [routerLink]="['/Home']">
+      <img src="./assets/img/logo-TFC.png" alt="Logo" height="125" width="125">
     </a>
   </div>
   <div class="user-options">
     <img src="./assets/img/cesta.png" alt="Cesta" height="40" width="40">
-    <!-- Aqui hay que implementar unas comprobaciones para que se muestre el icono de usuario o el de login:
-        si-> usuario logueado: mostrar icono de usuario y redirigir a la pagina de usuario
-        sino-> mostrar icono de login y redirigir a la pagina de login
+    <div *ngIf="isLoggedIn; else notLoggedIn">
+      <div class="user-image-container" (click)="toggleMenu()">
+        <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
+        <div class="menu" [ngClass]="{'visible': menuVisible}">
+          <ul>
+            <li>Mis datos</li>
+<!--
+            Recordar cambiar a false el visible para que al volver no se active el togglemenu auto
+-->
+            <li>Mis pedidos</li>
+            <li>Log out</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ng-template #notLoggedIn>
+      <a [routerLink]="['/register-login']">
+        <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
+      </a>
+    </ng-template>
 
-        se podria hacer con un *ngIf de la siguiente manera:
-        <a *ngIf="usuarioLogueado" routerLink="/usuario">
-          <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
-          siendo el codigo de usuarioLogueado una variable booleana que se inicializa en false y se cambia a true cuando el usuario se loguea
-          para hacer eso se podria hacer una funcion en el servicio de login que devuelva un booleano si el usuario esta logueado o no
-          que sería asi:
-          usuarioLogueado: boolean = false;
-          constructor(private loginService: LoginService) {
-            this.usuarioLogueado = this.loginService.usuarioLogueado();
-          }
-          y en el servicio de login:
-          usuarioLogueado(): boolean {
-            return this.usuarioLogueado;
-          }
-          pero antes de hacer esto hay que implementar el servicio de login
-          conectarlo con la base de datos y hacer las comprobaciones necesarias
-          que se podrian hacer con un token de sesion o con un token de autenticacion
-          que se guardaria en el local storage del navegador
-          y se comprobaria en cada peticion al servidor
-          para ver si el usuario esta logueado o no
-          y si no lo esta redirigirlo a la pagina de login
-          y si lo esta permitirle acceder a la pagina de usuario
-          el codigo para hacer esto se podria hacer en el app.component.ts
-          en el ngOnInit() que se ejecuta al cargar la pagina
-          y se podria hacer de la siguiente manera:
-          ngOnInit() {
-            if (!this.loginService.usuarioLogueado()) {
-              this.router.navigate(['/login']);
-            }
-          }
-          y el codigo para conectar con la base de datos firebase es el siguiente:
-          usuarioLogueado(): boolean {
-            firebase.auth().onAuthStateChanged((user) => {
-              if (user) {
-                this.usuarioLogueado = true;
-              } else {
-                this.usuarioLogueado = false;
-              }
-            });
-            return this.usuarioLogueado;
-          }
-
-
-    -->
-    <a [routerLink]="['/register-login']">
-    <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
-    </a>
   </div>
   <div *ngIf="sidebarOpen" class="sidebar">
     <div class="closebtn" (click)="toggleSidebar()">&times;</div>

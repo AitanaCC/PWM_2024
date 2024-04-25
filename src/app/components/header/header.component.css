@@ -86,4 +86,46 @@
   transform: translateX(0);
 }
 
+.user-image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
 
+.user-image-container img {
+  display: block;
+}
+
+.menu {
+  position: absolute;
+  top: 130%;
+  bottom: -283%;
+  left: -30%;
+  transform: translateX(-50%);
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  width: 350%;
+  height: 300%;
+  display: none;
+  z-index: 3;
+}
+
+.menu.visible {
+  display: block;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  font-family: Poppins;
+  z-index: 3;
+}
+
+.menu ul li {
+  padding: 8px 12px;
+}
+
+.menu ul li:hover {
+  cursor: pointer;
+}

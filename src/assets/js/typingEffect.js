@@ -23,7 +23,7 @@ function initializeTypingEffect(elementSelector, words) {
             } else {
                 setTimeout(() => {
                     deleting = true;
-                    setTimeout(typeLetters, 200);
+                    setTimeout(typeLetters, 100);
                 }, 1000);
             }
         }
