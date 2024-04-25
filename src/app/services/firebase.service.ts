@@ -172,7 +172,15 @@ export class FirebaseService {
       return null;
     }
   }
-
+  async getDocumentByRef(ref: DocumentReference): Promise<any> {
+    const docSnap = await getDoc(ref);
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() };
+    } else {
+      console.error("Document not found!");
+      return null;
+    }
+  }
 
 
 }

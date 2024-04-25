@@ -10,7 +10,9 @@
     </a>
   </div>
   <div class="user-options">
+    <a class="basket-image" [routerLink]="['/basket']">
     <img src="./assets/img/cesta.png" alt="Cesta" height="40" width="40">
+    </a>
     <div *ngIf="isLoggedIn; else notLoggedIn">
       <div class="user-image-container" (click)="toggleMenu()">
         <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
@@ -35,13 +37,13 @@
   </div>
   <div *ngIf="sidebarOpen" class="sidebar">
     <div class="closebtn" (click)="toggleSidebar()">&times;</div>
-    <a routerLink="/">Drinks</a>
+    <a routerLink="/Home">Drinks</a>
     <a routerLink="/">Smoothies</a>
     <a routerLink="/">Cocktails</a>
     <a routerLink="/">Frozen Desserts</a>
     <a routerLink="/">Appetizer</a>
     <hr/>
-    <a routerLink="/">Reviews</a>
-    <a routerLink="/">Contact us</a>
+    <a [routerLink]="['/reviews']">Reviews</a>
+    <a [routerLink]="['/contact-us']">Contact Us</a>
   </div>
 </div>

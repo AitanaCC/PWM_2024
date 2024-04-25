@@ -1,4 +1,5 @@
-/* header.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -146,4 +147,8 @@
   color: inherit;
   text-decoration: none;
   display: block;
+}
+
+.basket-image{
+  margin-right: 1em;
 }
