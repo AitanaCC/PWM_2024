@@ -110,10 +110,11 @@ import {
   where,
   writeBatch,
   ye
-} from "./chunk-R3EMVTAL.js";
+} from "./chunk-CFO645MI.js";
 import {
   AuthInstances
-} from "./chunk-B3WL2DUQ.js";
+} from "./chunk-7FZGDAET.js";
+import "./chunk-S3VKETLD.js";
 import {
   FirebaseApp,
   FirebaseApps,
@@ -123,8 +124,7 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-ONFBPCLA.js";
-import "./chunk-2ZJAZFDQ.js";
+} from "./chunk-SDNYJUCZ.js";
 import {
   InjectionToken,
   Injector,
@@ -146,12 +146,12 @@ import {
   timer,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-EME3F6PO.js";
-import "./chunk-CWSGFSSC.js";
+} from "./chunk-MLFMWDLQ.js";
+import "./chunk-LHRTKJE6.js";
+import "./chunk-UXLLQOJ6.js";
 import {
   registerVersion
-} from "./chunk-K7TAENCN.js";
-import "./chunk-LHRTKJE6.js";
+} from "./chunk-BQ5WTFZH.js";
 import "./chunk-RKN2ARKZ.js";
 
 // node_modules/rxfire/firestore/index.esm.js

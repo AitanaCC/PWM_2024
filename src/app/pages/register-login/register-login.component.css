@@ -17,7 +17,7 @@
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  z-index: 2;
+  z-index: 1;
 }
 .container .registration{
   display: none;

@@ -32,8 +32,8 @@ export class HeaderComponent {
   }
 
   logout() {
-    console.log('Cerrar sesión del usuario');
-    // Implementa la lógica para cerrar sesión
+    this.authService.logoutUser();
+    this.isLoggedIn = false;
   }
   toggleMenu() {
     this.menuVisible = !this.menuVisible;

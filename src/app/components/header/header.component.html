@@ -1,5 +1,6 @@
 <!-- header.component.html -->
 <div class="header">
+  <div class="overlay" *ngIf="sidebarOpen" (click)="toggleSidebar()"></div>
   <div class="menu-button" (click)="toggleSidebar()">
     <img src="./assets/img/menu.png" alt="Menu" height="40" width="40">
   </div>
@@ -16,11 +17,11 @@
         <div class="menu" [ngClass]="{'visible': menuVisible}">
           <ul>
             <li>Mis datos</li>
-<!--
-            Recordar cambiar a false el visible para que al volver no se active el togglemenu auto
--->
+            <!--
+                        Recordar cambiar a false el visible para que al volver no se active el togglemenu auto
+            -->
             <li>Mis pedidos</li>
-            <li>Log out</li>
+            <li><a routerLink="/" (click)="logout()">Log out</a></li>
           </ul>
         </div>
       </div>

@@ -24,7 +24,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-EME3F6PO.js";
+} from "./chunk-MLFMWDLQ.js";
 import {
   deleteApp,
   getApp,
@@ -33,7 +33,7 @@ import {
   onLog,
   registerVersion,
   setLogLevel
-} from "./chunk-K7TAENCN.js";
+} from "./chunk-BQ5WTFZH.js";
 
 // node_modules/@angular/fire/fesm2022/angular-fire.mjs
 var VERSION2 = new Version("ANGULARFIRE2_VERSION");
@@ -336,4 +336,4 @@ export {
   registerVersion2 as registerVersion,
   setLogLevel2 as setLogLevel
 };
-//# sourceMappingURL=chunk-ONFBPCLA.js.map
+//# sourceMappingURL=chunk-SDNYJUCZ.js.map
