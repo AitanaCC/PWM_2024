@@ -1,0 +1,119 @@
+/*body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}*/
+.payment-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.payment-title {
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100px; /* Ajusta la altura según el tamaño deseado para la imagen o el contenedor */
+}
+
+.payment-title img {
+  max-width: 140px; /* Asegura que la imagen no exceda el ancho del contenedor */
+  max-height: 200px; /* Asegura que la imagen no exceda la altura del contenedor */
+  /* Si necesitas que la imagen mantenga sus proporciones, puedes ajustar max-width o max-height específicamente */
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-inline {
+  display: flex;
+  justify-content: space-between;
+}
+.form-inline .form-group {
+  flex-basis: 48%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.info-text {
+  font-size: 0.8em;
+  color: #555;
+  display: block;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+input[type="submit"] {
+  width: 100%;
+  background-color: #2852bd;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #374837;
+}
+.label-and-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Mantiene el label a la izquierda y el nuevo contenedor de iconos a la derecha */
+}
+
+.label-and-icons label {
+  margin-bottom: 4%; /* Elimina el margen inferior del label */
+}
+
+.icons-container {
+  display: flex; /* Mantiene los iconos juntos */
+}
+
+.payment-icon {
+  width: 27px; /* Establece el tamaño de las imágenes */
+  height: 27px; /* Mantiene la proporción */
+  margin-left: 10px; /* Espaciado entre los iconos */
+}
+
+.icon-field {
+  position: relative;
+}
+.input-icon-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input-icon-container input {
+  flex: 1;
+  border: none;
+  padding-left: 40px; /* Espacio para el ícono */
+  height: 40px; /* Ajusta según la altura de tus inputs normales */
+}
+.input-icon-container i.far,
+.input-icon-container i.fas {
+  position: absolute;
+  margin-left: 10px;
+  color: #000000; /* Ajusta el color del ícono */
+
+}
+.input-icon-container input:focus {
+  outline: none;
+}
