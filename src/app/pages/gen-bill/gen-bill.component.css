@@ -1,0 +1,89 @@
+/* gen-bill.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:host {
+  height: 200vh;
+}
+
+#principalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+#basket-contents {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 80%;
+  height: 100%;
+  max-width: 400px; /* Más estrecho para simular un recibo */
+  font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir para simular recibo */
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 80px; /* Imágenes un poco más pequeñas */
+  height: auto;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+div {
+  flex: 1;
+}
+
+h3, p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+button {
+  background-color: #FFD700;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #006653;
+}
+
+.total {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border-top: 2px dashed #ccc;
+}

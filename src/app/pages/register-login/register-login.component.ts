@@ -29,9 +29,22 @@ export class RegisterLoginComponent{
       .then(() => {
         this.isAuthenticated = true;
         this.triggerAutoButtonClick();
+        this.errorMessage = ''; // Limpiar mensaje de error para no tener problemas futuros
+
       })
       .catch((error) => {
         console.error('Registration failed:', error);
+        if (error.code === 'auth/email-already-in-use') {
+          this.errorMessage = 'Registration failed: The email address is already in use by another account.';
+        } else if (error.code === 'auth/invalid-email') {
+          this.errorMessage = 'Registration failed: The email address is not valid.';
+        } else if (error.code === 'auth/operation-not-allowed') {
+          this.errorMessage = 'Registration failed: Operation not allowed.';
+        } else if (error.code === 'auth/weak-password') {
+          this.errorMessage = 'Registration failed: The password must be 6 characters long or more.';
+        } else {
+          this.errorMessage = 'Registration failed: ' + error.message; // Error genérico
+        }
       });
   }
 
@@ -44,7 +57,7 @@ export class RegisterLoginComponent{
       })
       .catch((error) => {
         console.error('Login failed:', error);
-        this.errorMessage = 'Login failed: Incorrect email or password.'; // Establecer el mensaje de error
+        this.errorMessage = 'Login failed: Incorrect email or password.';
         this.clearForm(); // Limpiar formulario tras error
       });
   }

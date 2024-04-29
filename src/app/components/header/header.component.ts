@@ -21,19 +21,9 @@ export class HeaderComponent {
     this.sidebarOpen = !this.sidebarOpen;
   }
 
-  viewProfile() {
-    console.log('Ver perfil de usuario');
-    // Aquí puedes abrir un modal o navegar a una página de detalles del usuario
-  }
-
-  viewOrders() {
-    console.log('Ver pedidos del usuario');
-    // Navega a la página de pedidos o muestra detalles en un modal
-  }
-
   logout() {
-    console.log('Cerrar sesión del usuario');
-    // Implementa la lógica para cerrar sesión
+    this.authService.logoutUser();
+    this.isLoggedIn = false;
   }
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
