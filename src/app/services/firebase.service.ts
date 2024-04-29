@@ -182,5 +182,37 @@ export class FirebaseService {
     }
   }
 
+  async getBasketItemsWithDetails(): Promise<any[]> {
+    if (!this.currentUserUid) {
+      console.error("No user is currently logged in.");
+      return [];
+    }
+
+    const basketRef = collection(this.db, `users/${this.currentUserUid}/basket`);
+    const snapshot = await getDocs(basketRef);
+    const basketItems = [];
+
+    for (const doc of snapshot.docs) {
+      const itemData = doc.data();
+      // Using bracket notation to access 'ref' and checking if it exists
+      if (itemData['ref'] && typeof itemData['ref'] === 'object' && 'id' in itemData['ref']) {
+        const productDetails = await this.getDocumentByRef(itemData['ref']);
+        if (productDetails) {
+          basketItems.push({
+            ...itemData,
+            productId: doc.id,
+            productDetails
+          });
+        }
+      } else {
+        // Handle items without a product reference or log them
+        console.log("Item in basket without product reference:", doc.id);
+      }
+    }
+    return basketItems;
+  }
+
+
+
 
 }

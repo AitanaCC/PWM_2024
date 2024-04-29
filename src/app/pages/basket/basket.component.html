@@ -10,8 +10,8 @@
             <div>
               <h3><b>{{ item.name }}</b></h3>
               <p>{{ item.description }}</p>
-              <p><b>Precio: </b> {{ item.price | currency:'EUR':true:'1.2' }}</p>
-              <p><b>Cantidad:</b> {{ item.quantity }}</p>
+              <p><b>Price: </b> {{ item.price | currency:'EUR':true:'1.2' }}</p>
+              <p><b>Quantity:</b> {{ item.quantity }}</p>
             </div>
           </li>
         </ul>
@@ -20,7 +20,7 @@
         </div>
       </ng-container>
       <ng-template #emptyBasketTemplate>
-        <p>Su cesta está vacía.</p>
+        <p>Your basket is empty.</p>
       </ng-template>
     </div>
   </ng-container>
@@ -28,8 +28,7 @@
   <ng-template #notLoggedInTemplate>
     <div class="empty-basket">
       <i class="fas fa-shopping-basket fa-10x" style="opacity: 0.3;;"></i>
-      <p>Sesión no loggeada. <a routerLink="/register-login">Inicie sesión</a> para poder añadir productos a la cesta.
-      </p>
+      <p>Session not logged. <a routerLink="/register-login">Log in</a> to add products to the basket.</p>
     </div>
   </ng-template>
 </div>
