@@ -11,18 +11,18 @@
   </div>
   <div class="user-options">
     <a class="basket-image" [routerLink]="['/basket']">
-    <img src="./assets/img/cesta.png" alt="Cesta" height="40" width="40">
+      <img src="./assets/img/cesta.png" alt="Basket" height="40" width="40">
     </a>
     <div *ngIf="isLoggedIn; else notLoggedIn">
       <div class="user-image-container" (click)="toggleMenu()">
-        <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
+        <img src="./assets/img/usuario.png" alt="User" height="40" width="40">
         <div class="menu" [ngClass]="{'visible': menuVisible}">
           <ul>
-            <li>Mis datos</li>
+            <li>My Data</li>
             <!--
-                        Recordar cambiar a false el visible para que al volver no se active el togglemenu auto
+                        Remember to change visible to false to prevent auto toggleMenu activation when returning
             -->
-            <li>Mis pedidos</li>
+            <li>My Orders</li>
             <li><a routerLink="/" (click)="logout()">Log out</a></li>
           </ul>
         </div>
@@ -30,7 +30,7 @@
     </div>
     <ng-template #notLoggedIn>
       <a [routerLink]="['/register-login']">
-        <img src="./assets/img/usuario.png" alt="Usuario" height="40" width="40">
+        <img src="./assets/img/usuario.png" alt="User" height="40" width="40">
       </a>
     </ng-template>
 
@@ -43,7 +43,12 @@
     <a routerLink="/">Frozen Desserts</a>
     <a routerLink="/">Appetizer</a>
     <hr/>
-    <a [routerLink]="['/reviews']">Reviews</a>
     <a [routerLink]="['/contact-us']">Contact Us</a>
+    <!--Admin Options-->
+    <div *ngIf="isAdmin">
+      <hr/>
+      <a routerLink="/add-product">Add Product to DB</a>
+      <a routerLink="/rm-product">Remove Product</a>
+    </div>
   </div>
 </div>

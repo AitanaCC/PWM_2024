@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+:host{
+  background-color: beige;
+}
+
 .basket-container {
   text-align: center;
   display: flex;
@@ -7,7 +11,6 @@
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  height: 80vh;
 }
 .basket-container-2 {
   display: flex;
@@ -15,7 +18,6 @@
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  height: 80vh;
   text-align: left;
 }
 
@@ -37,8 +39,11 @@
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
+.noLog-basket{
+  margin:10em 0;
+}
 
-.empty-basket p {
+.noLog-basket p {
   color: #666;
 }
 
@@ -56,4 +61,29 @@ p{
   color: #333;
   padding: 0 2vw;
   text-align: center;
+}
+
+.empty-basket p {
+  color: #666;
+}
+
+.empty-basket{
+  margin:10em 0;
+}
+.button{
+  display: flex;
+}
+
+button{
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #FFD700;
+  font-size: 3.5vw;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s;
+  width: 100%;
+  margin: 0.5em 6em;
+  border-radius: 5px;
+
 }

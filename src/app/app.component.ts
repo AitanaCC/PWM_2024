@@ -1,5 +1,5 @@
-import {Component, OnInit, Inject, PLATFORM_ID} from '@angular/core';
-import {AsyncPipe, isPlatformBrowser, NgIf} from '@angular/common';
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
+import {AsyncPipe, NgIf} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {FooterComponent} from "./components/footer/footer.component";
 import {HeaderComponent} from "./components/header/header.component";
@@ -9,9 +9,6 @@ import {HomeComponent} from "./pages/home/home.component";
 import {FirebaseService} from './services/firebase.service';
 import {FormsModule} from "@angular/forms";
 import { AuthService } from './services/auth.service';
-import {deleteDoc} from "firebase/firestore";
-
-declare function initializeTypingEffect(elementSelector: string, words: string[]): void;
 
 @Component({
   selector: 'app-root',
@@ -48,11 +45,9 @@ declare function initializeTypingEffect(elementSelector: string, words: string[]
  * isBasketEmpty: boolean | null
  */
 
-export class AppComponent implements OnInit {
+export class AppComponent{
 
-  title = 'Chiringuito';
   userId: string | null = null;       // Almacena el ID de usuario
-  newPassword: string = '';  // Almacena la nueva contraseña
   isBasketEmpty: boolean | null = null;
   documentDetails: any;
   email: string = '';
@@ -61,33 +56,7 @@ export class AppComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private firebaseService: FirebaseService, private authService: AuthService) {
   }
 
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) { //Asegura que el código se ejecute solo en el navegador para evitar errores en el servidor
-      this.loadScript('assets/js/typingEffect.js').then(() => {
-        initializeTypingEffect('.typing-effect', ["Drinks", "Smoothies", "Frozen Desserts", "Cocktails", "Appetizer"]);
-      }).catch(error => console.error('Error loading the script:', error));
-    }
-  }
 
-  loadScript(src: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.onload = () => resolve();
-      script.onerror = (e) => reject(e);
-      document.head.appendChild(script);
-    });
-  }
-
-  addNewDocument() {
-    const newData = {name: 'New User', age: 30};
-    this.firebaseService.addDocument('users', newData);
-  }
-
-  async fetchAllDocuments() {
-    const users = await this.firebaseService.getDocuments('users');
-    console.log(users);
-  }
 
   updateProductInBasket(productId: string, quantity: number | null) {
     this.firebaseService.updateBasket(productId, quantity);

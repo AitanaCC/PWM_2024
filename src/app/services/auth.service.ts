@@ -10,7 +10,7 @@ export class AuthService {
   private app: any;
   private auth: any;
   private db: any;
-
+  private adminUid: string = 'QNaiW8obd1UXEuc8CuPWC5Peadn1'; // Admin UID
 
   constructor() {
     const firebaseConfig = {
@@ -109,6 +109,11 @@ export class AuthService {
       console.error("Failed to send reset password email:", error);
       throw error;
     }
+  }
+
+  isAdmin(): boolean {
+    const user = this.auth.currentUser;
+    return user && user.uid === this.adminUid;
   }
 
 }

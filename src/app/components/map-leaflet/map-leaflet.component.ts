@@ -22,11 +22,20 @@ export class MapLeafletComponent implements AfterViewInit {
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         minZoom: 3,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: 'Chiringuito TFC!'
       }).addTo(this.map);
 
+      const markerIcon = L.icon({
+        iconSize: [25, 41],
+        iconAnchor: [10, 41],
+        popupAnchor: [2, -40],
+        iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+        shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+      })
+
       // Añadiendo el marcador
-      const marker = L.marker([27.743091, -15.576004]).addTo(this.map);
+      const marker = L.marker([27.743091, -15.576004], {icon:markerIcon}).addTo(this.map);
       marker.bindPopup("<b>Chiringuito TFC!</b><br>streetNstreet,CPstreet.").openPopup(); // Abre el popup automáticamente
     });
   }

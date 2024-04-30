@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {HeaderComponent} from "../../components/header/header.component";
 import {CommonModule} from "@angular/common";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {OnInit} from '@angular/core';
 import {FirebaseService} from '../../services/firebase.service';
 import {DocumentReference} from 'firebase/firestore';
@@ -24,7 +24,7 @@ export class GenBillComponent implements OnInit {
   isLoggedIn: boolean | undefined;
   showButton = true;
 
-  constructor(private firebaseService: FirebaseService) {
+  constructor(private firebaseService: FirebaseService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -63,6 +63,7 @@ export class GenBillComponent implements OnInit {
     this.total = this.basketItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   }
 
+
   generatePdf() {
     this.showButton = false; // Esconde el botón antes de la captura
 
@@ -83,6 +84,10 @@ export class GenBillComponent implements OnInit {
           pdf.save('basket-details.pdf');
 
           this.showButton = true; // Muestra el botón de nuevo si es necesario
+
+          // Redirecciona a la página de inicio después de generar el PDF
+          this.router.navigate(['/Home']);
+
         });
       } else {
         console.error('Element #basket-contents not found');
@@ -90,6 +95,23 @@ export class GenBillComponent implements OnInit {
       }
     }, 100); // Timeout para asegurar que la UI se actualiza y el botón desaparece antes de la captura
   }
+/*
+  FALTA AÑADIR AQUI LOGICA PARA VACIAR LA CESTA JUSTO AL ABANDONAR LA PAGINA
+  ngOnDestroy() {
+    this.firebaseService.clearBasket(this.firebaseService.getCurrentUserUid());
+
+  }
+
+  esta funcion en firebase.service.ts seria:
+  clearBasket(userId: string) {
+    this.db.collection(`users/${userId}/basket`).get().then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        doc.ref.delete();
+      });
+    });
+  }
+*/
+
 
 
 }

@@ -2,8 +2,8 @@
 <div class="basket-container">
   <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
     <!-- Verificamos si hay ítems en la cesta -->
-    <div class="basket-container-2">
-      <ng-container *ngIf="basketItems.length > 0; else emptyBasketTemplate">
+    <ng-container *ngIf="basketItems.length > 0; else emptyBasketTemplate">
+      <div class="basket-container-2">
         <ul>
           <li *ngFor="let item of basketItems">
             <img [src]="item['img-route']" alt="Product image">
@@ -18,15 +18,21 @@
         <div class="total">
           <h3>Total: {{ total | currency:'EUR':true:'1.2' }}</h3>
         </div>
-      </ng-container>
-      <ng-template #emptyBasketTemplate>
-        <p>Your basket is empty.</p>
-      </ng-template>
-    </div>
+        <div class="button">
+          <button routerLink="/paymentGateway">Checkout</button>
+        </div>
+      </div>
+    </ng-container>
   </ng-container>
+  <ng-template #emptyBasketTemplate>
+    <div class="empty-basket">
+      <i class="fas fa-shopping-basket fa-10x" style="opacity: 0.3;"></i>
+      <p>Your basket is empty.</p>
+    </div>
+  </ng-template>
 
   <ng-template #notLoggedInTemplate>
-    <div class="empty-basket">
+    <div class="noLog-basket">
       <i class="fas fa-shopping-basket fa-10x" style="opacity: 0.3;;"></i>
       <p>Session not logged. <a routerLink="/register-login">Log in</a> to add products to the basket.</p>
     </div>

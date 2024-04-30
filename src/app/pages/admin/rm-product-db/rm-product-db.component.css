@@ -1,0 +1,83 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  background-color: beige;
+  height: 100%;
+}
+
+.remove-product-form {
+  width: 80vw;
+  margin: 2em auto;
+  padding: 2em;
+  background: #fff;
+  border-radius: 0.625em; /* 10px */
+  box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.remove-product-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5em;
+}
+
+.remove-product-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove-product-form label {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.remove-product-form input,
+.remove-product-form select {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.remove-product-form button {
+  padding: 1em 1em;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em; /* Adjusted to em */
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.remove-product-form button:hover {
+  background-color: #c82333;
+}
+
+.product-preview {
+  margin-top: 1.5em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.product-preview h3 {
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.product-preview p {
+  margin: 0.5em 0;
+  color: #666;
+}
+

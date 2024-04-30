@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="add-product-form">
+  <h2>Add Product</h2>
+  <form (ngSubmit)="submitProduct()">
+    <label for="productCategory">Product Category:</label>
+    <select id="productCategory" [(ngModel)]="category" name="category" required>
+      <option value="appetizer">Appetizer</option>
+      <option value="cocktails">Cocktails</option>
+      <option value="drinks">Drinks</option>
+      <option value="frozen-desserts">Frozen Desserts</option>
+      <option value="smoothies">Smoothies</option>
+    </select>
+
+    <label for="productId">Product ID:</label>
+    <input type="text" id="productId" [(ngModel)]="productId" name="productId" required>
+
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" [(ngModel)]="product.name" name="name" required>
+
+    <label for="productPrice">Price:</label>
+    <input type="number" id="productPrice" [(ngModel)]="product.price" name="price" required>
+
+    <label for="productDescription">Description:</label>
+    <textarea id="productDescription" [(ngModel)]="product.description" name="description"></textarea>
+
+    <label for="productImage">Image Route:</label>
+    <input type="text" id="productImage" [(ngModel)]="product.imgRoute" name="imgRoute">
+
+    <button type="submit">Add Product</button>
+  </form>
+</div>

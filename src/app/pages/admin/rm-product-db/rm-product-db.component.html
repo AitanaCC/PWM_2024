@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="remove-product-form">
+  <h2>Delete Product</h2>
+  <form>
+    <label for="productCategory">Product Category:</label>
+    <select id="productCategory" [(ngModel)]="category" name="category" required>
+      <option value="appetizer">Appetizer</option>
+      <option value="cocktails">Cocktails</option>
+      <option value="drinks">Drinks</option>
+      <option value="frozen-desserts">Frozen Desserts</option>
+      <option value="smoothies">Smoothies</option>
+    </select>
+
+    <label for="productId">Product ID:</label>
+    <input type="text" id="productId" [(ngModel)]="productId" name="productId" required>
+
+    <button type="button" (click)="fetchProduct()">Get Details</button>
+  </form>
+
+  <div *ngIf="productDetails" class="product-preview">
+    <h3>Product Details:</h3>
+    <p><b>Name:</b> {{ productDetails.name }}</p>
+    <p><b>Description:</b> {{ productDetails.description }}</p>
+    <p><b>Price:</b> {{ productDetails.price | currency }}</p>
+    <button *ngIf="confirmDelete" (click)="removeProduct()">Confirm Deletion</button>
+    <button *ngIf="!confirmDelete" (click)="confirmDeletion()">Delete Product</button>
+  </div>
+</div>

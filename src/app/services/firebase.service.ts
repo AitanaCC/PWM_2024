@@ -51,64 +51,13 @@ export class FirebaseService {
       }
     });
   }
-// Función para añadir documentos
-  async addDocument(collectionName: string, data: any): Promise<DocumentReference> {
-    try {
-      const docRef = await addDoc(collection(this.db, collectionName), data);
-      console.log("Document written with ID: ", docRef.id);
-      return docRef;  // Devuelve el DocumentReference
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      throw e;  // Lanza el error para manejo externo
-    }
-  }
 
-  // Función para obtener documentos
   async getDocuments(collectionName: string): Promise<QuerySnapshot> {
     try {
       const querySnapshot = await getDocs(collection(this.db, collectionName));
       return querySnapshot;  // Devuelve el QuerySnapshot
     } catch (e) {
       console.error("Error getting documents: ", e);
-      throw e;  // Lanza el error para manejo externo
-    }
-  }
-
-  // Función para obtener un documento específico
-  async getDocument(collectionName: string, docId: string): Promise<any> {
-    try {
-      const docRef = doc(this.db, collectionName, docId);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        return docSnap.data();  // Devuelve los datos del documento
-      } else {
-        console.log("No such document!");
-        return null;  // Devuelve null si el documento no existe
-      }
-    } catch (e) {
-      console.error("Error getting document: ", e);
-      throw e;  // Lanza el error para manejo externo
-    }
-  }
-
-  // Función para actualizar un documento
-  async updateDocument(collectionName: string, docId: string, newData: any): Promise<void> {
-    try {
-      const docRef = doc(this.db, collectionName, docId);
-      await updateDoc(docRef, newData);
-    } catch (e) {
-      console.error("Error updating document: ", e);
-      throw e;  // Lanza el error para manejo externo
-    }
-  }
-
-  // Función para eliminar un documento
-  async deleteDocument(collectionName: string, docId: string): Promise<void> {
-    try {
-      const docRef = doc(this.db, collectionName, docId);
-      await deleteDoc(docRef);
-    } catch (e) {
-      console.error("Error deleting document: ", e);
       throw e;  // Lanza el error para manejo externo
     }
   }
@@ -124,20 +73,20 @@ export class FirebaseService {
     }
     const basketRef = collection(this.db, `users/${this.currentUserUid}/basket`);
 
-    // Si la cantidad es null, se debe eliminar el producto (excepto si es 'empty')
+    // If the quantity is null, the product should be deleted (except if it's 'empty')
     if (quantity === null) {
       if (productId !== 'empty') {
         const productDocRef = doc(basketRef, productId);
         await deleteDoc(productDocRef);
-        console.log(`Producto ${productId} eliminado de la cesta.`);
+        console.log(`Product ${productId} removed from the basket.`);
       }
       return;
     }
 
-    // Actualizar o añadir un nuevo producto (incluyendo 'empty')
+    // Update or add a new product (including 'empty')
     const productDocRef = doc(basketRef, productId);
     await setDoc(productDocRef, { quantity }, { merge: true });
-    console.log(`Producto ${productId} actualizado/añadido con cantidad ${quantity}.`);
+    console.log(`Product ${productId} updated/added with quantity ${quantity}.`);
   }
 
 
@@ -212,7 +161,36 @@ export class FirebaseService {
     return basketItems;
   }
 
+  async addProduct(product: any, category: string, productId: string): Promise<void> {
+    try {
+      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
+      await setDoc(productRef, product);
+      console.log('Product added successfully in category:', category);
+    } catch (error) {
+      console.error('Error adding product:', error);
+      throw error;
+    }
+  }
 
+  async removeProduct(category: string, productId: string): Promise<void> {
+    try {
+      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
+      await deleteDoc(productRef);
+      console.log('Product removed successfully in category:', category);
+    } catch (error) {
+      console.error('Error removing product:', error);
+      throw error;
+    }
+  }
 
+  async getProduct(category: string, productId: string): Promise<any> {
+    const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
+    const docSnap = await getDoc(productRef);
+    if (docSnap.exists()) {
+      return docSnap.data(); // Returns the product details
+    } else {
+      throw new Error('Product not found');
+    }
+  }
 
 }
