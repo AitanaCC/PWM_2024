@@ -4,27 +4,28 @@
   align-items: center;
   background-color: #333; /* Color oscuro para contrastar con el texto blanco */
   color: white;
-  padding: 20px;
-  flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
-  gap: 20%;
+  flex-wrap: wrap;
   flex-direction: row;
   z-index: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-right {
-  width: 400px; /* Asegúrate de que tiene suficiente ancho */
-  height: 300px; /* Altura mínima para visualizar correctamente el mapa */
-  padding: 10px;
+  width: 20em;/* Asegúrate de que tiene suficiente ancho */
+  margin: 2%;
 }
 
-
 h3 {
-  margin-top: 0; /* Elimina el margen superior para alinear el título con el borde superior */
+  font-size: 2vw;
   color: #FFD700; /* Color dorado para los títulos */
 }
 
 p {
-  margin: 5px 0; /* Reduce el margen para los párrafos */
+  margin: 2em 0;
+  font-size: 1.5vw;
 }
 
+b{
+  color: #FFD700;
+}
 

@@ -1,4 +1,5 @@
-/* header.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,7 +10,9 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   margin: 2%;
   height: 10vh;
-  border-radius: 20px
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 
@@ -35,24 +38,23 @@
 .sidebar a {
   padding: 1em 2em;
   text-decoration: none;
-  font-size: 1.5em;
   color: #000000;
   display: block;
   transition: 0.5s;
+  font-size: 1.8em;
 }
-
 
 .sidebar hr {
   border: 0;
   height: 3px;
   background-color: black;
-  margin: 0 auto;
+  margin: 10%;
   width: 80%;
 }
 
 .closebtn {
   position: relative;
-  left: 200px;
+  left: 15rem;
   cursor: pointer;
   font-size: 2em; /* Tamaño de la 'X' */
   font-weight: bold;
@@ -66,20 +68,30 @@
   margin-left: 20px;
   cursor: pointer;
 }
+.overlay {
+  position: fixed; /* Posición fija respecto a la ventana del navegador */
+  width: 100%; /* Cubre toda la anchura */
+  height: 100%; /* Cubre toda la altura */
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro con transparencia */
+  z-index: 2; /* Asegúrate de que esté por debajo del sidebar pero por encima del contenido normal */
+}
+
 .sidebar {
   height: 100%;
-  width: 250px;
+  width: 20rem;
   position: fixed; /* Fijar el sidebar en la pantalla */
-  z-index: 1; /* Colocar el sidebar por encima del contenido */
   left: 0;
   top: 0;
-  padding-top: 5%;
+  padding-top: 2.5%;
   background-color: #ffffff; /* Color de fondo del sidebar */
   box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Sombra para un efecto 3D */
   transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
   border-bottom-right-radius: 5%;
   border-top-right-radius: 5%;
+  z-index: 3;
 }
 
 .header .sidebar {
@@ -108,7 +120,7 @@
   width: 350%;
   height: 300%;
   display: none;
-  z-index: 3;
+  z-index: 1;
 }
 
 .menu.visible {
@@ -118,8 +130,9 @@
 .menu ul {
   list-style: none;
   margin: 0;
-  font-family: Poppins;
-  z-index: 3;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .menu ul li {
@@ -128,4 +141,14 @@
 
 .menu ul li:hover {
   cursor: pointer;
+}
+
+.menu ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.basket-image{
+  margin-right: 1em;
 }

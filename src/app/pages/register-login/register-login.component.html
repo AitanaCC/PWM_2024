@@ -7,11 +7,17 @@
     <form (submit)="login()">
       <input type="text" placeholder="Enter your email" [(ngModel)]="loginEmail" name="loginEmail">
       <input type="password" placeholder="Enter your password" [(ngModel)]="loginPassword" name="loginPassword">
-      <a href="/">Forgot password?</a>
+
+      <a routerLink="/password-reset">Forgot password?</a>
+
       <input type="button" class="button" value="Login" (click)="login()">
       <a *ngIf="isAuthenticated" routerLink="/Home">
         <button #autoButton (click)="autoFunc()" style="display: none">Click</button>
       </a>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
     </form>
     <div class="signup">
         <span class="signup">Don't have an account?
@@ -29,6 +35,10 @@
       <a *ngIf="isAuthenticated" routerLink="/Home">
         <button #autoButton (click)="autoFunc()" style="display: none">Click</button>
       </a>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
     </form>
     <div class="signup">
         <span class="signup">Already have an account?

@@ -15,5 +15,4 @@ export class ContactUsComponent {
   contructor(){
     this.contactEmail="email@example.com"
   }
-
 }

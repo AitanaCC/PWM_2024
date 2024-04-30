@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div id="principalContainer">
+  <div id="basket-contents" style="background-color: white; padding: 20px;">
+    <h1>Purchase Receipt</h1>
+    <ul>
+      <li *ngFor="let item of basketItems">
+        <img [src]="item['img-route']" alt="Product image" style="width: 100px; height: auto;">
+        <div>
+          <h3>{{ item.name }}</h3>
+          <p>Price: {{ item.price | currency:'EUR':true:'1.2' }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+        </div>
+      </li>
+    </ul>
+    <p class="total">Total: {{ total | currency:'EUR':true:'1.2' }}</p>
+    <button *ngIf="showButton" (click)="generatePdf()">Generate PDF</button>
+  </div>
+</div>
+<!--FALTA AÑADIR AQUI LOGICA PARA VACIAR LA CESTA JUSTO AL ABANDONAR LA PAGINA-->

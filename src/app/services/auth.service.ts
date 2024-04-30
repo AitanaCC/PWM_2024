@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, deleteUser } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, deleteUser, sendPasswordResetEmail } from 'firebase/auth';
 import { getFirestore, doc, setDoc, deleteDoc } from 'firebase/firestore';
-import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -99,6 +98,17 @@ export class AuthService {
   isLoggedIn(): boolean {
     const user = this.auth.currentUser;
     return user !== null;
+  }
+
+  // Añade el método de reseteo de contraseña aquí
+  async resetPassword(email: string): Promise<void> {
+    try {
+      await sendPasswordResetEmail(this.auth, email);
+      console.log("Reset password email sent.");
+    } catch (error) {
+      console.error("Failed to send reset password email:", error);
+      throw error;
+    }
   }
 
 }
