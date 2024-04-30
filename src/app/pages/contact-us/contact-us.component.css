@@ -1,0 +1,157 @@
+/*body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background-color: beige;
+  width: 100%;
+  overflow-x: hidden;
+}*/
+
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.centered-text {
+  position: absolute;
+  top: 53%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 80%;
+}
+
+.centered-text h1 {
+  font-size: 50px;
+  color: white;
+}
+
+
+/* Contenedor Principal de Contacto */
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Sección de Información de Contacto */
+#contact-info {
+  display: flex;
+  flex-wrap: wrap; /* Hace que los bloques de información sean responsivos */
+  justify-content: space-around;
+  background-color: #9b9b9b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 960px; /* Ajusta este valor según tus preferencias */
+}
+
+.info-block {
+  margin: 10px;
+  padding: 10px;
+  flex-basis: 30%; /* Controla el ancho de los bloques en diferentes tamaños de pantalla */
+  color: #fff;
+}
+
+/* Formulario de Contacto */
+.info-block.contact-form {
+  flex-basis: 100%; /* Ocupa el ancho completo para mayor claridad */
+}
+
+.info-block.contact-form form {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos del formulario */
+}
+
+.info-block.contact-form input,
+.info-block.contact-form textarea,
+.info-block.contact-form button {
+  width: 90%; /* Establece un ancho específico para todos los elementos del formulario */
+  max-width: 500px; /* Asegura que los elementos no se extiendan demasiado en pantallas grandes */
+  padding: 10px;
+  margin-bottom: 10px; /* Espaciado entre elementos del formulario */
+  border-radius: 5px;
+  border: 1px solid #ddd; /* Estilo del borde, ajusta según tu diseño */
+}
+
+.info-block.contact-form button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none; /* Remueve el borde para el botón, opcional */
+}
+
+.info-block.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  #contact-info {
+    flex-direction: column;
+  }
+}
+
+
+
+/*--------------------PARÁMETROS MEDIA--------------------*/
+
+/* Ajustes para Tamaño Web: 1366x768 */
+@media (min-width: 1025px) {
+  .info-block.contact-form input,
+  .info-block.contact-form textarea,
+  .info-block.contact-form button {
+    width: 90%; /* Ocupa más espacio en pantallas más grandes */
+  }
+}
+
+/* Ajustes para Tamaño Tablet: 1024x765 */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .info-block.contact-form input,
+  .info-block.contact-form textarea,
+  .info-block.contact-form button {
+    width: 85%; /* Un poco más estrecho para tabletas */
+  }
+}
+
+/* Ajustes para Tamaño Móvil: 360x640 */
+@media (max-width: 640px) {
+  .info-block.contact-form input,
+  .info-block.contact-form textarea,
+  .info-block.contact-form button {
+    width: 100%; /* Aprovecha todo el ancho disponible en dispositivos móviles */
+  }
+
+  #contact-info {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .info-block {
+    margin: 10px 0; /* Aumenta el margen para una mejor visualización en móviles */
+    flex-basis: 100%; /* Los bloques de información usan todo el ancho */
+  }
+
+  .info-block.contact-form {
+    margin-left: 0; /* Alinea correctamente el formulario en dispositivos móviles */
+  }
+
+
+  nav {
+    display: flex;
+    justify-content: space-between; /* Si tienes varios elementos en tu nav, los alinea al final */
+    margin-right: 1%;
+  }
+
+
+}
