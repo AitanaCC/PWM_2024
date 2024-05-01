@@ -1,7 +1,16 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, deleteUser, sendPasswordResetEmail } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  deleteUser,
+  sendPasswordResetEmail,
+  onAuthStateChanged
+} from 'firebase/auth';
 import { getFirestore, doc, setDoc, deleteDoc } from 'firebase/firestore';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +20,8 @@ export class AuthService {
   private auth: any;
   private db: any;
   private adminUid: string = 'QNaiW8obd1UXEuc8CuPWC5Peadn1'; // Admin UID
+  private userStatus = new BehaviorSubject<boolean>(false);
+  private adminStatus = new BehaviorSubject<boolean>(false);
 
   constructor() {
     const firebaseConfig = {
@@ -24,6 +35,13 @@ export class AuthService {
     this.app = initializeApp(firebaseConfig);
     this.auth = getAuth(this.app);
     this.db = getFirestore(this.app);
+
+    // Escuchar cambios de estado de autenticación
+    onAuthStateChanged(this.auth, (user) => {
+      const loggedIn = user !== null;
+      this.userStatus.next(loggedIn);
+      this.adminStatus.next(loggedIn && user.uid === this.adminUid);
+    });
   }
   async registerUser(email: string, password: string) {
     try {
@@ -95,9 +113,8 @@ export class AuthService {
       throw error;
     }
   }
-  isLoggedIn(): boolean {
-    const user = this.auth.currentUser;
-    return user !== null;
+  get isLoggedIn() {
+    return this.userStatus.asObservable();
   }
 
   // Añade el método de reseteo de contraseña aquí
@@ -110,10 +127,8 @@ export class AuthService {
       throw error;
     }
   }
-
-  isAdmin(): boolean {
-    const user = this.auth.currentUser;
-    return user && user.uid === this.adminUid;
+  get isAdmin() {
+    return this.adminStatus.asObservable();
   }
 
 }

@@ -1,9 +1,10 @@
 <app-header></app-header>
-<div class="remove-product-form">
+<div *ngIf="isAdmin; else notAdminContent" class="remove-product-form">
   <h2>Delete Product</h2>
   <form>
     <label for="productCategory">Product Category:</label>
     <select id="productCategory" [(ngModel)]="category" name="category" required>
+      <option value="">Select a Category</option>
       <option value="appetizer">Appetizer</option>
       <option value="cocktails">Cocktails</option>
       <option value="drinks">Drinks</option>
@@ -26,3 +27,6 @@
     <button *ngIf="!confirmDelete" (click)="confirmDeletion()">Delete Product</button>
   </div>
 </div>
+<ng-template #notAdminContent>
+  <app-permission-denied></app-permission-denied>
+</ng-template>

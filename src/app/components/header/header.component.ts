@@ -19,8 +19,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    this.isAdmin = this.authService.isAdmin();
+    this.authService.isLoggedIn.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
+    this.authService.isAdmin.subscribe((adminStatus) => {
+      this.isAdmin = adminStatus;
+    });
   }
 
   toggleSidebar(): void {
@@ -34,6 +38,4 @@ export class HeaderComponent implements OnInit {
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
   }
-
-
 }

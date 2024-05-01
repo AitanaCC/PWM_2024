@@ -1,6 +1,6 @@
-import {Component, Inject, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {AsyncPipe, NgIf} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {FooterComponent} from "./components/footer/footer.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {NgOptimizedImage} from "@angular/common";
@@ -9,6 +9,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import {FirebaseService} from './services/firebase.service';
 import {FormsModule} from "@angular/forms";
 import { AuthService } from './services/auth.service';
+import { routes } from './app.routes'; // Importa las rutas definidas en tu archivo de rutas
 
 @Component({
   selector: 'app-root',
@@ -45,18 +46,26 @@ import { AuthService } from './services/auth.service';
  * isBasketEmpty: boolean | null
  */
 
-export class AppComponent{
+export class AppComponent implements OnInit{
 
   userId: string | null = null;       // Almacena el ID de usuario
   isBasketEmpty: boolean | null = null;
   documentDetails: any;
   email: string = '';
   password: string = '';
+  showFooter: boolean = true;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private firebaseService: FirebaseService, private authService: AuthService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private firebaseService: FirebaseService, private authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = this.router.url.split('?')[0]; // Obtén la ruta actual
+        const isNotFoundRoute = currentRoute === '/not-found'; // Verifica si es la ruta NotFound
+        this.showFooter = !isNotFoundRoute; // Si es la ruta NotFound, no muestra el footer
+      }
+    });
   }
-
-
 
   updateProductInBasket(productId: string, quantity: number | null) {
     this.firebaseService.updateBasket(productId, quantity);
@@ -66,10 +75,6 @@ export class AppComponent{
      * <button (click)="updateProductInBasket('user1', '00002', null)">Eliminar Producto</button>
      */
 
-  }
-
-  currenUser(){
-    this.userId = this.firebaseService.getCurrentUserUid();
   }
 
   checkIfBasketIsEmpty(userId: string) {

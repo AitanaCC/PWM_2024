@@ -1,11 +1,6 @@
-/*body {
-  margin: 0;
-  font-family: Poppins, sans-serif;
+:host{
   background-color: beige;
-  width: 100%;
-  overflow-x: hidden;
-}*/
-
+}
 
 #wrapper {
   display: flex;

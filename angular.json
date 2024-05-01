@@ -23,7 +23,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "/node_modules/leaflet/dist/images", "output": "/src/assets/leaflet-images/" }
             ],
             "styles": [
               "src/styles.css",

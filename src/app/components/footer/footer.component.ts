@@ -12,6 +12,6 @@ import {MapLeafletComponent} from "../map-leaflet/map-leaflet.component";
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  contactEmail: string = 'example@example.com';
+  contactEmail: string = 'pwm.app.angular@gmail.com';
 
 }

@@ -8,7 +8,6 @@ import {DocumentReference} from 'firebase/firestore';
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-
 @Component({
   selector: 'app-gen-bill',
   standalone: true,
@@ -28,35 +27,35 @@ export class GenBillComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.firebaseService.getCurrentUserUid()) {
-      this.isLoggedIn = true;
-      this.loadBasketItems();
-    } else {
-      this.isLoggedIn = false;
-    }
+    this.firebaseService.getCurrentUserUid().subscribe(uid => {
+      if (uid) {
+        this.isLoggedIn = true;
+        this.loadBasketItems(uid);
+      } else {
+        this.isLoggedIn = false;
+        this.basketItems = []; // Limpiar el carrito cuando no hay usuario loggeado
+        this.total = 0;
+      }
+    });
   }
 
-  async loadBasketItems() {
-    const userId = this.firebaseService.getCurrentUserUid();
-    if (userId) {
-      const basketSnapshot = await this.firebaseService.getDocuments(`users/${userId}/basket`);
-      const productDetailsPromises = basketSnapshot.docs.map(async docItem => {
-        const itemData = docItem.data();
-        // Asegúrate de que 'ref' se trata como DocumentReference y accede de manera segura
-        const itemRef = itemData['ref'] as DocumentReference;
-        if (itemRef) {
-          const productDetails = await this.firebaseService.getDocumentByRef(itemRef);
-          return {...itemData, ...productDetails};
-        } else {
-          console.error('No reference found for this item');
-          return null;
-        }
-      });
+  async loadBasketItems(userId: string) {
+    const basketSnapshot = await this.firebaseService.getDocuments(`users/${userId}/basket`);
+    const productDetailsPromises = basketSnapshot.docs.map(async docItem => {
+      const itemData = docItem.data();
+      const itemRef = itemData['ref'] as DocumentReference;
+      if (itemRef) {
+        const productDetails = await this.firebaseService.getDocumentByRef(itemRef);
+        return {...itemData, ...productDetails};
+      } else {
+        console.error('No reference found for this item');
+        return null;
+      }
+    });
 
-      this.basketItems = await Promise.all(productDetailsPromises);
-      this.basketItems = this.basketItems.filter(item => item); // Filtrar nulls si algún documento no fue encontrado
-      this.calculateTotal();
-    }
+    this.basketItems = await Promise.all(productDetailsPromises);
+    this.basketItems = this.basketItems.filter(item => item !== null); // Filtrar nulls
+    this.calculateTotal();
   }
 
   calculateTotal() {
@@ -95,23 +94,29 @@ export class GenBillComponent implements OnInit {
       }
     }, 100); // Timeout para asegurar que la UI se actualiza y el botón desaparece antes de la captura
   }
-/*
-  FALTA AÑADIR AQUI LOGICA PARA VACIAR LA CESTA JUSTO AL ABANDONAR LA PAGINA
-  ngOnDestroy() {
-    this.firebaseService.clearBasket(this.firebaseService.getCurrentUserUid());
 
-  }
+  /*
+    FALTA AÑADIR AQUI LOGICA PARA VACIAR LA CESTA JUSTO AL ABANDONAR LA PAGINA
+    ngOnDestroy(): void {
+      this.clearBasket();
+    }
 
-  esta funcion en firebase.service.ts seria:
-  clearBasket(userId: string) {
-    this.db.collection(`users/${userId}/basket`).get().then(snapshot => {
-      snapshot.docs.forEach(doc => {
-        doc.ref.delete();
-      });
-    });
-  }
-*/
+    async clearBasket() {
+      const uid = await this.firebaseService.getCurrentUserUid().toPromise(); // asumiendo que getCurrentUserUid retorna un Observable
+      if (uid) {
+        this.firebaseService.clearBasket(uid);
+      }
+    }
 
-
+    esta funcion en firebase.service.ts seria:
+    clearBasket(userId: string) {
+      const basketRef = collection(this.db, `users/${userId}/basket`);
+      getDocs(basketRef).then(snapshot => {
+        snapshot.forEach(doc => {
+          deleteDoc(doc.ref); // elimina cada documento
+        });
+      }).catch(error => console.error("Error clearing basket:", error));
+    }
+  */
 
 }

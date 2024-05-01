@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FirebaseService } from "../../../services/firebase.service";
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "../../../components/header/header.component";
+import {AuthService} from "../../../services/auth.service";
+import { Router } from '@angular/router';
+import {NgIf} from "@angular/common";
+import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
 
 @Component({
   selector: 'app-add-product-db',
@@ -9,11 +13,13 @@ import { HeaderComponent } from "../../../components/header/header.component";
   templateUrl: './add-product-db.component.html',
   imports: [
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    NgIf,
+    PermissionDeniedComponent
   ],
   styleUrls: ['./add-product-db.component.css']
 })
-export class AddProductDbComponent {
+export class AddProductDbComponent implements OnInit {
   product = {
     name: '',
     price: 0,
@@ -22,9 +28,21 @@ export class AddProductDbComponent {
   };
   category: string = '';
   productId: string = '';
-  constructor(private firebaseService: FirebaseService) {}
+  isAdmin: boolean = false;
+  alertShown: boolean = false;  // Flag para controlar la alerta
 
+  constructor(private authService: AuthService, private firebaseService: FirebaseService, private router: Router) {}
+
+  ngOnInit() {
+    this.authService.isAdmin.subscribe(isAdmin => {
+      this.isAdmin = isAdmin;
+    });
+  }
   submitProduct() {
+    if (!this.isAdmin) {
+      alert('You are not authorized to perform this action.');
+      return;
+    }
     if (this.product.name && this.product.price > 0 && this.productId && this.category) {
       this.firebaseService.addProduct(this.product, this.category, this.productId).then(() => {
         alert('Product added successfully.');

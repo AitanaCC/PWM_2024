@@ -17,6 +17,7 @@ import {
 } from 'firebase/firestore';
 
 import { getAuth, onAuthStateChanged, Auth } from 'firebase/auth';
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class FirebaseService {
   app: any;
   db: Firestore;
   auth: Auth;
-  currentUserUid: string | null = null; // Almacena el UID del usuario actual
+  private currentUserUid = new BehaviorSubject<string | null>(null);
 
   constructor() {
     const firebaseConfig = {
@@ -42,13 +43,7 @@ export class FirebaseService {
     this.auth = getAuth(this.app);
 
     onAuthStateChanged(this.auth, (user) => {
-      if (user) {
-        this.currentUserUid = user.uid; // Actualiza el UID cuando el usuario está loggeado
-        console.log("Logged in as:", user.uid);
-      } else {
-        this.currentUserUid = null; // Limpia el UID cuando no hay usuario loggeado
-        console.log("No user logged in.");
-      }
+      this.currentUserUid.next(user ? user.uid : null); // Actualiza el BehaviorSubject
     });
   }
 
@@ -62,9 +57,8 @@ export class FirebaseService {
     }
   }
 
-  getCurrentUserUid(): string | null {
-    const user = this.auth.currentUser;
-    return user ? user.uid : null;
+  getCurrentUserUid() {
+    return this.currentUserUid.asObservable(); // Devuelve un Observable
   }
 
   async updateBasket(productId: string, quantity: number|null) {

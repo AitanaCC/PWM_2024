@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="add-product-form">
+<div  *ngIf="isAdmin; else notAdminContent" class="add-product-form">
   <h2>Add Product</h2>
   <form (ngSubmit)="submitProduct()">
     <label for="productCategory">Product Category:</label>
@@ -29,3 +29,6 @@
     <button type="submit">Add Product</button>
   </form>
 </div>
+<ng-template #notAdminContent>
+  <app-permission-denied></app-permission-denied>
+</ng-template>

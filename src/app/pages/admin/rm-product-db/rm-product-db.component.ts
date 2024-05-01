@@ -1,28 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../../../services/auth.service";
 import { FirebaseService } from "../../../services/firebase.service";
-import { FormsModule } from "@angular/forms";
-import { HeaderComponent } from "../../../components/header/header.component";
-import { CurrencyPipe, NgIf } from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {HeaderComponent} from "../../../components/header/header.component";
+import {CurrencyPipe, NgIf} from "@angular/common";
+import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
 
 @Component({
   selector: 'app-rm-product-db',
   templateUrl: './rm-product-db.component.html',
   standalone: true,
+  styleUrls: ['./rm-product-db.component.css'],
   imports: [
     FormsModule,
     HeaderComponent,
     CurrencyPipe,
-    NgIf
-  ],
-  styleUrls: ['./rm-product-db.component.css']
+    NgIf,
+    PermissionDeniedComponent
+  ]
 })
-export class RmProductDbComponent {
+export class RmProductDbComponent implements OnInit {
+  isAdmin: boolean = false;
   category: string = '';
   productId: string = '';
   productDetails: any = null;
   confirmDelete: boolean = false;
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private authService: AuthService, private firebaseService: FirebaseService) {}
+
+  ngOnInit() {
+    this.authService.isAdmin.subscribe(isAdmin => {
+      this.isAdmin = isAdmin;
+    });
+  }
 
   fetchProduct() {
     if (this.category && this.productId) {
@@ -38,11 +48,10 @@ export class RmProductDbComponent {
 
   confirmDeletion() {
     this.confirmDelete = true;
-    alert('Are you sure you want to delete the product? If yes, click confirm deletion.');
   }
 
   removeProduct() {
-    if (this.confirmDelete && this.category && this.productId) {
+    if (this.category && this.productId) {
       this.firebaseService.removeProduct(this.category, this.productId).then(() => {
         alert('Product deleted successfully.');
         this.productDetails = null;
@@ -54,6 +63,7 @@ export class RmProductDbComponent {
       });
     }
   }
+
   resetForm() {
     this.category = '';
     this.productId = '';
