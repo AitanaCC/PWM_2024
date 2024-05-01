@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class = categories>
+  <ul>
+    <li *ngFor="let category of categories" >
+      {{category | uppercase}}
+    </li>
+    <!---
+    <li class="category" *ngFor="let category of categories" >
+      {{category}}
+    </li>
+    --->
+  </ul>
+</div>
+
+

@@ -38,7 +38,7 @@
   <div *ngIf="sidebarOpen" class="sidebar">
     <div class="closebtn" (click)="toggleSidebar()">&times;</div>
     <a routerLink="/Home">Drinks</a>
-    <a routerLink="/">Smoothies</a>
+    <a [routerLink]="['/products']">Smoothies</a>
     <a routerLink="/">Cocktails</a>
     <a routerLink="/">Frozen Desserts</a>
     <a routerLink="/">Appetizer</a>

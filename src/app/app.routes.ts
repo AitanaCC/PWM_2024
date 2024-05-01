@@ -9,6 +9,7 @@ import {GenBillComponent} from "./pages/gen-bill/gen-bill.component";
 import {AddProductDbComponent} from "./pages/admin/add-product-db/add-product-db.component";
 import {RmProductDbComponent} from "./pages/admin/rm-product-db/rm-product-db.component";
 import {NotFoundComponent} from "./pages/not-found/not-found.component";
+import {ProductsComponent} from "./pages/products/products.component";
 
 export const routes: Routes = [
 
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {path: 'add-product', component:AddProductDbComponent},
   {path: 'rm-product', component: RmProductDbComponent},
   {path: 'paymentGateway', component: PaymentComponent},
+  {path: 'products', component: ProductsComponent},
   {path: '**', redirectTo: 'not-found'},
   {path: 'not-found', component: NotFoundComponent }
 ];
