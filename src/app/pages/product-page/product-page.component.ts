@@ -13,7 +13,21 @@ import {DocumentReference} from 'firebase/firestore';
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.css'
 })
-export class ProductPageComponent {
+export class ProductPageComponent implements OnInit {
 
+  product: Product = { id: "",
+    description: "",
+    imgRoute: "",
+    name: "",
+    price: 0 };
 
+  ngOnInit() {
+    //const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.product = {  id: "0001/0001",
+      description: "Savor the crisp, effervescent delight of Coke. With its iconic flavor and refreshing fizz, it's a timeless classic that elevates any moment.",
+      imgRoute: "../../../assets/img/drinks/coke.png",
+      name: "Coke",
+      price: 1.68};
+      //this.product = this.productService.getProductById(id);
+  }
 }
