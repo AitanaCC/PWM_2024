@@ -10,6 +10,8 @@ import {AddProductDbComponent} from "./pages/admin/add-product-db/add-product-db
 import {RmProductDbComponent} from "./pages/admin/rm-product-db/rm-product-db.component";
 import {NotFoundComponent} from "./pages/not-found/not-found.component";
 import {ProductsComponent} from "./pages/products/products.component";
+import {ProductPageComponent} from "./pages/product-page/product-page.component";
+import {ProfileComponent} from "./pages/profile/profile.component";
 
 export const routes: Routes = [
 
@@ -25,6 +27,8 @@ export const routes: Routes = [
   {path: 'rm-product', component: RmProductDbComponent},
   {path: 'paymentGateway', component: PaymentComponent},
   {path: 'products', component: ProductsComponent},
+  {path: 'product-page', component: ProductPageComponent },
+  {path: 'profile', component: ProfileComponent},
   {path: '**', redirectTo: 'not-found'},
   {path: 'not-found', component: NotFoundComponent }
 ];

@@ -18,14 +18,39 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadCategorires().then(r => {
+      if (this.categories) {
+        console.log("después del load cat: ", this.categories);
+        this.loadSubcollections();
+      }
+    });
+
+  }
+
+  async loadSubcollections() {
+    const subcollections = await this.productService.getSubcollectionNames(this.categories![2]);
+    console.log(subcollections.join(", "));
+    for (const subcollectionId of subcollections) {
+      const documents = await this.productService.getDocumentsFromSubcollection(this.categories![2], subcollectionId);
+      console.log('Documents in subcollection', subcollectionId, documents);
+    }
+  }
+/*
+  ngOnInit() {
     /*this.productService.getCategories().subscribe((res) =>{
       this.categories = res;
-    });*/
-    this.loadCategorires();
+    });
+    this.loadCategorires().then(r => {
+      if (this.categories) {
+        console.log("después del load cat: ", this.categories);
+        this.productService.getProductsByCat(this.categories[2]);
+      }
+    });
+
 
     //console.log("Categoría: ");
   }
-
+*/
   async loadCategorires() {
     try {
       const result = await this.productService.getCategories();
@@ -35,4 +60,7 @@ export class ProductsComponent implements OnInit {
       console.error("Error al cargar las categorías...", error);
     }
   }
+
+
+
 }

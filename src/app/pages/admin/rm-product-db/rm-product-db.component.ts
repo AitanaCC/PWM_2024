@@ -5,6 +5,7 @@ import {FormsModule} from "@angular/forms";
 import {HeaderComponent} from "../../../components/header/header.component";
 import {CurrencyPipe, NgIf} from "@angular/common";
 import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
+import {ProductService} from "../../../services/product.service";
 
 @Component({
   selector: 'app-rm-product-db',
@@ -26,7 +27,7 @@ export class RmProductDbComponent implements OnInit {
   productDetails: any = null;
   confirmDelete: boolean = false;
 
-  constructor(private authService: AuthService, private firebaseService: FirebaseService) {}
+  constructor(private authService: AuthService, private productService: ProductService) {}
 
   ngOnInit() {
     this.authService.isAdmin.subscribe(isAdmin => {
@@ -36,7 +37,7 @@ export class RmProductDbComponent implements OnInit {
 
   fetchProduct() {
     if (this.category && this.productId) {
-      this.firebaseService.getProduct(this.category, this.productId).then(product => {
+      this.productService.getProduct(this.category, this.productId).then(product => {
         this.productDetails = product;
         this.confirmDelete = false; // Reset confirmation on new fetch
       }).catch(error => {
@@ -52,7 +53,7 @@ export class RmProductDbComponent implements OnInit {
 
   removeProduct() {
     if (this.category && this.productId) {
-      this.firebaseService.removeProduct(this.category, this.productId).then(() => {
+      this.productService.removeProduct(this.category, this.productId).then(() => {
         alert('Product deleted successfully.');
         this.productDetails = null;
         this.confirmDelete = false;

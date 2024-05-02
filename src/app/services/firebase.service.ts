@@ -155,36 +155,5 @@ export class FirebaseService {
     return basketItems;
   }
 
-  async addProduct(product: any, category: string, productId: string): Promise<void> {
-    try {
-      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
-      await setDoc(productRef, product);
-      console.log('Product added successfully in category:', category);
-    } catch (error) {
-      console.error('Error adding product:', error);
-      throw error;
-    }
-  }
-
-  async removeProduct(category: string, productId: string): Promise<void> {
-    try {
-      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
-      await deleteDoc(productRef);
-      console.log('Product removed successfully in category:', category);
-    } catch (error) {
-      console.error('Error removing product:', error);
-      throw error;
-    }
-  }
-
-  async getProduct(category: string, productId: string): Promise<any> {
-    const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
-    const docSnap = await getDoc(productRef);
-    if (docSnap.exists()) {
-      return docSnap.data(); // Returns the product details
-    } else {
-      throw new Error('Product not found');
-    }
-  }
 
 }

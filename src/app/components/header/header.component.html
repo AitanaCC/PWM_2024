@@ -18,7 +18,7 @@
         <img src="./assets/img/usuario.png" alt="User" height="40" width="40">
         <div class="menu" [ngClass]="{'visible': menuVisible}">
           <ul>
-            <li>My Data</li>
+            <li><a routerLink="/profile" (click)="logout()">My Data</a></li>
             <!--
                         Remember to change visible to false to prevent auto toggleMenu activation when returning
             -->

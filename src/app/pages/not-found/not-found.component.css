@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 .not-found-container {
   display: flex;
   flex-direction: column;
@@ -20,13 +26,13 @@
 .not-found-container button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #007BFF;
-  color: white;
+  background-color: #FFD700;
+  color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .not-found-container button:hover {
-  background-color: #0056b3;
+  background-color: #FFD700;
 }

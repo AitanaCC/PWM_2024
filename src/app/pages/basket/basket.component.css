@@ -84,6 +84,7 @@ button{
   transition: 0.4s;
   width: 100%;
   margin: 0.5em 6em;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: none;
 
 }

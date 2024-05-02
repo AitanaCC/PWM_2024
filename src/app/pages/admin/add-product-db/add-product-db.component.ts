@@ -6,6 +6,7 @@ import {AuthService} from "../../../services/auth.service";
 import { Router } from '@angular/router';
 import {NgIf} from "@angular/common";
 import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
+import {ProductService} from "../../../services/product.service";
 
 @Component({
   selector: 'app-add-product-db',
@@ -31,7 +32,7 @@ export class AddProductDbComponent implements OnInit {
   isAdmin: boolean = false;
   alertShown: boolean = false;  // Flag para controlar la alerta
 
-  constructor(private authService: AuthService, private firebaseService: FirebaseService, private router: Router) {}
+  constructor(private authService: AuthService, private productService:ProductService, private router: Router) {}
 
   ngOnInit() {
     this.authService.isAdmin.subscribe(isAdmin => {
@@ -44,7 +45,7 @@ export class AddProductDbComponent implements OnInit {
       return;
     }
     if (this.product.name && this.product.price > 0 && this.productId && this.category) {
-      this.firebaseService.addProduct(this.product, this.category, this.productId).then(() => {
+      this.productService.addProduct(this.product, this.category, this.productId).then(() => {
         alert('Product added successfully.');
         this.resetForm(); // Reset form
       }).catch(error => {
