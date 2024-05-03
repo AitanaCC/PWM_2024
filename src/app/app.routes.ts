@@ -27,7 +27,7 @@ export const routes: Routes = [
   {path: 'rm-product', component: RmProductDbComponent},
   {path: 'paymentGateway', component: PaymentComponent},
   {path: 'products', component: ProductsComponent},
-  {path: 'product-page', component: ProductPageComponent },
+  {path: 'product-page/:category/:id', component: ProductPageComponent },
   {path: 'profile', component: ProfileComponent},
   {path: '**', redirectTo: 'not-found'},
   {path: 'not-found', component: NotFoundComponent }

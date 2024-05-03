@@ -1,27 +1,23 @@
 import {Injectable} from "@angular/core";
 import {
+  arrayRemove,
+  arrayUnion,
   collection,
+  deleteDoc,
   doc,
   Firestore,
+  getDoc,
   getDocs,
   getFirestore,
-  query,
   onSnapshot,
-  getDoc,
-  DocumentReference,
-  DocumentData,
-  arrayUnion,
-  updateDoc,
+  query,
   setDoc,
-  deleteDoc,
-  arrayRemove
+  updateDoc
 } from "firebase/firestore";
 import {Auth, getAuth, onAuthStateChanged} from "firebase/auth";
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 import {initializeApp} from "firebase/app";
 import {Product} from "../models/product.model";
-import {fromDocRef} from "@angular/fire/compat/firestore";
-import {unsubscribe} from "node:diagnostics_channel";
 
 
 @Injectable({
@@ -136,11 +132,12 @@ export class ProductService {
     }
   }
 
-  async getProduct(category: string, productId: string): Promise<any> {
+  async getProduct(category: string, productId: string): Promise<string[]> {
     const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
     const docSnap = await getDoc(productRef);
     if (docSnap.exists()) {
-      return docSnap.data(); // Returns the product details
+      const productData = docSnap.data(); // Retrieve product data
+      return [productData['description'], productData['img-route'], productData['name'], productData['price']];
     } else {
       throw new Error('Product not found');
     }
