@@ -6,20 +6,26 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0;
+  padding-bottom: 0;
+
 }
 
 .centered-text {
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 80%;
+  text-align: center;
 }
 
 .centered-text h1 {
-  font-size: 50px;
-  color: white;
+  font-size: 4rem;
+  color: #505050;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 
@@ -29,7 +35,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Sección de Información de Contacto */
@@ -37,31 +44,37 @@
   display: flex;
   flex-wrap: wrap; /* Hace que los bloques de información sean responsivos */
   justify-content: space-around;
-  background-color: #9b9b9b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
+  background-color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 10px;
   width: 80%;
   max-width: 960px; /* Ajusta este valor según tus preferencias */
 }
 
 .info-block {
   margin: 10px;
-  padding: 10px;
-  flex-basis: 30%; /* Controla el ancho de los bloques en diferentes tamaños de pantalla */
+  padding: 15px;
+  font-size: 20px;
+  flex-grow: 1;
+  min-width: 250px;
   color: #fff;
+  background-color: rgba(256,255,255,0.1);
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px #007BFF;
 }
 
 /* Formulario de Contacto */
 .info-block.contact-form {
-  flex-basis: 100%; /* Ocupa el ancho completo para mayor claridad */
+  flex-grow: 1;
+  width: 100%;
 }
 
 .info-block.contact-form form {
   background-color: #333;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra los elementos del formulario */
@@ -72,10 +85,11 @@
 .info-block.contact-form button {
   width: 90%; /* Establece un ancho específico para todos los elementos del formulario */
   max-width: 500px; /* Asegura que los elementos no se extiendan demasiado en pantallas grandes */
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px; /* Espaciado entre elementos del formulario */
   border-radius: 5px;
-  border: 1px solid #ddd; /* Estilo del borde, ajusta según tu diseño */
+  border: 1px solid #ffffff; /* Estilo del borde, ajusta según tu diseño */
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .info-block.contact-form button {
@@ -90,63 +104,14 @@
 }
 
 
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-  #contact-info {
-    flex-direction: column;
-  }
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1%;
 }
 
-
-
-/*--------------------PARÁMETROS MEDIA--------------------*/
-
-/* Ajustes para Tamaño Web: 1366x768 */
-@media (min-width: 1025px) {
-  .info-block.contact-form input,
-  .info-block.contact-form textarea,
-  .info-block.contact-form button {
-    width: 90%; /* Ocupa más espacio en pantallas más grandes */
-  }
-}
-
-/* Ajustes para Tamaño Tablet: 1024x765 */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .info-block.contact-form input,
-  .info-block.contact-form textarea,
-  .info-block.contact-form button {
-    width: 85%; /* Un poco más estrecho para tabletas */
-  }
-}
-
-/* Ajustes para Tamaño Móvil: 360x640 */
-@media (max-width: 640px) {
-  .info-block.contact-form input,
-  .info-block.contact-form textarea,
-  .info-block.contact-form button {
-    width: 100%; /* Aprovecha todo el ancho disponible en dispositivos móviles */
-  }
-
-  #contact-info {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .info-block {
-    margin: 10px 0; /* Aumenta el margen para una mejor visualización en móviles */
-    flex-basis: 100%; /* Los bloques de información usan todo el ancho */
-  }
-
-  .info-block.contact-form {
-    margin-left: 0; /* Alinea correctamente el formulario en dispositivos móviles */
-  }
-
-
-  nav {
-    display: flex;
-    justify-content: space-between; /* Si tienes varios elementos en tu nav, los alinea al final */
-    margin-right: 1%;
-  }
-
-
-}
+/*
+color: #009579;  verde flojo
+background: #FFD700; amarillo
+background: #006653; verde fuerte
+ */
