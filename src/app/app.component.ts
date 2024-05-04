@@ -9,7 +9,9 @@ import {HomeComponent} from "./pages/home/home.component";
 import {FirebaseService} from './services/firebase.service';
 import {FormsModule} from "@angular/forms";
 import { AuthService } from './services/auth.service';
-import { routes } from './app.routes'; // Importa las rutas definidas en tu archivo de rutas
+import { routes } from './app.routes';
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {FlexLayoutServerModule} from "@angular/flex-layout/server"; // Importa las rutas definidas en tu archivo de rutas
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,8 @@ import { routes } from './app.routes'; // Importa las rutas definidas en tu arch
     AsyncPipe,
     FormsModule,
     NgIf,
+    FlexLayoutModule,
+    FlexLayoutServerModule
   ],
   templateUrl: './app.component.html',
   /*template: `

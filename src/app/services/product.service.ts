@@ -32,6 +32,8 @@ export class ProductService {
   db: Firestore;
   auth: Auth;
   private currentUserUid = new BehaviorSubject<string | null>(null);
+  private category$ = new  BehaviorSubject<any>({});
+  selectedCategory$ = this.category$.asObservable();
 
   constructor() {
     const firebaseConfig = {
@@ -49,7 +51,9 @@ export class ProductService {
       this.currentUserUid.next(user ? user.uid : null); // Actualiza el BehaviorSubject
     });
   }
-
+  setCategory(category: any){
+    this.category$.next(category);
+  }
 
   async getCategories(): Promise<{ categories: string[] }>{
     console.log("Se cargan las categorías");
@@ -65,13 +69,13 @@ export class ProductService {
       });
     });
    }
-   /*
-  getProductsByCat(category: string){
-    let documentReference = doc(this.db, `products/${category}`);
-    documentReference.converter
-  }
+  /*
+ getProductsByCat(category: string){
+   let documentReference = doc(this.db, `products/${category}`);
+   documentReference.converter
+ }
 
- */
+*/
   // Función para obtener las subcolecciones de 'drinks'
   async getSubcollectionNames(categoryID: string): Promise<string[]> {
     console.log("Entra en getSubcolNames");

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+.product-card {
+  /*max-width: 242.2px;
+  min-width:min(100%, 20em); /* O el ancho que prefieras */
+  height: calc(80% - 2em);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-content: center;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+ /* display: flex;
+  position: relative;*/
+  align-self: center;
+  flex-direction: column;
+
+}
+.image-container{
+  overflow: hidden;
+  width: 100%;
+  height: 72.81%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.product-image {
+  width: auto;
+  /*border-radius: 3px;*/
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.product-name {
+  font-size: 18px;
+  color: #333;
+  line-height: 110%;
+  font-weight: bolder;
+  flex-grow: 1;
+}
+.product-price {
+  padding-right: 1em;
+  text-align: right;
+  font-size: 18px;
+  color: #488BFF;
+  line-height: 110%;
+  font-weight: bolder;
+  flex-grow: 1;
+}
+.product-button {
+  border:none;
+  font-weight:600;
+  color: white;
+  background-color:black;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-top-left-radius: 0; /* Adjust the radius value as needed */
+  border-bottom-left-radius: 0; /* Adjust the radius value as needed */
+  display: block;
+  width: 100%;
+}
+.product-button:hover {
+  background-color: #0056b3;
+}
