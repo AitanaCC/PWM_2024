@@ -2,7 +2,8 @@
 
 <div class = categories>
   <ul>
-    <li *ngFor="let category of categories" >
+    <li *ngFor="let category of categories" class="category" [class.selected]="category == lastSelectedCategory"
+    (click)="onSelectedCategory(category)">
       {{category | uppercase}}
     </li>
     <!---
@@ -12,5 +13,17 @@
     --->
   </ul>
 </div>
-
-
+  <div class = "products-display" *ngIf="productsLoaded | async"
+       fxLayout="row wrap"
+       fxLayout.lt-sm="column"
+       fxLayoutGap="32px"
+       fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let product of productsList" class="product-card-container">
+      <app-product
+        fxFlex="0 1 calc(24% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="80%"
+        [product]="product"
+        [category]="selectedCategory"></app-product>
+    </ng-container>
+  </div>

@@ -6,12 +6,16 @@
       <div class="basket-container-2">
         <ul>
           <li *ngFor="let item of basketItems">
-            <img [src]="item['img-route']" alt="Product image">
+            <img [src]="item['imgRoute']" alt="Product image">
             <div>
               <h3><b>{{ item.name }}</b></h3>
               <p>{{ item.description }}</p>
               <p><b>Price: </b> {{ item.price | currency:'EUR':true:'1.2' }}</p>
-              <p><b>Quantity:</b> {{ item.quantity }}</p>
+              <p><b>Quantity:</b>
+                <button (click)="decreaseProduct(item['id'], item.quantity)" class="count">-</button>
+                {{ item.quantity }}
+                 <button class="count">+</button>
+              </p>
             </div>
           </li>
         </ul>

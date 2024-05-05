@@ -57,4 +57,8 @@ export class BasketComponent implements OnInit {
   calculateTotal() {
     this.total = this.basketItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   }
+
+  decreaseProduct(id: any, quantity: any) {
+    this.firebaseService.updateBasket(id, --quantity).then(r => this.calculateTotal());
+  }
 }
