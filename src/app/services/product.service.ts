@@ -126,12 +126,12 @@ export class ProductService {
   async addProduct(product: any, category: string, productId: string): Promise<void> {
     try {
       // Reference to the specific product document
-      const productRef = doc(this.db, "products/${category}/${productId}/${productId}");
+      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
       await setDoc(productRef, product);
       console.log('Product added successfully in category:', category);
 
       // Reference to the category document where subcollections are stored
-      const categoryRef = doc(this.db, "products/${category}");
+      const categoryRef = doc(this.db, `products/${category}`);
       // Update the subcollections array with the new productId, only if it's not already there
       await updateDoc(categoryRef, {
         subcollections: arrayUnion(productId)
@@ -176,12 +176,12 @@ export class ProductService {
   async removeProduct(category: string, productId: string): Promise<void> {
     try {
       // Reference to the specific product document
-      const productRef = doc(this.db, "products/${category}/${productId}/${productId}");
+      const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
       await deleteDoc(productRef);
       console.log('Product removed successfully from category:', category);
 
       // Reference to the category document where subcollections are stored
-      const categoryRef = doc(this.db, "products/${category}");
+      const categoryRef = doc(this.db, `products/${category}`);
       // Remove the productId from the subcollections array
       await updateDoc(categoryRef, {
         subcollections: arrayRemove(productId)
