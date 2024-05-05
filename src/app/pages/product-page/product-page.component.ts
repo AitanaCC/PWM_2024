@@ -22,33 +22,21 @@ export class ProductPageComponent implements OnInit {
     name: "",
     price: 0 };
 
-  constructor(
-    private route: ActivatedRoute,
-    private productService: ProductService,
-  ) {}
-
-  async ngOnInit() {
+  constructor( private route: ActivatedRoute, private productService: ProductService) {
     const category = this.route.snapshot.paramMap.get('category');
     const id = this.route.snapshot.paramMap.get('id');
-    let productData: Promise<string[]>; // Declare productData variable here
-
     if (category && id) {
-      productData = this.productService.getProduct(category, id); // Assign productData here
+      this.getProduct(category, id);
     } else {
       console.error('Category or id undefined');
-      return; // Exit ngOnInit if category or id is undefined
     }
+  }
 
-    try {
-      const array = await productData; // Use await within an async function
-      this.product = {  id: id,
-        description: array[0],
-        imgRoute: "../../.." + array[1],
-        name: array[2],
-        price: parseFloat(array[3])};
-    } catch (error) {
-      console.error(error); // Handle errors that occur during promise resolution
-    }
+  ngOnInit() {
 
+  }
+
+  async getProduct(category: string, id: string){
+    this.product = await this.productService.getProduct(category, id);
   }
 }

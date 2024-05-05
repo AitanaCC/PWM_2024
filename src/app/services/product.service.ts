@@ -132,12 +132,11 @@ export class ProductService {
     }
   }
 
-  async getProduct(category: string, productId: string): Promise<string[]> {
+  async getProduct(category: string, productId: string): Promise<any> {
     const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
     const docSnap = await getDoc(productRef);
     if (docSnap.exists()) {
-      const productData = docSnap.data(); // Retrieve product data
-      return [productData['description'], productData['img-route'], productData['name'], productData['price']];
+      return docSnap.data(); // Returns the product details
     } else {
       throw new Error('Product not found');
     }
