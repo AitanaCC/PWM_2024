@@ -8,8 +8,6 @@ import {
   query,
   onSnapshot,
   getDoc,
-  DocumentReference,
-  DocumentData,
   arrayUnion,
   updateDoc,
   setDoc,
@@ -18,12 +16,9 @@ import {
   increment
 } from "firebase/firestore";
 import {Auth, getAuth, onAuthStateChanged} from "firebase/auth";
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 import {initializeApp} from "firebase/app";
 import {Product} from "../models/product.model";
-import {fromDocRef} from "@angular/fire/compat/firestore";
-import {unsubscribe} from "node:diagnostics_channel";
-
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +44,7 @@ export class ProductService {
     this.db = getFirestore(this.app);
     this.auth = getAuth(this.app);
     onAuthStateChanged(this.auth, (user) => {
-      this.currentUserUid.next(user ? user.uid : null); // Actualiza el BehaviorSubject
+      this.currentUserUid.next(user ? user.uid : null);
     });
   }
   setCategory(category: any){
@@ -69,16 +64,7 @@ export class ProductService {
       });
     });
    }
-
-  /*
- getProductsByCat(category: string){
-   let documentReference = doc(this.db, `products/${category}`);
-   documentReference.converter
- }
-
-*/
-  // Función para obtener las subcolecciones de 'drinks'
-  async getSubcollectionNames(categoryID: string): Promise<string[]> {
+   async getSubcollectionNames(categoryID: string): Promise<string[]> {
     const docRef = doc(this.db, `products/${categoryID}`);
     const docSnapshot = await getDoc(docRef);
     if (docSnapshot.exists()) {
@@ -89,16 +75,8 @@ export class ProductService {
       return [];
     }
   }
-  // Función para obtener los documentos dentro de una subcolección específica bajo 'drinks'
 
-  async getDocumentsFromSubcollection(categoryId: string, subcollectionId: string): Promise<any[]> {
-    const subColRef = collection(this.db, 'products/${categoryId}/${subcollectionId}');
-    const snapshot = await getDocs(subColRef);
-    return snapshot.docs.map(doc => ({
-      id: doc.id,
-      data: doc.data()
-    }));
-  }
+  /* ----------------- FUNCIÓN ÚTIL FUTURA PARA OBTENER LOS PRODUCTOS DEL CARRITO -----------------
 
   async getBasketProducts(uid: string){
     const basketRef = collection(this.db, `users/${uid}/basket`);
@@ -113,24 +91,23 @@ export class ProductService {
       })
     });
     return basketList;
-    /*
+    /!*
     return snapshot.docs.map(doc =>({
       id: doc.id,
       data: doc.data()
     }));
-    */
+    *!/
   }
+
+  -----------------------------------------------------------------------------------------------*/
 
   async addProduct(product: any, category: string, productId: string): Promise<void> {
     try {
-      // Reference to the specific product document
       const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
       await setDoc(productRef, product);
       console.log('Product added successfully in category:', category);
 
-      // Reference to the category document where subcollections are stored
       const categoryRef = doc(this.db, `products/${category}`);
-      // Update the subcollections array with the new productId, only if it's not already there
       await updateDoc(categoryRef, {
         subcollections: arrayUnion(productId)
       });
@@ -142,14 +119,11 @@ export class ProductService {
   }
 
   async addProduct2Basket(product: Product, category: string) {
-    const uid = this.auth.currentUser?.uid; // Obtiene el UID del usuario actual
+    const uid = this.auth.currentUser?.uid;
     if (!uid) {
-      // Si no hay un usuario logueado, lanzar un error o simplemente retornar
-      console.error("Attempted to add a product to the basket without being logged in.");
       alert("User must be logged in to add products to the basket.");
       return;
     }
-
     const documentReference = doc(this.db, `users/${uid}/basket/${product.id}`);
     const documentSnapshot = await getDoc(documentReference);
     if (documentSnapshot.exists()) {
@@ -168,25 +142,13 @@ export class ProductService {
     }
   }
 
-  async getBasketItems(uid:string){
-    const snapshot = await getDocs(collection(this.db, `users/${uid}/basket`));
-    snapshot.docs.map((doc)=>({
-      id: doc.id,
-      data: doc.data()
-    })).filter((doc) => doc.id != "empty").forEach((doc)=>{
-    })
-  }
-
   async removeProduct(category: string, productId: string): Promise<void> {
     try {
-      // Reference to the specific product document
       const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
       await deleteDoc(productRef);
       console.log('Product removed successfully from category:', category);
 
-      // Reference to the category document where subcollections are stored
       const categoryRef = doc(this.db, `products/${category}`);
-      // Remove the productId from the subcollections array
       await updateDoc(categoryRef, {
         subcollections: arrayRemove(productId)
       });
@@ -201,7 +163,7 @@ export class ProductService {
     const productRef = doc(this.db, `products/${category}/${productId}/${productId}`);
     const docSnap = await getDoc(productRef);
     if (docSnap.exists()) {
-      return docSnap.data(); // Returns the product details
+      return docSnap.data();
     } else {
       throw new Error('Product not found');
     }

@@ -6,11 +6,6 @@
     (click)="onSelectedCategory(category)">
       {{category | uppercase}}
     </li>
-    <!---
-    <li class="category" *ngFor="let category of categories" >
-      {{category}}
-    </li>
-    --->
   </ul>
 </div>
   <div class = "products-display" *ngIf="productsLoaded | async"

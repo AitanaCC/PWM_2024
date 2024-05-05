@@ -14,6 +14,6 @@ export class PermissionDeniedComponent {
   constructor(private router: Router) { }
 
   goBack() {
-    this.router.navigate(['/Home']); // Función para navegar a la página de inicio
+    this.router.navigate(['/Home']);
   }
 }

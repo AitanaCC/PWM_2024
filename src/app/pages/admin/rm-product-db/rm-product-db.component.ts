@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../../services/auth.service";
-import { FirebaseService } from "../../../services/firebase.service";
 import {FormsModule} from "@angular/forms";
 import {HeaderComponent} from "../../../components/header/header.component";
 import {CurrencyPipe, NgIf} from "@angular/common";

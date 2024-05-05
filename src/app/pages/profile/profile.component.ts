@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {NgIf} from "@angular/common";
-import {HeaderComponent} from "../../components/header/header.component";  // Importa Router
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-profile',
@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router  // Inyecta Router aquí
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
       this.authService.deleteUserAccount().then(() => {
         console.log("Account deletion successful");
-        this.router.navigate(['/Home']);  // Usa Router para redirigir al usuario
+        this.router.navigate(['/Home']);
       }).catch(error => {
         console.error("Failed to delete account:", error);
       });

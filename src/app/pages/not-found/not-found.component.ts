@@ -12,6 +12,6 @@ export class NotFoundComponent {
   constructor(private router: Router) {}
 
   goHome() {
-    this.router.navigate(['/']);  // Asumiendo que '/' es tu ruta de inicio
+    this.router.navigate(['/']);
   }
 }

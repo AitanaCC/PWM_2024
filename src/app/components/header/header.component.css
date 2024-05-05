@@ -23,11 +23,11 @@
 }
 
 .user-options img {
-  margin-right: 0.5em; /* Añade margen a la derecha de cada icono */
+  margin-right: 0.5em;
 }
 
 .user-options img:last-child {
-  margin-right: 0; /* Elimina el margen del último icono para evitar espacio extra en el borde */
+  margin-right: 0;
 }
 
 .title {
@@ -36,7 +36,7 @@
 
 }
 .sidebar a {
-  padding: 1em 2em;
+  padding: 1em 0 0.4em 1.1em;
   text-decoration: none;
   color: #000000;
   display: block;
@@ -56,9 +56,9 @@
   position: relative;
   left: 15rem;
   cursor: pointer;
-  font-size: 2em; /* Tamaño de la 'X' */
+  font-size: 2em;
   font-weight: bold;
-  color: black; /* Color de la 'X' */
+  color: black;
 }
 
 .contact_sidebar{
@@ -69,24 +69,24 @@
   cursor: pointer;
 }
 .overlay {
-  position: fixed; /* Posición fija respecto a la ventana del navegador */
-  width: 100%; /* Cubre toda la anchura */
-  height: 100%; /* Cubre toda la altura */
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con transparencia */
-  z-index: 3; /* Asegúrate de que esté por debajo del sidebar pero por encima del contenido normal */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
 }
 
 .sidebar {
   height: 100%;
   width: 20rem;
-  position: fixed; /* Fijar el sidebar en la pantalla */
+  position: fixed;
   left: 0;
   top: 0;
-  padding-top: 2.5%;
-  background-color: #ffffff; /* Color de fondo del sidebar */
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Sombra para un efecto 3D */
+  padding-top: 1%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
   transition: all 0.4s;
   transform: translateX(-100%);
   border-bottom-right-radius: 5%;

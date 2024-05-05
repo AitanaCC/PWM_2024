@@ -15,8 +15,8 @@ export class MapLeafletComponent implements AfterViewInit {
   private initMap(): void {
     import('leaflet').then(L => {
       this.map = L.map('map', {
-        center: [27.743091, -15.576004], // Cambio las coordenadas del centro del mapa
-        zoom: 13 // Ajusto el zoom para enfocar en el marcador
+        center: [27.743091, -15.576004],
+        zoom: 13
       });
 
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -36,7 +36,7 @@ export class MapLeafletComponent implements AfterViewInit {
 
       // Añadiendo el marcador
       const marker = L.marker([27.743091, -15.576004], {icon:markerIcon}).addTo(this.map);
-      marker.bindPopup("<b>Chiringuito TFC!</b><br>streetNstreet,CPstreet.").openPopup(); // Abre el popup automáticamente
+      marker.bindPopup("<b>Chiringuito TFC, Visit Us!</b><br>Maspalomas Dunes, 35100").openPopup();
     });
   }
 

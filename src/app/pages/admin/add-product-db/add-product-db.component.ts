@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { FirebaseService } from "../../../services/firebase.service";
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "../../../components/header/header.component";
 import {AuthService} from "../../../services/auth.service";
-import { Router } from '@angular/router';
 import {NgIf} from "@angular/common";
 import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
 import {ProductService} from "../../../services/product.service";
@@ -30,9 +28,8 @@ export class AddProductDbComponent implements OnInit {
   category: string = '';
   productId: string = '';
   isAdmin: boolean = false;
-  alertShown: boolean = false;  // Flag para controlar la alerta
 
-  constructor(private authService: AuthService, private productService:ProductService, private router: Router) {}
+  constructor(private authService: AuthService, private productService:ProductService) {}
 
   ngOnInit() {
     this.authService.isAdmin.subscribe(isAdmin => {

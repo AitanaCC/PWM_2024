@@ -4,7 +4,6 @@ import {CommonModule} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {OnInit} from '@angular/core';
 import {FirebaseService} from '../../services/firebase.service';
-import {DocumentReference} from 'firebase/firestore';
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import {Subscription} from "rxjs";
@@ -59,35 +58,33 @@ export class GenBillComponent implements OnInit, OnDestroy {
 
 
   generatePdf() {
-    this.showButton = false; // Esconde el botón antes de la captura
+    this.showButton = false;
 
     setTimeout(() => {
       const data = document.getElementById('basket-contents');
       if (data) {
         html2canvas(data as HTMLElement, {
-          scale: 3, // Incrementa la escala para mejorar la calidad
-          useCORS: true // Permite cargar recursos externos para imágenes, si es necesario
+          scale: 3,
+          useCORS: true
         }).then(canvas => {
-          const imgWidth = 210; // Aproximadamente el ancho de un A4
-          const imgHeight = canvas.height * imgWidth / canvas.width; // Altura proporcional
+          const imgWidth = 210;
+          const imgHeight = canvas.height * imgWidth / canvas.width;
 
-          const contentDataURL = canvas.toDataURL('image/png', 1.0); // Mejora la calidad de la imagen
+          const contentDataURL = canvas.toDataURL('image/png', 1.0);
           const pdf = new jsPDF('p', 'mm', 'a4');
           const position = 0;
           pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
           pdf.save('basket-details.pdf');
 
-          this.showButton = true; // Muestra el botón de nuevo si es necesario
+          this.showButton = true;
 
-          // Redirecciona a la página de inicio después de generar el PDF
           this.router.navigate(['/Home']);
-
         });
       } else {
         console.error('Element #basket-contents not found');
-        this.showButton = true; // Muestra el botón de nuevo si la captura falla
+        this.showButton = true;
       }
-    }, 100); // Timeout para asegurar que la UI se actualiza y el botón desaparece antes de la captura
+    }, 100);
   }
 
   ngOnDestroy() {

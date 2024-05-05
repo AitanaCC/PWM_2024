@@ -38,7 +38,6 @@ export class AuthService {
     this.auth = getAuth(this.app);
     this.db = getFirestore(this.app);
 
-    // Escuchar cambios de estado de autenticación
     onAuthStateChanged(this.auth, (user) => {
       const loggedIn = user !== null;
       this.currentUserUid.next(user ? user.uid : null);
@@ -90,7 +89,6 @@ export class AuthService {
     }
   }
 
-  // Método para obtener el UID del usuario actualmente autenticado
   getCurrentUserUid(): Observable<string|null> {
     return this.currentUserUid.asObservable(); // Return the Observable from BehaviorSubject
   }
@@ -98,8 +96,6 @@ export class AuthService {
   getCurrentUser(): Observable<any> {
     return this.currentUserSubject.asObservable();
   }
-
-  // Método para eliminar la cuenta del usuario y su documento en Firestore
   async deleteUserAccount() {
     const user = this.auth.currentUser;
     if (!user) {
@@ -127,7 +123,6 @@ export class AuthService {
     return this.userStatus.asObservable();
   }
 
-  // Añade el método de reseteo de contraseña aquí
   async resetPassword(email: string): Promise<void> {
     try {
       await sendPasswordResetEmail(this.auth, email);

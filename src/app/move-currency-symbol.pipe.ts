@@ -11,7 +11,6 @@ export class MoveCurrencySymbolPipe implements PipeTransform {
       return null;
     }
 
-    // Luego continúa con tu lógica original
     if (value.includes('€')) {
       return value.replace('€', '').trim() + ' €';
     }

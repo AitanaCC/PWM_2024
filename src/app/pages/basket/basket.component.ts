@@ -29,7 +29,7 @@ export class BasketComponent implements OnInit {
         this.subscribeToBasketItems(uid);
       } else {
         this.isLoggedIn = false;
-        this.basketItems = []; // Limpiar el carrito cuando no hay usuario loggeado
+        this.basketItems = [];
         this.total = 0;
       }
     });
@@ -51,10 +51,8 @@ export class BasketComponent implements OnInit {
 
   updateQuantity(productId: string, newQuantity: number): void {
     if (newQuantity < 1) {
-      // Si la cantidad es menor que 1, entonces eliminar el producto
       this.firebaseService.updateBasket(productId, null);
     } else {
-      // Actualizar la cantidad del producto
       this.firebaseService.updateBasket(productId, newQuantity);
     }
   }

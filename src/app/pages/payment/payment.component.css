@@ -18,16 +18,15 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .payment-title {
-  display: flex; /* Usa Flexbox para alinear el contenido */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  height: 100px; /* Ajusta la altura según el tamaño deseado para la imagen o el contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .payment-title img {
-  max-width: 140px; /* Asegura que la imagen no exceda el ancho del contenedor */
-  max-height: 200px; /* Asegura que la imagen no exceda la altura del contenedor */
-  /* Si necesitas que la imagen mantenga sus proporciones, puedes ajustar max-width o max-height específicamente */
+  max-width: 140px;
+  max-height: 200px;
 }
 
 
@@ -78,21 +77,21 @@ input[type="submit"]:hover {
 .label-and-icons {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Mantiene el label a la izquierda y el nuevo contenedor de iconos a la derecha */
+  justify-content: space-between;
 }
 
 .label-and-icons label {
-  margin-bottom: 4%; /* Elimina el margen inferior del label */
+  margin-bottom: 4%;
 }
 
 .icons-container {
-  display: flex; /* Mantiene los iconos juntos */
+  display: flex;
 }
 
 .payment-icon {
-  width: 27px; /* Establece el tamaño de las imágenes */
-  height: 27px; /* Mantiene la proporción */
-  margin-left: 10px; /* Espaciado entre los iconos */
+  width: 27px;
+  height: 27px;
+  margin-left: 10px;
 }
 
 .icon-field {
@@ -108,14 +107,14 @@ input[type="submit"]:hover {
 .input-icon-container input {
   flex: 1;
   border: none;
-  padding-left: 40px; /* Espacio para el ícono */
-  height: 40px; /* Ajusta según la altura de tus inputs normales */
+  padding-left: 40px;
+  height: 40px;
 }
 .input-icon-container i.far,
 .input-icon-container i.fas {
   position: absolute;
   margin-left: 10px;
-  color: #000000; /* Ajusta el color del ícono */
+  color: #000000;
 
 }
 .input-icon-container input:focus {

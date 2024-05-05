@@ -30,7 +30,6 @@
 .product-image {
   width: auto;
   display: flex;
-  /*border-radius: 3px;*/
   position: relative;
   height: 100%;
   object-fit: cover;
@@ -60,8 +59,8 @@
   background-color:black;
   padding: 10px 20px;
   cursor: pointer;
-  border-top-left-radius: 0; /* Adjust the radius value as needed */
-  border-bottom-left-radius: 0; /* Adjust the radius value as needed */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   display: block;
   width: 100%;
 }

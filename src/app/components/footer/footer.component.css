@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #333; /* Color oscuro para contrastar con el texto blanco */
+  background-color: #333;
   color: white;
   flex-wrap: wrap;
   flex-direction: row;
@@ -11,13 +11,13 @@
 }
 
 .footer-right {
-  width: 20em;/* Asegúrate de que tiene suficiente ancho */
+  width: 20em;
   margin: 2%;
 }
 
 h3 {
   font-size: 2vw;
-  color: #FFD700; /* Color dorado para los títulos */
+  color: #FFD700;
 }
 
 p {

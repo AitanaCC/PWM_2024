@@ -28,8 +28,6 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-
-/* Contenedor Principal de Contacto */
 #contact-container {
   display: flex;
   flex-direction: column;
@@ -39,10 +37,9 @@
   margin-bottom: 0;
 }
 
-/* Sección de Información de Contacto */
 #contact-info {
   display: flex;
-  flex-wrap: wrap; /* Hace que los bloques de información sean responsivos */
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: #333333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -50,7 +47,7 @@
   padding: 30px;
   margin: 10px;
   width: 80%;
-  max-width: 960px; /* Ajusta este valor según tus preferencias */
+  max-width: 960px;
 }
 
 .info-block {
@@ -62,10 +59,9 @@
   color: #fff;
   background-color: rgba(256,255,255,0.1);
   border-radius: 10px;
-  box-shadow: 4px 4px 4px #007BFF;
+  box-shadow: 4px 4px 4px #FFD700;
 }
 
-/* Formulario de Contacto */
 .info-block.contact-form {
   flex-grow: 1;
   width: 100%;
@@ -77,30 +73,31 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos del formulario */
+  align-items: center;
 }
 
 .info-block.contact-form input,
 .info-block.contact-form textarea,
 .info-block.contact-form button {
-  width: 90%; /* Establece un ancho específico para todos los elementos del formulario */
-  max-width: 500px; /* Asegura que los elementos no se extiendan demasiado en pantallas grandes */
+  width: 90%;
+  max-width: 500px;
   padding: 12px;
-  margin-bottom: 10px; /* Espaciado entre elementos del formulario */
+  margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ffffff; /* Estilo del borde, ajusta según tu diseño */
+  border: 1px solid #ffffff;
   box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .info-block.contact-form button {
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none; /* Remueve el borde para el botón, opcional */
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  font-weight: 600;
 }
 
 .info-block.contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #FFe700;
 }
 
 
@@ -109,9 +106,3 @@ nav{
   justify-content: space-between;
   margin-right: 1%;
 }
-
-/*
-color: #009579;  verde flojo
-background: #FFD700; amarillo
-background: #006653; verde fuerte
- */

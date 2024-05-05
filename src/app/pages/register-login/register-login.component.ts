@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import { AuthService } from '../../services/auth.service'; // Asegúrate de que el servicio está correctamente importado.
+import { AuthService } from '../../services/auth.service';
 import {AppComponent} from "../../app.component";
 import {FormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
@@ -29,7 +29,7 @@ export class RegisterLoginComponent{
       .then(() => {
         this.isAuthenticated = true;
         this.triggerAutoButtonClick();
-        this.errorMessage = ''; // Limpiar mensaje de error para no tener problemas futuros
+        this.errorMessage = '';
 
       })
       .catch((error) => {
@@ -58,7 +58,7 @@ export class RegisterLoginComponent{
       .catch((error) => {
         console.error('Login failed:', error);
         this.errorMessage = 'Login failed: Incorrect email or password.';
-        this.clearForm(); // Limpiar formulario tras error
+        this.clearForm();
       });
   }
 
@@ -67,7 +67,7 @@ export class RegisterLoginComponent{
   }
 
   triggerAutoButtonClick() {
-    setTimeout(() => this.autoButton.nativeElement.click(), 0); // Usar setTimeout para evitar problemas de detección de cambios
+    setTimeout(() => this.autoButton.nativeElement.click(), 0);
   }
 
   autoFunc() {

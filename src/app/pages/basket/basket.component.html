@@ -1,7 +1,6 @@
 <app-header></app-header>
 <div class="basket-container">
   <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
-    <!-- Verificamos si hay ítems en la cesta -->
     <ng-container *ngIf="basketItems.length > 0; else emptyBasketTemplate">
       <div class="basket-container-2">
         <ul>
