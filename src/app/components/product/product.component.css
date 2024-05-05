@@ -7,9 +7,7 @@
   margin-bottom: 0.5em;
 }
 .product-card {
-  /*max-width: 242.2px;
-  min-width:min(100%, 20em); /* O el ancho que prefieras */
-  height: calc(100% - 2em);
+  min-width:min(100%, 20em);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -17,10 +15,7 @@
   margin-left: 3%;
   margin-right: 3%;
   margin-bottom: 0.5em;
- /* display: flex;
-  position: relative;*/
-  align-self: center;
-  flex-direction: column;
+  overflow: hidden;
 
 }
 .image-container{
@@ -47,6 +42,7 @@
   line-height: 110%;
   font-weight: bolder;
   flex-grow: 1;
+  cursor: pointer;
 }
 .product-price {
   padding-right: 1em;

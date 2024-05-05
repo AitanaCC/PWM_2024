@@ -11,7 +11,7 @@
 
       <div class="product-extra">
         <p class="price" >{{ product.price }}€</p>
-        <button class="add-cart">Add to Cart</button>
+        <button (click)="addProductToBasketAndGoBack()" class="add-cart">Add to Cart</button>
       </div>
     </section>
 

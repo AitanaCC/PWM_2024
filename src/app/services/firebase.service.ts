@@ -13,11 +13,13 @@ import {
   deleteDoc,
   DocumentReference,
   QuerySnapshot,
-  setDoc
+  setDoc, onSnapshot
 } from 'firebase/firestore';
 
 import { getAuth, onAuthStateChanged, Auth } from 'firebase/auth';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
+import {AuthService} from "./auth.service";
+import {writeBatch} from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,7 @@ export class FirebaseService {
   auth: Auth;
   private currentUserUid = new BehaviorSubject<string | null>(null);
 
-  constructor() {
+  constructor(private authService: AuthService) {
     const firebaseConfig = {
       apiKey: "AIzaSyC8MhVZ6CcVdQvzl3nR3gdHb8koT1D6gCM",
       authDomain: "pwmapp-a480f.firebaseapp.com",
@@ -61,26 +63,31 @@ export class FirebaseService {
     return this.currentUserUid.asObservable(); // Devuelve un Observable
   }
 
-  async updateBasket(productId: string, quantity: number|null) {
-    if (!this.currentUserUid) {
-      throw new Error("No user is currently logged in.");
-    }
-    const basketRef = collection(this.db, `users/${this.currentUserUid}/basket`);
+  updateBasket(productId: string, quantity: number|null) {
+    this.authService.getCurrentUserUid().subscribe({
+      next: (uid) => {
+        if (!uid) {
+          console.error("No user is currently logged in.");
+          return;
+        }
 
-    // If the quantity is null, the product should be deleted (except if it's 'empty')
-    if (quantity === null) {
-      if (productId !== 'empty') {
+        const basketRef = collection(this.db, `users/${uid}/basket`);
         const productDocRef = doc(basketRef, productId);
-        await deleteDoc(productDocRef);
-        console.log(`Product ${productId} removed from the basket.`);
-      }
-      return;
-    }
 
-    // Update or add a new product (including 'empty')
-    const productDocRef = doc(basketRef, productId);
-    await setDoc(productDocRef, { quantity }, { merge: true });
-    console.log(`Product ${productId} updated/added with quantity ${quantity}.`);
+        if (quantity === null) {
+          if (productId !== 'empty') {
+            deleteDoc(productDocRef)
+              .then(() => console.log(`Product ${productId} removed from the basket.`))
+              .catch(error => console.error("Failed to remove product: ", error));
+          }
+        } else {
+          setDoc(productDocRef, { quantity }, { merge: true })
+            .then(() => console.log(`Product ${productId} updated/added with quantity ${quantity}.`))
+            .catch(error => console.error("Failed to update/add product: ", error));
+        }
+      },
+      error: (error) => console.error("Failed to retrieve user UID: ", error)
+    });
   }
 
 
@@ -155,5 +162,38 @@ export class FirebaseService {
     return basketItems;
   }
 
+  getBasketItemsRealtime(userId: string): Observable<any[]> {
+    return new Observable(subscriber => {
+      const basketRef = collection(this.db, `users/${userId}/basket`);
+      const unsubscribe = onSnapshot(basketRef, async (snapshot) => {
+        const items = [];
+        for (const doc of snapshot.docs) {
+          const itemData = doc.data();
+          if (itemData['ref']) {
+            const productDetails = await this.getDocumentByRef(itemData['ref']);
+            items.push({ id: doc.id, ...itemData, ...productDetails });
+          }
+        }
+        subscriber.next(items);
+      }, error => subscriber.error(error));
 
+      return () => unsubscribe();
+    });
+  }
+
+  async clearBasketExceptEmpty(userId: string): Promise<void> {
+    console.log("Attempting to clear basket for user:", userId);
+    const basketRef = collection(this.db, `users/${userId}/basket`);
+    const snapshot = await getDocs(basketRef);
+
+    for (const doc of snapshot.docs) {
+      if (doc.id !== "empty") {
+        console.log(`Deleting document: ${doc.id}`);
+        await deleteDoc(doc.ref); // Elimina directamente cada documento excepto 'empty'
+        console.log(`Document ${doc.id} deleted.`);
+      }
+    }
+
+    console.log("Basket cleared, except for the 'empty' document.");
+  }
 }

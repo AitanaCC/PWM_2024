@@ -15,6 +15,7 @@
 }
 .category:hover{
   color: darkkhaki;
+  cursor: pointer;
 }
 .category.selected{
   color: darkkhaki;

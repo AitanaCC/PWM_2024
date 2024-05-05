@@ -3,13 +3,15 @@ import {Product} from "../../models/product.model";
 import {AsyncPipe, NgIf} from "@angular/common";
 import {ProductService} from "../../services/product.service";
 import {FirebaseService} from "../../services/firebase.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-product',
   standalone: true,
   imports: [
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
@@ -28,7 +30,6 @@ export class ProductComponent implements OnInit {
   }
 
   add2Basket() {
-    this.productService.addProduct2Basket(this.product, this.category).then(r => console.log("Añadido el producto: "));
-    //this.firebaseService.updateBasket(this.product.id, 1).then(r => console.log("Añadido: ", r));
+    this.productService.addProduct2Basket(this.product, this.category).then(r => alert('Product added to basket!'));
   }
 }

@@ -57,7 +57,6 @@ export class ProductService {
   }
 
   async getCategories(): Promise<{ categories: string[] }>{
-    console.log("Se cargan las categorías");
     return await new Promise<{categories:string[]}>((resolve, reject) => {
       const categories:string[]=[];
       const q = query(collection(this.db, "products"));
@@ -80,7 +79,6 @@ export class ProductService {
 */
   // Función para obtener las subcolecciones de 'drinks'
   async getSubcollectionNames(categoryID: string): Promise<string[]> {
-    console.log("Entra en getSubcolNames");
     const docRef = doc(this.db, `products/${categoryID}`);
     const docSnapshot = await getDoc(docRef);
     if (docSnapshot.exists()) {
@@ -143,33 +141,39 @@ export class ProductService {
     }
   }
 
-  async addProduct2Basket(product: Product, category: string){
-    const documentReference = doc(this.db, `users/${this.auth.currentUser?.uid}/basket/${product.id}`);
+  async addProduct2Basket(product: Product, category: string) {
+    const uid = this.auth.currentUser?.uid; // Obtiene el UID del usuario actual
+    if (!uid) {
+      // Si no hay un usuario logueado, lanzar un error o simplemente retornar
+      console.error("Attempted to add a product to the basket without being logged in.");
+      alert("User must be logged in to add products to the basket.");
+      return;
+    }
+
+    const documentReference = doc(this.db, `users/${uid}/basket/${product.id}`);
     const documentSnapshot = await getDoc(documentReference);
-    if(documentSnapshot.exists()){
+    if (documentSnapshot.exists()) {
       await updateDoc(documentReference, {
         quantity: increment(1)
-      })
-      return;
+      });
+      console.log("Product quantity incremented in the basket.");
     } else {
       let quantity = 1;
-      let ref = doc(this.db, `products/${category}/${product.id}/${product.id}`)
+      let ref = doc(this.db, `products/${category}/${product.id}/${product.id}`);
       await setDoc(documentReference, {
         quantity,
         ref
-      })
+      });
+      console.log("New product added to the basket.");
     }
-    console.log(this.currentUserUid);
   }
 
   async getBasketItems(uid:string){
-    console.log("Entra en getItems");
     const snapshot = await getDocs(collection(this.db, `users/${uid}/basket`));
     snapshot.docs.map((doc)=>({
       id: doc.id,
       data: doc.data()
     })).filter((doc) => doc.id != "empty").forEach((doc)=>{
-      console.log("Elemento: ", doc.id, "data:", doc.data);
     })
   }
 

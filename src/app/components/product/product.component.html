@@ -2,7 +2,7 @@
   <div class="image-container">
     <img [src]="product['imgRoute']" alt="Producto" class="product-image">
   </div>
-  <p class="product-name">{{product.name}}</p>
+  <p class="product-name" [routerLink]="['/product-page', category, product.id]">{{ product.name }}</p>
   <p class="product-price">{{product.price}} €</p>
   <button (click)="add2Basket()" class="product-button">Add cart</button>
 </div>

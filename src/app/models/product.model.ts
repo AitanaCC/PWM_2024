@@ -1,5 +1,4 @@
 export interface Product {
-
   id: string;
   description: string;
   imgRoute: string;

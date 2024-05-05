@@ -4,15 +4,15 @@
     <h1>Purchase Receipt</h1>
     <ul>
       <li *ngFor="let item of basketItems">
-        <img [src]="item['img-route']" alt="Product image" style="width: 100px; height: auto;">
+        <img [src]="item['imgRoute']" alt="Product image" style="width: 100px; height: auto;">
         <div>
           <h3>{{ item.name }}</h3>
-          <p>Price: {{ item.price | currency:'EUR':true:'1.2' }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
+          <p>Price: {{ item['price'] | currency:'EUR':'symbol-narrow':'1.2-2' | moveCurrencySymbol }}</p>
+          <p>Quantity: {{ item['quantity'] }}</p>
         </div>
       </li>
     </ul>
-    <p class="total">Total: {{ total | currency:'EUR':true:'1.2' }}</p>
+    <p class="total">Total: {{ total | currency:'EUR':'symbol-narrow':'1.2-2' | moveCurrencySymbol}}</p>
     <button *ngIf="showButton" (click)="generatePdf()">Generate PDF</button>
   </div>
 </div>

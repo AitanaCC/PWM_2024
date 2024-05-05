@@ -1,2 +1,16 @@
 <app-header></app-header>
-<p>profile works!</p>
+<div class="center-wrapper">
+  <div class="profile-form">
+    <div class="profile-header">
+      <img src="/assets/img/usuario.png" alt="Profile Image">
+    </div>
+    <div *ngIf="currentUser; else noUserData">
+      <p class="user-email"><strong>Email:</strong> {{ currentUser['email'] }}</p>
+      <button class="delete-account" (click)="deleteUserAccount()">Delete Account</button>
+    </div>
+    <ng-template #noUserData>
+      <p style="text-align: center">You are not logged</p>
+      <button routerLink="/register-login" class="button-log button" style="background-color: #FFD700; color: #333333; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; display: block; width: 100%; text-align: center;">Register/Login</button>
+    </ng-template>
+  </div>
+</div>

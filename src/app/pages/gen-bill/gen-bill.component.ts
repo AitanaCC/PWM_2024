@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {HeaderComponent} from "../../components/header/header.component";
 import {CommonModule} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
@@ -7,21 +7,24 @@ import {FirebaseService} from '../../services/firebase.service';
 import {DocumentReference} from 'firebase/firestore';
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import {Subscription} from "rxjs";
+import {MoveCurrencySymbolPipe} from "../../move-currency-symbol.pipe";
 
 @Component({
   selector: 'app-gen-bill',
   standalone: true,
   templateUrl: './gen-bill.component.html',
   imports: [
-    HeaderComponent, CommonModule, RouterLink
+    HeaderComponent, CommonModule, RouterLink, MoveCurrencySymbolPipe
   ],
   styleUrls: ['./gen-bill.component.css']
 })
-export class GenBillComponent implements OnInit {
+export class GenBillComponent implements OnInit, OnDestroy {
   basketItems: any[] = [];
   total: number = 0;
   isLoggedIn: boolean | undefined;
   showButton = true;
+  private basketSubscription: Subscription | undefined;
 
   constructor(private firebaseService: FirebaseService, private router: Router) {
   }
@@ -30,32 +33,24 @@ export class GenBillComponent implements OnInit {
     this.firebaseService.getCurrentUserUid().subscribe(uid => {
       if (uid) {
         this.isLoggedIn = true;
-        this.loadBasketItems(uid);
+        this.subscribeToBasketItems(uid);
       } else {
         this.isLoggedIn = false;
-        this.basketItems = []; // Limpiar el carrito cuando no hay usuario loggeado
+        this.basketItems = [];
         this.total = 0;
       }
     });
   }
-
-  async loadBasketItems(userId: string) {
-    const basketSnapshot = await this.firebaseService.getDocuments(`users/${userId}/basket`);
-    const productDetailsPromises = basketSnapshot.docs.map(async docItem => {
-      const itemData = docItem.data();
-      const itemRef = itemData['ref'] as DocumentReference;
-      if (itemRef) {
-        const productDetails = await this.firebaseService.getDocumentByRef(itemRef);
-        return {...itemData, ...productDetails};
-      } else {
-        console.error('No reference found for this item');
-        return null;
+  subscribeToBasketItems(userId: string) {
+    this.basketSubscription = this.firebaseService.getBasketItemsRealtime(userId).subscribe({
+      next: (items) => {
+        this.basketItems = items;
+        this.calculateTotal();
+      },
+      error: (error) => {
+        console.error('Error fetching basket items:', error);
       }
     });
-
-    this.basketItems = await Promise.all(productDetailsPromises);
-    this.basketItems = this.basketItems.filter(item => item !== null); // Filtrar nulls
-    this.calculateTotal();
   }
 
   calculateTotal() {
@@ -95,28 +90,20 @@ export class GenBillComponent implements OnInit {
     }, 100); // Timeout para asegurar que la UI se actualiza y el botón desaparece antes de la captura
   }
 
-  /*
-    FALTA AÑADIR AQUI LOGICA PARA VACIAR LA CESTA JUSTO AL ABANDONAR LA PAGINA
-    ngOnDestroy(): void {
-      this.clearBasket();
+  ngOnDestroy() {
+    if (this.basketSubscription) {
+      this.basketSubscription.unsubscribe();
+      console.log("Unsubscribed from basket updates.");
     }
 
-    async clearBasket() {
-      const uid = await this.firebaseService.getCurrentUserUid().toPromise(); // asumiendo que getCurrentUserUid retorna un Observable
+    this.firebaseService.getCurrentUserUid().subscribe(uid => {
       if (uid) {
-        this.firebaseService.clearBasket(uid);
+        console.log("Clearing basket for user:", uid);
+        this.firebaseService.clearBasketExceptEmpty(uid);
+      } else {
+        console.log("Cannot clear basket, no user UID found.");
       }
-    }
-
-    esta funcion en firebase.service.ts seria:
-    clearBasket(userId: string) {
-      const basketRef = collection(this.db, `users/${userId}/basket`);
-      getDocs(basketRef).then(snapshot => {
-        snapshot.forEach(doc => {
-          deleteDoc(doc.ref); // elimina cada documento
-        });
-      }).catch(error => console.error("Error clearing basket:", error));
-    }
-  */
+    });
+  }
 
 }

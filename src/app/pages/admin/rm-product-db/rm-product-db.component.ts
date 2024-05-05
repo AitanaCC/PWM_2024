@@ -6,6 +6,7 @@ import {HeaderComponent} from "../../../components/header/header.component";
 import {CurrencyPipe, NgIf} from "@angular/common";
 import {PermissionDeniedComponent} from "../permission-denied/permission-denied.component";
 import {ProductService} from "../../../services/product.service";
+import {MoveCurrencySymbolPipe} from "../../../move-currency-symbol.pipe";
 
 @Component({
   selector: 'app-rm-product-db',
@@ -17,7 +18,8 @@ import {ProductService} from "../../../services/product.service";
     HeaderComponent,
     CurrencyPipe,
     NgIf,
-    PermissionDeniedComponent
+    PermissionDeniedComponent,
+    MoveCurrencySymbolPipe
   ]
 })
 export class RmProductDbComponent implements OnInit {

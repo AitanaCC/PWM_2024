@@ -1,16 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import {HeaderComponent} from "../../components/header/header.component";
-import {CommonModule} from "@angular/common";
-import {RouterLink} from "@angular/router";
-import {Product} from "../../models/product.model";
+import { AuthService } from '../../services/auth.service';
+import {Router, RouterLink} from '@angular/router';
+import {NgIf} from "@angular/common";
+import {HeaderComponent} from "../../components/header/header.component";  // Importa Router
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, RouterLink],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  imports: [
+    NgIf,
+    HeaderComponent,
+    RouterLink
+  ],
+  styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+  currentUser: any = null;
 
+  constructor(
+    private authService: AuthService,
+    private router: Router  // Inyecta Router aquí
+  ) {}
+
+  ngOnInit(): void {
+    this.authService.getCurrentUser().subscribe({
+      next: (user) => {
+        this.currentUser = user;
+      },
+      error: (err) => console.error('Error fetching user data:', err)
+    });
+  }
+
+  deleteUserAccount(): void {
+    if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+      this.authService.deleteUserAccount().then(() => {
+        console.log("Account deletion successful");
+        this.router.navigate(['/Home']);  // Usa Router para redirigir al usuario
+      }).catch(error => {
+        console.error("Failed to delete account:", error);
+      });
+    }
+  }
 }

@@ -22,7 +22,7 @@
     <h3>Product Details:</h3>
     <p><b>Name:</b> {{ productDetails.name }}</p>
     <p><b>Description:</b> {{ productDetails.description }}</p>
-    <p><b>Price:</b> {{ productDetails.price | currency }}</p>
+    <p><b>Price:</b> {{ productDetails['price'] | currency:'EUR':'symbol-narrow':'1.2-2' | moveCurrencySymbol }}</p>
     <button *ngIf="confirmDelete" (click)="removeProduct()">Confirm Deletion</button>
     <button *ngIf="!confirmDelete" (click)="confirmDeletion()">Delete Product</button>
   </div>

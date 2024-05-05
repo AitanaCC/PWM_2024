@@ -115,14 +115,12 @@
 .menu {
   position: absolute;
   top: 130%;
-  bottom: -283%;
   left: -30%;
   transform: translateX(-50%);
   background-color: #333;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   width: 350%;
-  height: 300%;
   display: none;
   z-index: 2;
 }

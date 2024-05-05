@@ -7,10 +7,11 @@ import {
   signOut,
   deleteUser,
   sendPasswordResetEmail,
-  onAuthStateChanged
+  onAuthStateChanged,
+  User
 } from 'firebase/auth';
 import { getFirestore, doc, setDoc, deleteDoc } from 'firebase/firestore';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class AuthService {
   private adminUid: string = 'QNaiW8obd1UXEuc8CuPWC5Peadn1'; // Admin UID
   private userStatus = new BehaviorSubject<boolean>(false);
   private adminStatus = new BehaviorSubject<boolean>(false);
-
+  private currentUserUid = new BehaviorSubject<string|null>(null);
+  private currentUserSubject = new BehaviorSubject<User | null>(null);
   constructor() {
     const firebaseConfig = {
       apiKey: "AIzaSyC8MhVZ6CcVdQvzl3nR3gdHb8koT1D6gCM",
@@ -39,8 +41,10 @@ export class AuthService {
     // Escuchar cambios de estado de autenticación
     onAuthStateChanged(this.auth, (user) => {
       const loggedIn = user !== null;
+      this.currentUserUid.next(user ? user.uid : null);
       this.userStatus.next(loggedIn);
       this.adminStatus.next(loggedIn && user.uid === this.adminUid);
+      this.currentUserSubject.next(user);
     });
   }
   async registerUser(email: string, password: string) {
@@ -87,9 +91,12 @@ export class AuthService {
   }
 
   // Método para obtener el UID del usuario actualmente autenticado
-  getCurrentUserUid(): string | null {
-    const user = this.auth.currentUser;
-    return user ? user.uid : null;
+  getCurrentUserUid(): Observable<string|null> {
+    return this.currentUserUid.asObservable(); // Return the Observable from BehaviorSubject
+  }
+
+  getCurrentUser(): Observable<any> {
+    return this.currentUserSubject.asObservable();
   }
 
   // Método para eliminar la cuenta del usuario y su documento en Firestore
@@ -100,12 +107,15 @@ export class AuthService {
       throw new Error("No user logged in.");
     }
 
+    if (user.uid === this.adminUid) {
+      alert("You cannot delete the admin account: Attempt blocked.");
+      return;
+    }
+
     try {
-      // Primero intentamos eliminar el documento de Firestore
       await deleteDoc(doc(this.db, `users/${user.uid}`));
       console.log("User document deleted in Firestore.");
 
-      // Si eso es exitoso, eliminamos el usuario de Authentication
       await deleteUser(user);
       console.log("User deleted from Firebase Authentication.");
     } catch (error) {
