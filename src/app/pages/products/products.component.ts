@@ -7,6 +7,7 @@ import {Product} from "../../models/product.model";
 import {strict} from "node:assert";
 import {ProductComponent} from "../../components/product/product.component";
 import {FlexModule} from "@angular/flex-layout";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -22,22 +23,29 @@ export class ProductsComponent implements OnInit {
   product: Product = {id: "", description: "", imgRoute: "", name: "", price: 0}
   protected subcollections: string[] = [];
   protected selectedCategory: any;
-  private lastSelectedCategory: any;
-  constructor(private productService: ProductService) {
-  }
-
-  ngOnInit() {
+  protected lastSelectedCategory: any;
+  constructor(private productService: ProductService,private router: Router, private activatedRoute: ActivatedRoute) {
     this.loadCategorires().then(r => {
       if (this.categories) {
         console.log("después del load cat: ", this.categories);
       }
     });
+    this.productService.selectedCategory$.subscribe((value) =>{
+      this.selectedCategory = value;
+    });
+    this.onSelectedCategory(this.router.getCurrentNavigation()?.extras.state!["category"]);
+  }
+
+  ngOnInit() {
+
+    /*
     this.productService.selectedCategory$.subscribe((value) => {
       this.selectedCategory = value;
     });
+     */
   }
 
-  onSelectedCategory(category: string){
+  onSelectedCategory(category: string | undefined){
     this.productService.setCategory(category);
     console.log(this.selectedCategory);
     if (this.selectedCategory !== this.lastSelectedCategory)

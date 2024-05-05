@@ -2,7 +2,7 @@
 
 <div class = categories>
   <ul>
-    <li *ngFor="let category of categories"
+    <li *ngFor="let category of categories" class="category" [class.selected]="category == lastSelectedCategory"
     (click)="onSelectedCategory(category)">
       {{category | uppercase}}
     </li>
@@ -23,6 +23,7 @@
         fxFlex="0 1 calc(24% - 32px)"
         fxFlex.lt-md="0 1 calc(50% - 32px)"
         fxFlex.lt-sm="80%"
-        [product]="product" ></app-product>
+        [product]="product"
+        [category]="selectedCategory"></app-product>
     </ng-container>
   </div>

@@ -10,8 +10,14 @@
   justify-content: center;
   display: flex;
   flex-direction: row;
-  font-size: 1.2vw;
+  font-size: 2vw;
   font-weight: bold;
+}
+.category:hover{
+  color: darkkhaki;
+}
+.category.selected{
+  color: darkkhaki;
 }
 
 ul{

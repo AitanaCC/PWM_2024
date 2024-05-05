@@ -37,11 +37,11 @@
   </div>
   <div *ngIf="sidebarOpen" class="sidebar">
     <div class="closebtn" (click)="toggleSidebar()">&times;</div>
-    <a routerLink="/Home">Drinks</a>
-    <a [routerLink]="['/products']">Smoothies</a>
-    <a routerLink="/">Cocktails</a>
-    <a routerLink="/">Frozen Desserts</a>
-    <a routerLink="/">Appetizer</a>
+    <a [routerLink]="['/products']" [state]="{category:'appetizer'}">Appetizer</a>
+    <a [routerLink]="['/products']" [state]="{category:'cocktails'}">Cocktails</a>
+    <a [routerLink]="['/products']"  [state]="{category:'drinks'}">Drinks</a>
+    <a [routerLink]="['/products']" [state]="{category:'frozen-desserts'}">Frozen Desserts</a>
+    <a [routerLink]="['/products']" [state]="{category:'smoothies'}" >Smoothies</a>
     <hr/>
     <a [routerLink]="['/contact-us']">Contact Us</a>
     <!--Admin Options-->
